@@ -1,0 +1,82 @@
+/* CLASSES NOVAS CRIADAS PARA O PROJETO */
+
+#topo{
+
+min-height: 100px;
+background-color: #fff;
+color: #fff;
+    
+}
+
+#rodape{
+     
+ min-height: 150px;
+ background-color: #000;  
+color: #fff; 
+    
+}
+
+#conteudo{
+    
+   min-height: 450px; 
+}
+
+#lateral{
+    
+   border-right: 1px solid #000;
+   height: 100%;
+  }
+
+  .transparente{
+   opacity: 0.9;   
+      
+  }
+
+
+/* CLASSES OVERRIDE DO BOOTSTRAP para personalização*/
+
+/* navbar e menu navbar */
+.navbar-inverse{
+    border-radius: 0;
+    
+}
+
+
+.navbar-inverse .navbar-nav > li > a{
+    
+  color: #fff;
+  font-size: 16px;  
+    
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    
+ background-color: #000;
+ border-radius: 10px;
+ color: #eb9316;
+    
+}
+
+/* menu lateral com list group*/
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+    
+   background-color: #101010; 
+    
+}
+
+a.list-group-item:hover{
+    
+    background-color: #262626;
+     color: #FFF;
+     
+    
+}
+
+a.list-group-item{
+  
+    border: 0;
+    font-size: 16px;
+    
+    
+}
+
