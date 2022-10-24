@@ -11,15 +11,17 @@ class Conexao extends Config{
 
 	private $host, $user, $senha, $banco;
 
-	protected $obj, $itens=array();	
+	protected $obj, $itens=array(), $prefix;
 
 
 	function __construct(){
 
-		$this->host  =  Config::$BANCO_HOST;
-		$this->user  =  Config::$BANCO_USER;
-		$this->senha = Config::$BANCO_SENHA;
-		$this->banco = Config::$BANCO_BD;
+		$this->host  = self::BD_HOST;
+		$this->user  = self::BD_USER;
+		$this->senha = self::BD_SENHA;
+		$this->banco = self::BD_BANCO;
+
+		$this->prefix=self::BD_PREFIX;
 
 		try{
 
