@@ -8,6 +8,8 @@ color: #fff;
     
 }
 
+
+
 #rodape{
      
 min-height: 150px;
@@ -56,6 +58,9 @@ color: #fff;
     
 }
 
+#banner{
+    border: 2px solid #000;
+}
 
 .navbar-inverse .navbar-nav > li > a{
     

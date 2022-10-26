@@ -20,7 +20,12 @@ class Produtos extends Conexao{
 	function GetProdutos(){
 
 		$query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";	
+
+		$query .= " limit 1,6";
+
+
 		$this->ExecuteSQL($query);
+
 
 		$this->GetLista();
 
@@ -34,7 +39,10 @@ class Produtos extends Conexao{
 	function GetProdutosID($id){
 
 		$query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";	
+			
+
 		$query .= " AND pro_id = {$id}";
+
 
 		$this->ExecuteSQL($query);
 

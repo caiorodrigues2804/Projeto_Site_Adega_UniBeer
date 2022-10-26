@@ -9,6 +9,10 @@ class Categorias extends Conexao{
 	 	parent::__construct();
 	 }
 
+	 /**
+	  * Retorna o sql da consulta de categorias 
+	  * */
+
 	 function GetCategorias(){
 
 	 	$query = "SELECT * FROM {$this->prefix}categorias";
