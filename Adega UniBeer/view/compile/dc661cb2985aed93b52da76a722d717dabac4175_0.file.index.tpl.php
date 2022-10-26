@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-24 22:00:20
+/* Smarty version 3.1.46, created on 2022-10-25 22:10:33
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6356eed46c10a1_17383733',
+  'unifunc' => 'content_635842b9c31fb3_73464356',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1666641619,
+      1 => 1666728632,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6356eed46c10a1_17383733 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635842b9c31fb3_73464356 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -66,7 +66,7 @@ function content_6356eed46c10a1_17383733 (Smarty_Internal_Template $_smarty_tpl)
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=vlce5Ze9HgEAX8lbBuK&_nc_ht=scontent.fcgh22-1.fna&oh=00_AT9KzEWHwv2MElD4gFBpX31Kn-XQQkuITNZGExDttau25Q&oe=6354071E" width="360px" alt="unibeer"></a>
+                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=8ZJBKPYjWTAAX9gSKI_&_nc_ht=scontent.fcgh22-1.fna&oh=00_AT8hIO-w0FuSeO2CqmxcRPvpz6iKu4KLSa9PbGjTKaaPSw&oe=635DEA5E" width="360px" alt="unibeer"></a>
                     </center>
                    
                 </div>    
@@ -176,6 +176,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home </a></li>
                         <li><a href="#"> Produtos </a></li>
                         <li><a href="#"> Info </a></li>
+                        <li>Hoje é <?php echo $_smarty_tpl->tpl_vars['DATA']->value;?>
+</li>
                     </ul>   
                     <!-- fim do menu breadcrumb-->             
  

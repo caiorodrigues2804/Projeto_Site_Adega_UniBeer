@@ -52,7 +52,7 @@
 				endif;
 				// se não passou nada pela URL
 				else:
-
+					include 'home.php';
 				endif;
 
 		}

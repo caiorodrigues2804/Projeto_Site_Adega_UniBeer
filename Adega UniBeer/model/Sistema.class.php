@@ -38,7 +38,7 @@ class Sistema {
      * @return float - valor formatado em REal
      */
     static function MoedaBR($valor){
-     
+        // 500.99 500,99
         return number_format($valor,2,",",".");  
     }
      /**

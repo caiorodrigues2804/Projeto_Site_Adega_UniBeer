@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-20 00:45:25
+/* Smarty version 3.1.46, created on 2022-10-25 22:09:45
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos_info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63507e052a84e7_02243410',
+  'unifunc' => 'content_63584289545fd4_44502975',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9fca4399abc56a41dcec2a8cce984d20515ad9e3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos_info.tpl',
-      1 => 1666219523,
+      1 => 1666728584,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63507e052a84e7_02243410 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63584289545fd4_44502975 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 $_smarty_tpl->tpl_vars['P']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
@@ -68,13 +68,11 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 
 <div>
 	<!-- LISTAGEM DE IMAGENS PRODUTOS -->
-	<div class="row">
-		<hr>
-		<h4 class="text-center">Mais imagens</h4>
+	 
 	</div>
 
 	<!--- DESCRIÇÃO DO PRODUTO-->
-	<div class="row">
+	<div style="margin: 20px;" class="row">
 		<hr/>
 		<h4 class="text-center">Descrição do produto</h4>
 	<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_desc'];?>

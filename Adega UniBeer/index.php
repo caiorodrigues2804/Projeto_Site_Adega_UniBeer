@@ -19,6 +19,7 @@ $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
 $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 $smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
 $smarty->assign('CATEGORIAS', $categorias->GetItens());
+$smarty->assign('DATA', Sistema::DataAtualBR());
 
 // $dados = new Conexao();
 // $dados->ExecuteSQL("select * from clientes");

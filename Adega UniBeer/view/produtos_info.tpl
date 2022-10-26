@@ -36,13 +36,11 @@
 
 <div>
 	<!-- LISTAGEM DE IMAGENS PRODUTOS -->
-	<div class="row">
-		<hr>
-		<h4 class="text-center">Mais imagens</h4>
+	 
 	</div>
 
 	<!--- DESCRIÇÃO DO PRODUTO-->
-	<div class="row">
+	<div style="margin: 20px;" class="row">
 		<hr/>
 		<h4 class="text-center">Descrição do produto</h4>
 	{$P.pro_desc}

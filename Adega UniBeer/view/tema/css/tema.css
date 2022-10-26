@@ -32,6 +32,10 @@ color: #fff;
       
   }
 
+.thumbnail{
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #adadad;
+}
 
 /* CLASSES OVERRIDE DO BOOTSTRAP para personalização*/
 .btn-cssc{
