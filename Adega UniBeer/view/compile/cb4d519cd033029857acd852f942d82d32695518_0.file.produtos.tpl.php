@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-20 21:08:33
+/* Smarty version 3.1.46, created on 2022-10-27 22:06:02
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63519cb1d34ad5_60492652',
+  'unifunc' => 'content_635ae4aad27af9_04232956',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb4d519cd033029857acd852f942d82d32695518' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
-      1 => 1666292913,
+      1 => 1666901161,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63519cb1d34ad5_60492652 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635ae4aad27af9_04232956 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 <hr/>
@@ -69,7 +69,7 @@ function content_63519cb1d34ad5_60492652 (Smarty_Internal_Template $_smarty_tpl)
 	 	
  <?php echo '</script'; ?>
 >     
-
+<section id="produtos" class="row">
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?>
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>
 <?php }?>
@@ -84,6 +84,8 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
 
 	<li class="col-md-4">
+		<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
+
 
 		<div class="thumbnail">
 		<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value;?>
@@ -116,5 +118,13 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-</ul><?php }
+</ul>
+</section>
+
+<section id="paginacao" class="row">
+<center>
+	<?php echo $_smarty_tpl->tpl_vars['PAGINAS']->value;?>
+
+</center>
+</section><?php }
 }

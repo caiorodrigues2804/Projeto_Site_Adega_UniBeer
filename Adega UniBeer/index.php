@@ -1,5 +1,5 @@
 <?php 
-
+// carrega o auto load
 require './lib/autoload.php';
 
 // Chamo a classe do template

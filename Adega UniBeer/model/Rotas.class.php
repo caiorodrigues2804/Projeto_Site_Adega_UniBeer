@@ -228,4 +228,13 @@
 
 		}
 
+		/**
+		 * 
+		 * @return string com a pasta de controller
+		 * */
+		
+		static function get_Pasta_Controller(){
+			return self::$pasta_controller;
+		}
+
 	}

@@ -44,7 +44,7 @@
 	 document.write('</h4>')
 	 	
  </script>     
-
+<section id="produtos" class="row">
 {if $PRO_TOTAL < 1}
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>
 {/if}
@@ -54,6 +54,7 @@
 	{foreach from=$PRO item=P}
 
 	<li class="col-md-4">
+		{$P.pro_id}
 
 		<div class="thumbnail">
 		<a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
@@ -79,3 +80,10 @@
 	{/foreach}
 
 </ul>
+</section>
+
+<section id="paginacao" class="row">
+<center>
+	{$PAGINAS}
+</center>
+</section>

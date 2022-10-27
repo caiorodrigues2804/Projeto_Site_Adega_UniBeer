@@ -2,7 +2,7 @@
 
 /**
  * 
- * descricao - gerencia a conexao com o Banco de Dados
+ * Descrição - gerencia a conexao com o Banco de Dados
  * 
  * @author Caio Rodrigues
  **/
@@ -13,6 +13,8 @@ class Conexao extends Config{
 
 	protected $obj, $itens=array(), $prefix;
 
+	public $paginacaolinks;
+	//  1  2  3  4  5  6 
 
 	function __construct(){
 
@@ -93,5 +95,52 @@ class Conexao extends Config{
  		return $this->itens;
  	}
 
+/**
+ * @param string campos da tabela
+ * @param string nome da tabela
+ * @return string com complemento SQL para limitar
+ * */
+
+
+ 	function PaginacaoLinks($campo,$tabela){
+ 	 
+ 		$pag = new Paginacao();
+ 		$pag->GetPaginacao($campo,$tabela);
+
+ 		$this->paginacaolinks = $pag->link;
+
+ 		$inicio = $pag->inicio;
+ 		$limite = $pag->limite;
+
+ 		return " limit {$inicio},{$limite}";
+
+ 	}
+
+ 	/**
+ 	 * Retorna uma Lista com as paginas para escolher
+ 	 * */
+ 	protected function Paginacao($paginas=array()){
+
+ 		$pag = '<ul class="pagination">';
+
+ 			foreach($paginas as $p):
+			$pag .= '<li><a href="?p='.$p.'">' . $p .'</a></li>'; 			
+
+ 			endforeach;
+
+ 		$pag .= '</ul>';
+
+ 		return $pag;
+ 	}
+
+ 	/**
+ 	 * @return array com a paginação em links
+ 	 * */
+
+ 	function ShowPaginacao(){
+
+ 		return $this->Paginacao($this->paginacaolinks);
+
+ 	}
 
 }
