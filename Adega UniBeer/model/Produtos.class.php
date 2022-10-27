@@ -19,12 +19,55 @@ class Produtos extends Conexao{
 
 	function GetProdutos(){
 
-		$query = "SELECT * FROM produtos p INNER JOIN categorias c ON p.pro_categoria = c.cate_id";	
+		$query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";	
+
+		$query .=  $this->PaginacaoLinks("pro_id",$this->prefix."produtos");
+
+		echo $query;
+
+		$this->ExecuteSQL($query);
+
+
+		$this->GetLista();
+
+	}
+
+	 /**
+	  * 
+	  * @param INT id do produto
+	  * */
+
+	function GetProdutosID($id){
+
+		$query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";	
+			
+
+		$query .= " AND pro_id = {$id}";
+
+
 		$this->ExecuteSQL($query);
 
 		$this->GetLista();
 
 	}
+
+	 /**
+	  * 
+	  * @param INT id da categoria
+	  * */
+
+	function GetProdutosCate($id){
+
+		$query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";	
+		$query .= " AND pro_categoria = {$id}";
+
+		$this->ExecuteSQL($query);
+
+		$this->GetLista();
+
+	}
+
+
 
 	/**
 	 * retorna o array com os itens da tabela
@@ -40,13 +83,16 @@ class Produtos extends Conexao{
          'pro_nome'  => $lista['pro_nome'] ,  
          'pro_desc'  => $lista['pro_desc'] ,  
          'pro_peso'  => $lista['pro_peso'] ,  
-         'pro_valor'  => $lista['pro_valor'],  
+         'pro_valor'  => Sistema::MoedaBR($lista['pro_valor']),  
          'pro_altura' => $lista['pro_altura'] ,  
          'pro_largura' => $lista['pro_largura'] ,  
          'pro_comprimento' => $lista['pro_comprimento'] ,  
          'pro_img_atual'     => $lista['pro_img'] ,  
          'pro_img'     => Rotas::ImageLink($lista['pro_img']) ,  
-          'cate_nome' => $lista['cate_nome'] , 
+         'pro_slug' => $lista['pro_slug'],
+         'pro_ref' => $lista['pro_ref'],
+         'pro_descricao_extra' => $lista['pro_descricao_extra'],
+         'cate_nome' => $lista['cate_nome'] , 
          'cate_id'   => $lista['cate_id'] ,  
                     
             

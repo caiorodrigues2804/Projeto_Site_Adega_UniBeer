@@ -8,6 +8,7 @@ class ComposerStaticInit2e34b36067c815e0fcd87c4a49bd2203
 {
     public static $classMap = array (
         'Carrinho' => __DIR__ . '/../..' . '/model/Carrinho.class.php',
+        'Categorias' => __DIR__ . '/../..' . '/model/Categorias.class.php',
         'Clientes' => __DIR__ . '/../..' . '/model/Clientes.class.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Conexao' => __DIR__ . '/../..' . '/model/Conexao.class.php',
@@ -17,10 +18,13 @@ class ComposerStaticInit2e34b36067c815e0fcd87c4a49bd2203
         'PHPMailerOAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauth.php',
         'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
         'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
+        'Paginacao' => __DIR__ . '/../..' . '/model/Paginacao.class.php',
         'Pedidos' => __DIR__ . '/../..' . '/model/Pedidos.class.php',
         'Produtos' => __DIR__ . '/../..' . '/model/Produtos.class.php',
+        'ProdutosImages' => __DIR__ . '/../..' . '/model/ProdutosImages.class.php',
         'Rotas' => __DIR__ . '/../..' . '/model/Rotas.class.php',
         'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
+        'Sistema' => __DIR__ . '/../..' . '/model/Sistema.class.php',
         'Smarty' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
         'SmartyBC' => __DIR__ . '/..' . '/smarty/smarty/libs/SmartyBC.class.php',
         'SmartyCompilerException' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smartycompilerexception.php',

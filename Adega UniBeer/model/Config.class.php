@@ -13,11 +13,12 @@ class Config {
 	/**
 	 *  INFORMAÇÕES DE BANCO DE DADOS ====================
 	 * */
-	static $BANCO_HOST = "localhost";
-	static $BANCO_USER = "root";
-	static $BANCO_SENHA = "";
-	static $BANCO_BD = "miniloja2017";
-
+	const BD_HOST = "localhost";
+	const BD_USER = "root";
+	const BD_SENHA = "";
+	const BD_BANCO = "miniloja2017";
+	const BD_PREFIX = "as_";
+	const BD_LIMITE_POR_PAG = 6;
 
 
 	/**

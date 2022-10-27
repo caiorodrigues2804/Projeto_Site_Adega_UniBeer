@@ -52,7 +52,7 @@
 				endif;
 				// se não passou nada pela URL
 				else:
-
+					include 'home.php';
 				endif;
 
 		}
@@ -226,6 +226,15 @@
 
 			return self::get_SiteHOME() . '/' . self::get_ImagePasta();
 
+		}
+
+		/**
+		 * 
+		 * @return string com a pasta de controller
+		 * */
+		
+		static function get_Pasta_Controller(){
+			return self::$pasta_controller;
 		}
 
 	}
