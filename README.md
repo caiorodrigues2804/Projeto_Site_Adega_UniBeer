@@ -17,7 +17,7 @@
 [Versão 05](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_05)<br/>
 [Versão 06](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_06)<br/>
 [Versão 07](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_07)<br/>
-[Versão 07](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_08)
+[Versão 08](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_08)
 </ul>
 
 @2022
