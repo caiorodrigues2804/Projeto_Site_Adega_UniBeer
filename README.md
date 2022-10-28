@@ -9,15 +9,17 @@
 </div>
 
 ## Versões do PROJETO Site Adega UniBeer 
-[Versão 01](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01) <br/>
-[Versão 02](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_02) <br/>
-[Versão 03](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_03) <br/>
-[Versão 04](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_04) <br/>
-[Versão 05](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_05) <br/>
-[Versão 06](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_06) <br/>
+<ul>
+<li>[Versão 01](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01)</li>
+<li>[Versão 02](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_02)</li>
+<li>[Versão 03](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_03)</li>
+<li>[Versão 04](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_04)</li>
+<li>[Versão 05](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_05) </li>
+<li>[Versão 06](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_06) </li>
 [Versão 07](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_07)  
+</ul>
 
-
+@2022
 
 
 
