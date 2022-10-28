@@ -44,20 +44,21 @@
 	 document.write('</h4>')
 	 	
  </script>     
-<section id="produtos" class="row">
+<section style="margin: 2px;" id="produtos" class="row">
 {if $PRO_TOTAL < 1}
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>
 {/if}
 
 <ul style="list-style:none;">
 <br/>
+	
 	{foreach from=$PRO item=P}
 
 	<li class="col-md-4">
-		{$P.pro_id}
+		<!-- {$P.pro_id} -->
 
 		<div class="thumbnail">
-		<a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
+		<a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}?p=0">
 	
 			<img src="{$P.pro_img}" style="width: 230;height: 230px;" alt="">
 

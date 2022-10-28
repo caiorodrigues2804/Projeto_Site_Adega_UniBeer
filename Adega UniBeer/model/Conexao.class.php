@@ -124,7 +124,8 @@ class Conexao extends Config{
  		$pag = '<ul class="pagination">';
 
  			foreach($paginas as $p):
-			$pag .= '<li><a href="?p='.$p.'">' . $p .'</a></li>'; 			
+ 			
+			$pag .= '<li><a href="?p='.$p.'">'. $p .'</a></li>'; 			
 
  			endforeach;
 

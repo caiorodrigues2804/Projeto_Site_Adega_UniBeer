@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-27 22:06:02
+/* Smarty version 3.1.46, created on 2022-10-28 00:59:39
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635ae4aad27af9_04232956',
+  'unifunc' => 'content_635b0d5b1e4c56_66114441',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb4d519cd033029857acd852f942d82d32695518' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
-      1 => 1666901161,
+      1 => 1666911578,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635ae4aad27af9_04232956 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635b0d5b1e4c56_66114441 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 <hr/>
@@ -69,13 +69,14 @@ function content_635ae4aad27af9_04232956 (Smarty_Internal_Template $_smarty_tpl)
 	 	
  <?php echo '</script'; ?>
 >     
-<section id="produtos" class="row">
+<section style="margin: 2px;" id="produtos" class="row">
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?>
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>
 <?php }?>
 
 <ul style="list-style:none;">
 <br/>
+	
 	<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 $_smarty_tpl->tpl_vars['P']->do_else = true;
@@ -84,14 +85,14 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
 
 	<li class="col-md-4">
-		<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
-
+		<!-- <?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
+ -->
 
 		<div class="thumbnail">
 		<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
 /<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_slug'];?>
-">
+?p=0">
 	
 			<img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
 " style="width: 230;height: 230px;" alt="">

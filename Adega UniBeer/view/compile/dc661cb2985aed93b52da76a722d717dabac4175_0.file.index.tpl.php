@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-25 22:10:33
+/* Smarty version 3.1.46, created on 2022-10-28 00:58:17
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635842b9c31fb3_73464356',
+  'unifunc' => 'content_635b0d09733572_41421306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1666728632,
+      1 => 1666911496,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635842b9c31fb3_73464356 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635b0d09733572_41421306 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -137,7 +137,7 @@ function content_635842b9c31fb3_73464356 (Smarty_Internal_Template $_smarty_tpl)
             <div class="container"> 
               
                 <!-- coluna da esquerda -->
-                <div class="col-md-2" id="lateral">
+                <div  class="col-md-2" id="lateral">
                     
                 <div class="list-group">
                     <span class="list-group-item active"> Categorias</span>

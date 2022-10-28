@@ -96,7 +96,7 @@
             <div class="container"> 
               
                 <!-- coluna da esquerda -->
-                <div class="col-md-2" id="lateral">
+                <div  class="col-md-2" id="lateral">
                     
                 <div class="list-group">
                     <span class="list-group-item active"> Categorias</span>

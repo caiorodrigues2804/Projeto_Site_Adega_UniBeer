@@ -1,5 +1,7 @@
 <?php 
 
+ 
+
 // instancia a classe smarty
 $smarty = new Template();
 

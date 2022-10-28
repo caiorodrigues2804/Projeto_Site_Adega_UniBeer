@@ -6,6 +6,11 @@
  * 
  * @author Caio Rodrigues
  * */
+ 
+if(isset($_GET['p'])){
+	print '<h4 class="alert-info" style="padding: 12px;width:200px;border-radius:5px;">Página selecionada ' . $_GET['p'] . '</h4>';
+};
+
 
 class Produtos extends Conexao{
 	
@@ -23,7 +28,7 @@ class Produtos extends Conexao{
 
 		$query .=  $this->PaginacaoLinks("pro_id",$this->prefix."produtos");
 
-		echo $query;
+		//echo $query;
 
 		$this->ExecuteSQL($query);
 
