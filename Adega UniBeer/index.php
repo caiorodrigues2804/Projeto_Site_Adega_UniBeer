@@ -25,6 +25,8 @@ $smarty->assign('DATA', Sistema::DataAtualBR());
 // $dados->ExecuteSQL("select * from clientes");
 // echo $dados->totalDados();
 
+
+
 // chamo o template
 $smarty->display('index.tpl');
 

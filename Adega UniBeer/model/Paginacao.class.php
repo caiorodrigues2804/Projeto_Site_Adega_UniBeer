@@ -53,7 +53,8 @@ class Paginacao extends Conexao{
 		$paginas = ceil($total / $this->limite);
 
 		// Pego o número da página para navegação URL 
-		$p = isset($_GET['p']) ? $_GET['p'] : 1;
+		$p = (int)isset($_GET['p']) ? $_GET['p'] : 1;	
+		$p = filter_var($p, FILTER_SANITIZE_NUMBER_INT);
 
 		// Defino onde começa a paginação
 		$this->inicio = ($p * $this->limite) - $this->limite;

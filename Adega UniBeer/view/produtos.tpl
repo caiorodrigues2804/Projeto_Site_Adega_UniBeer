@@ -1,5 +1,6 @@
 
 <h2>Lista de Produtos</h2>
+
 <hr/>
  <script type="text/javascript">
  	let dado = document.location.href;
@@ -8,10 +9,10 @@
 	
  	document.write('<h4>')
 	 if (dados == 'ervejas') {
-	 	dados = 'Categoria: Cerveja'
+	 	dados = 'Categoria: Cervejas'
  		document.write(dados)
 	 }	 if (dados == 'nergeticos') {
-	 	dados = 'Categoria: Energetico'
+	 	dados = 'Categoria: Energeticos'
  		document.write(dados)
 	 }	 if (dados == 'efrigerantes') {
 	 	dados = 'Categoria: Refrigerantes'
@@ -40,6 +41,9 @@
 	 } if (dados == 'Combos') {
 	 	dados = 'Categoria: Combos'
 	 	document.write(dados)
+	 }if (dados == 'odos') {
+	 	dados = 'Categoria: Todos'
+	 	document.write(dados)
 	 }
 	 document.write('</h4>')
 	 	
@@ -58,7 +62,7 @@
 		<!-- {$P.pro_id} -->
 
 		<div class="thumbnail">
-		<a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}?p=0">
+		<a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
 	
 			<img src="{$P.pro_img}" style="width: 230;height: 230px;" alt="">
 
