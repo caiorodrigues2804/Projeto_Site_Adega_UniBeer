@@ -103,15 +103,19 @@ class Conexao extends Config{
 
 
  	function PaginacaoLinks($campo,$tabela){
- 	 
+ 	 	
+ 	 	// Instancia o objeto de paginação
  		$pag = new Paginacao();
+ 		// executo a base da paginação
  		$pag->GetPaginacao($campo,$tabela);
-
+ 		// recebo os links das paginas pelo numero de pagina
  		$this->paginacaolinks = $pag->link;
 
+ 		// definino o Início e o fim para limitar a SQL
  		$inicio = $pag->inicio;
  		$limite = $pag->limite;
 
+ 		// retorno a SQL de complemento
  		return " limit {$inicio},{$limite}";
 
  	}
@@ -120,6 +124,7 @@ class Conexao extends Config{
  	 * Retorna uma Lista com as paginas para escolher
  	 * */
  	protected function Paginacao($paginas=array()){
+ 		// monto a UL (LISTA) com os itens da paginação
 
  		$pag = '<ul class="pagination">';
 
@@ -140,6 +145,7 @@ class Conexao extends Config{
 
  	function ShowPaginacao(){
 
+ 		// retorno a paginação para o controller
  		return $this->Paginacao($this->paginacaolinks);
 
  	}

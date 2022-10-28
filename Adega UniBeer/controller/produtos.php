@@ -15,6 +15,10 @@ $produtos = new Produtos();
 		$produtos->GetProdutos();
 	endif;
 
+ 
+
+ 
+
 // passo variáveis para o template TPL
 $smarty->assign('PRO',$produtos->GetItens());
 $smarty->assign('PRO_INFO',Rotas::pag_ProdutosInfo());
@@ -23,8 +27,7 @@ $smarty->assign('CATEGORIAS',$produtos->TotalDados());
 
 //echo Rotas::get_ImageURL();
 $smarty->assign('PAGINAS',$produtos->ShowPaginacao());
-
-                  
+ 
 $smarty->display('produtos.tpl');
 
 

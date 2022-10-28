@@ -9,7 +9,6 @@ color: #fff;
 }
 
 
-
 #rodape{
      
 min-height: 150px;
@@ -36,10 +35,17 @@ color: #fff;
 
 .thumbnail{
     border-radius: 15px;
-    box-shadow: 5px 5px 5px #adadad;
+    box-shadow: 5px 6px 6px #adadad;
 }
 
 /* CLASSES OVERRIDE DO BOOTSTRAP para personalização*/
+
+.pagination>li>a{
+    background-color: #202377;
+    color: #fff;
+}
+
+
 .btn-cssc{
     color: #fff;
     background-color: #202377;
