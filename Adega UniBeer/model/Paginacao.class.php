@@ -55,14 +55,14 @@ class Paginacao extends Conexao{
 		// Pego o número da página para navegação URL 
 		$p = (int)isset($_GET['p']) ? $_GET['p'] : 1;	
 		$p = filter_var($p, FILTER_SANITIZE_NUMBER_INT);
-
+ 		
 		// Defino onde começa a paginação
 		$this->inicio = ($p * $this->limite) - $this->limite;
 
 		// Faço um laço passando as links das paginas para um array
 		for($i = 1;$i <= $paginas; $i++):
 
-		array_push($this->link,$i);
+			array_push($this->link,$i);
 
 		endfor;
 

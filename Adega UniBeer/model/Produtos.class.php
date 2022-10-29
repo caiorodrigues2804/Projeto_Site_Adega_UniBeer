@@ -9,6 +9,7 @@
  
 if(isset($_GET['p'])){
 	print '<h4 class="alert-info" style="padding: 12px;width:200px;border-radius:5px;">Página selecionada ' . $_GET['p'] . '</h4>';
+
 };
 
 
