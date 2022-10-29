@@ -15,8 +15,11 @@ $produtos = new Produtos();
 		$produtos->GetProdutos();
 	endif;
 
- 
-
+ 	if (isset($_GET['w'])) {
+ 		print '<h4>Categoria: ' . $_GET['w'] . '</h4>';
+ 	} else if (isset($_GET['c'])) {
+ 		print '<h4>Categoria: ' . ucfirst($_GET['c']) . '</h4>';
+ 	}
  
 
 // passo variáveis para o template TPL

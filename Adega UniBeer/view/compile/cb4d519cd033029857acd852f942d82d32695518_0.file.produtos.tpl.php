@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-28 21:49:09
+/* Smarty version 3.1.46, created on 2022-10-29 17:43:38
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635c3235eb7897_45100303',
+  'unifunc' => 'content_635d4a2a33d2d9_90901889',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb4d519cd033029857acd852f942d82d32695518' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
-      1 => 1666986549,
+      1 => 1667058217,
       2 => 'file',
     ),
   ),
@@ -20,59 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635c3235eb7897_45100303 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635d4a2a33d2d9_90901889 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 
 <hr/>
- <?php echo '<script'; ?>
- type="text/javascript">
- 	let dado = document.location.href;
-   	// document.write(dado.substr(45, 46))
- 	let dados = dado.substr(45, 46);
+<?php echo '<script'; ?>
+>
 	
- 	document.write('<h4>')
-	 if (dados == 'ervejas') {
-	 	dados = 'Categoria: Cervejas'
- 		document.write(dados)
-	 }	 if (dados == 'nergeticos') {
-	 	dados = 'Categoria: Energeticos'
- 		document.write(dados)
-	 }	 if (dados == 'efrigerantes') {
-	 	dados = 'Categoria: Refrigerantes'
- 		document.write(dados)
-	 }	 if (dados == 'ucos') {
-	 	dados = 'Categoria: Sucos'
- 		document.write(dados)
-	 } if (dados == 'abacos'){
-	 	dados = 'Categoria: Tabacos'
- 		document.write(dados)
-	 } if (dados == 'C3%81guas%20t%C3%B4nicas') {
-	 	dados = 'Categoria: Águas Tônicas'
-	 	document.write(dados)
-	 } if (dados == 'hiskys') {
-	 	dados = 'Categoria: Whiskys'
-	 	document.write(dados)
-	 } if (dados == 'arguiles') {
-	 	dados = 'Categoria: Narguiles'
-	 	document.write(dados)
-	 } if (dados == 'Doces') {
-	 	dados = 'Categoria: Doces'
-	 	document.write(dados)
-	 } if (dados == 'Vinhos') {
-	 	dados = 'Categoria: Vinhos'
-	 	document.write(dados)
-	 } if (dados == 'Combos') {
-	 	dados = 'Categoria: Combos'
-	 	document.write(dados)
-	 }if (dados == 'odos') {
-	 	dados = 'Categoria: Todos'
-	 	document.write(dados)
-	 }
-	 document.write('</h4>')
-	 	
- <?php echo '</script'; ?>
->     
+	let dados,nums;
+	dados = window.location.href;
+	nums = dados.indexOf('?p');
+	// document.write(nums)
+	if (nums >= 50) {
+	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/,'').replace('/','');
+	document.write('<h4>Categoria selecionada: ',dados_2,'</h4>');
+	}
+ 
+<?php echo '</script'; ?>
+>
+ 
 <section style="margin: 2px;" id="produtos" class="row">
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?>
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>

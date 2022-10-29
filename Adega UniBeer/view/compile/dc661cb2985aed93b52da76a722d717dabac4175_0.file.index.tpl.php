@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-28 21:35:31
+/* Smarty version 3.1.46, created on 2022-10-29 17:42:18
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635c2f03252545_57948809',
+  'unifunc' => 'content_635d49dad0fa71_10766082',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1666985730,
+      1 => 1667058138,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635c2f03252545_57948809 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635d49dad0fa71_10766082 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -66,7 +66,7 @@ function content_635c2f03252545_57948809 (Smarty_Internal_Template $_smarty_tpl)
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=8ZJBKPYjWTAAX9gSKI_&_nc_ht=scontent.fcgh22-1.fna&oh=00_AT8hIO-w0FuSeO2CqmxcRPvpz6iKu4KLSa9PbGjTKaaPSw&oe=635DEA5E" width="380px" alt="unibeer"></a>
+                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=8ZJBKPYjWTAAX9gSKI_&_nc_ht=scontent.fcgh22-1.fna&oh=00_AT8hIO-w0FuSeO2CqmxcRPvpz6iKu4KLSa9PbGjTKaaPSw&oe=635DEA5E" width="390px" alt="unibeer"></a>
                     </center>
                    
                 </div>    
@@ -156,6 +156,7 @@ $_smarty_tpl->tpl_vars['C']->do_else = false;
 
 
                     <a href="<?php echo $_smarty_tpl->tpl_vars['C']->value['cate_link'];?>
+?w=<?php echo $_smarty_tpl->tpl_vars['C']->value['cate_nome'];?>
 " class="list-group-item">
                         <span class="glyphicon glyphicon-menu-right"></span> <?php echo $_smarty_tpl->tpl_vars['C']->value['cate_nome'];?>
 </a> 
