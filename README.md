@@ -8,7 +8,7 @@
 	</div>
 </div>
 
-## Versões do PROJETO Site Adega UniBeer 
+## Versões do Projeto Site Adega UniBeer 
 
 [Versão 01](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01)<br/>
 [Versão 02](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_02)<br/>
