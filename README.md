@@ -12,7 +12,7 @@
 
 ## Versões do Projeto Site Adega UniBeer 
 
-### Recente
+### Versão recente
 [Versão 09](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_09)
 
 ### Todas as versões
