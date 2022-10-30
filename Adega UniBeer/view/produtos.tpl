@@ -1,7 +1,7 @@
 
 <h2>Lista de Produtos</h2>
 
-<hr/>
+
 <script>
 	
 	let dados,nums;
@@ -9,12 +9,12 @@
 	nums = dados.indexOf('?p');
 	// document.write(nums)
 	if (nums >= 50) {
-	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/,'').replace('/','');
+	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/g,'').replace('/','');
 	document.write('<h4>Categoria selecionada: ',dados_2,'</h4>');
 	}
  
 </script>
- 
+<hr/>
 <section style="margin: 2px;" id="produtos" class="row">
 {if $PRO_TOTAL < 1}
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>

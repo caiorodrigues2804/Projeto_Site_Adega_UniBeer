@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-29 17:43:38
+/* Smarty version 3.1.46, created on 2022-10-30 02:10:39
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635d4a2a33d2d9_90901889',
+  'unifunc' => 'content_635dcf0fc9a2e1_31344460',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb4d519cd033029857acd852f942d82d32695518' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
-      1 => 1667058217,
+      1 => 1667092238,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635d4a2a33d2d9_90901889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635dcf0fc9a2e1_31344460 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 
-<hr/>
+
 <?php echo '<script'; ?>
 >
 	
@@ -33,13 +33,13 @@ function content_635d4a2a33d2d9_90901889 (Smarty_Internal_Template $_smarty_tpl)
 	nums = dados.indexOf('?p');
 	// document.write(nums)
 	if (nums >= 50) {
-	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/,'').replace('/','');
+	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/g,'').replace('/','');
 	document.write('<h4>Categoria selecionada: ',dados_2,'</h4>');
 	}
  
 <?php echo '</script'; ?>
 >
- 
+<hr/>
 <section style="margin: 2px;" id="produtos" class="row">
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?>
 <h4 class="alert alert-danger">Nenhum produto foi encontrado</h4>
