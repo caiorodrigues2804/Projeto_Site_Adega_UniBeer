@@ -1,7 +1,7 @@
 ## Histórico de versões do Projeto Site Adega Unibeer
 
 <div style="overflow-y: auto" width="600px">
-[Versão 01](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01)<br/>
+<a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01">Versão 1</a><br/>
 [Versão 02](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_02)<br/>
 [Versão 03](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_03)<br/>
 [Versão 04](https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_04)<br/>
