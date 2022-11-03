@@ -1,16 +1,17 @@
-<h2>Este é meu carrinho de produtos</h2>
-
  <?php 
 
+$smarty = new Template();
+
 $sessao = $_SESSION['pedido'];
-$ID = 1;
+ 
+$carrinho = new Carrinho();
 
-$_SESSION['PRO'][$ID]['ID'] = 1;
+$smarty->assign('PRO',$carrinho->GetCarrinho());
+$smarty->assign('TOTAL',$carrinho->GetTotal());
 
- $carrinho = new Carrinho();
 
+$smarty->display('carrinho.tpl');
 
  echo '<pre>';
- 	var_dump($carrinho->GetCarrinho($sessao));	
+    var_dump($_SESSION['PRO']); 
  echo '</pre>';
-

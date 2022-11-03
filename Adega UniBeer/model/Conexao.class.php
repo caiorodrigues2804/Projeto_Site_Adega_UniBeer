@@ -1,5 +1,7 @@
 <?php 
 
+error_reporting(0);
+
 /**
  * 
  * Descrição - gerencia a conexao com o Banco de Dados
@@ -8,6 +10,7 @@
  **/
 
 class Conexao extends Config{
+
 
 	private $host, $user, $senha, $banco;
 
