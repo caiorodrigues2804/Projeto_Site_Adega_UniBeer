@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-30 02:10:39
+/* Smarty version 3.1.46, created on 2022-11-01 20:06:45
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635dcf0fc9a2e1_31344460',
+  'unifunc' => 'content_63616e45b50485_05430553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb4d519cd033029857acd852f942d82d32695518' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
-      1 => 1667092238,
+      1 => 1667329604,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635dcf0fc9a2e1_31344460 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63616e45b50485_05430553 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
-
 
 <?php echo '<script'; ?>
 >
@@ -34,7 +33,7 @@ function content_635dcf0fc9a2e1_31344460 (Smarty_Internal_Template $_smarty_tpl)
 	// document.write(nums)
 	if (nums >= 50) {
 	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/g,'').replace('/','');
-	document.write('<h4>Categoria selecionada: ',dados_2,'</h4>');
+	document.write('<h4>Categoria selecionada: ',((dados_2 == '%C%guas%t%C%Bnicas') ? 'Águas Tônicas' : dados_2),'</h4>');
 	}
  
 <?php echo '</script'; ?>

@@ -18,7 +18,7 @@ class Config {
 	const BD_SENHA = "";
 	const BD_BANCO = "miniloja2017";
 	const BD_PREFIX = "as_";
-	const BD_LIMITE_POR_PAG = 6;
+	const BD_LIMITE_POR_PAG = 9;
 
 
 	/**
