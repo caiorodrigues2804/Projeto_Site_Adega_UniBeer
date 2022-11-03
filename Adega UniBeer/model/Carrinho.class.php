@@ -6,7 +6,7 @@
  * @author Caio Rodrigues
  * 
  * */
- 
+  
 class Carrinho{
 
 	/**
@@ -32,22 +32,30 @@ class Carrinho{
 
 		$i = 1; $sub = 0; $peso = 0;
 
+		
 		foreach($_SESSION['PRO'] as $lista):
-		 
-		 
+
+		// calculo o subtotal do item
+		$sub = ($lista['VALOR_US'] * $lista['QTD']);
+		$this->total_Valor += $sub;
+
+		// gero meu array dos itens
 		$this->itens[$i] = array(
 			'pro_id'    => $lista['ID'],
 			'pro_nome'  => $lista['NOME'],
-			'pro_valor' => $lista['VALOR'],
+			'pro_valor' => $lista['VALOR'], // 1.000,99
+			'pro_valor_us' => $lista['VALOR_US'], // 1000.99
 			'pro_peso'  => $lista['PESO'],
 			'pro_qtd'   => $lista['QTD'],
 			'pro_img'   => $lista['IMG'],
 			'pro_link'  => $lista['LINK'],
-			'pro_subTotal'  => $sub
+			'pro_subTotal'  => Sistema::MoedaBR($sub),
+			'pro_subTotal_us'  => $sub
 			);
 
-	 
+	 	
 			$i++;
+
 		endforeach;
 
 		if(count($this->itens) > 0):
@@ -58,5 +66,11 @@ class Carrinho{
 
 	}
 
+	/**
+	 * @return float : total do carrinho
+	 * */
+	function GetTotal(){
+		return $this->total_Valor;
+	}
 
 }
