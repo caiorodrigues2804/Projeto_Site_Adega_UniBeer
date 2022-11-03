@@ -1,4 +1,16 @@
 <?php 
+
+// verifico se iniciou a sessão
+if(!isset($_SESSION)):
+	session_start();
+endif;
+// verifico se tem a sessão de pedido
+if(!isset($_SESSION['pedido'])):
+
+
+	$_SESSION['pedido'] = '123456789';
+endif;
+
 // carrega o auto load
 require './lib/autoload.php';
 

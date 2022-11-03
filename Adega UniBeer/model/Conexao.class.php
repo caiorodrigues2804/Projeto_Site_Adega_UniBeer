@@ -16,6 +16,12 @@ class Conexao extends Config{
 	public $paginacaolinks;
 	//  1  2  3  4  5  6 
 
+	/**
+	 * @var int numero total de páginas
+	 * */
+
+	public $totalpags;
+
 	function __construct(){
 
 		$this->host  = self::BD_HOST;
@@ -106,10 +112,15 @@ class Conexao extends Config{
  	 	
  	 	// Instancia o objeto de paginação
  		$pag = new Paginacao();
+
  		// executo a base da paginação
  		$pag->GetPaginacao($campo,$tabela);
+
  		// recebo os links das paginas pelo numero de pagina
  		$this->paginacaolinks = $pag->link;
+
+ 		// recebo o total de paginas
+ 		$this->totalpags = $pag->totalpags;
 
  		// definino o Início e o fim para limitar a SQL
  		$inicio = $pag->inicio;
@@ -123,20 +134,36 @@ class Conexao extends Config{
  	/**
  	 * Retorna uma Lista com as paginas para escolher
  	 * */
+  	
  	protected function Paginacao($paginas=array()){
+ 		
+
  		// monto a UL (LISTA) com os itens da paginação
 
  		$pag = '<ul class="pagination">';
 
+ 		$pag .= '<li><a href="?p=1"> << Início </a></li>'; 			
+	
  			foreach($paginas as $p):
- 			
+ 			 
 			$pag .= '<li><a href="?p='.$p.'">'. $p .'</a></li>'; 			
 
  			endforeach;
 
- 		$pag .= '</ul>';
-
- 		return $pag;
+  	 if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+   	
+   	if ($_SESSION['max_paginas'] >= 4) {
+   		$pag .= '<li><a href="?p='.$_SESSION['max_paginas'].'">' . $_SESSION['max_paginas'] .' >> </a></li>'; 	
+	 	$pag .= '</ul>';
+   	}
+ 	
+ 	// retorna a paginação somente se tiver + de uma página de itens
+	if($_SESSION['max_paginas'] > 1):
+	 		return $pag;
+ 		endif;
  	}
 
  	/**

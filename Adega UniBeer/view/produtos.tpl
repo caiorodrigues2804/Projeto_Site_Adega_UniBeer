@@ -1,7 +1,6 @@
 
 <h2>Lista de Produtos</h2>
 
-
 <script>
 	
 	let dados,nums;
@@ -10,7 +9,7 @@
 	// document.write(nums)
 	if (nums >= 50) {
 	let dados_2 = dados.substr(44, 35).replace('?p=','').replace(/[0-9]/g,'').replace('/','');
-	document.write('<h4>Categoria selecionada: ',dados_2,'</h4>');
+	document.write('<h4>Categoria selecionada: ',((dados_2 == '%C%guas%t%C%Bnicas') ? 'Águas Tônicas' : dados_2),'</h4>');
 	}
  
 </script>

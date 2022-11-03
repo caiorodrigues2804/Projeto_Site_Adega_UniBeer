@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-29 17:42:18
+/* Smarty version 3.1.46, created on 2022-10-31 20:03:27
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_635d49dad0fa71_10766082',
+  'unifunc' => 'content_63601bff7ef9b7_85061565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1667058138,
+      1 => 1667243006,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_635d49dad0fa71_10766082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63601bff7ef9b7_85061565 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -66,7 +66,7 @@ function content_635d49dad0fa71_10766082 (Smarty_Internal_Template $_smarty_tpl)
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=8ZJBKPYjWTAAX9gSKI_&_nc_ht=scontent.fcgh22-1.fna&oh=00_AT8hIO-w0FuSeO2CqmxcRPvpz6iKu4KLSa9PbGjTKaaPSw&oe=635DEA5E" width="390px" alt="unibeer"></a>
+                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=WLtLvcGQ7cIAX-Tlykb&_nc_ht=scontent.fcgh22-1.fna&oh=00_AfAe6q7tV78rfP31eTPLMgZSaTl0whvZxBunHIHV8uSE2A&oe=6365D35E" width="390px" alt="unibeer"></a>
                     </center>
                    
                 </div>    
