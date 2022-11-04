@@ -1,7 +1,7 @@
+<center>
 # Projeto Site Adega UniBeer (Página Principal)
 
 <div align="center">
-<center>
 <h3> Código-fonte do Site Adega UniBeer </h3>
 <h3> Logo </h3>
 </center>
