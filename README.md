@@ -12,7 +12,7 @@
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_11">Versão 11</a><br/>
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_12">Versão 12</a><br/>
 
-## Visualizar mais versões do projeto
+## Exibir mais versões do projeto e baixar todos os arquivos do projeto
  <h3><a href="https://adegaunibeerversoes.caiorodriguesportfolios.com.br/">Clique aqui para visualizar</a></h3>
  
 <br/>
