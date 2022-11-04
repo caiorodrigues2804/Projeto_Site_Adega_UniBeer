@@ -4,7 +4,6 @@
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01">Versão 1</a>
 
 ## Todas as versões 
-<a href="https://adegaunibeerversoes.caiorodriguesportfolios.com.br/">Visualizar mais versões do projeto</a><br/> 
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_01">Versão 1</a><br/>
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_02">Versão 2</a><br/>
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_03">Versão 3</a><br/>
@@ -18,6 +17,7 @@
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_11">Versão 11</a><br/>
 <a href="https://github.com/caiorodrigues2804/PROJETO_SITE_Adega_UniBeer/tree/v_12">Versão 12</a><br/>
 	 
+ <h3><a href="https://adegaunibeerversoes.caiorodriguesportfolios.com.br/">Visualizar mais versões do projeto</a></h3>
  
 <br/>
 @2022
