@@ -24,12 +24,12 @@
 [Clique aqui para exibir todas as versões do site](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/versoes)<br/>
 
 ## Visualizar a modelagem de dados do banco
-[Visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
+[Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
 
 ## Visualizar arquivos Word, Pdfs, Excel, etc...
-[Visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
+[Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
 
-<br/><br/>
+<br/>
 @2022
 
 
