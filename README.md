@@ -23,6 +23,8 @@
 ### Todas as versões
 [Clique aqui para exibir todas as versões do site](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/versoes)<br/>
 
+### Visualizar a modelagem de dados do banco
+[Visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
 
 @2022
 
