@@ -28,7 +28,6 @@
 
 ## Visualizar arquivos Word, Pdfs, Excel, etc...
 [Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
-<button>Olá</button>
 
 <br/>
 @2022
