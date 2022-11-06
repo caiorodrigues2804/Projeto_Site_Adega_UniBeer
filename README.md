@@ -27,7 +27,7 @@
 [Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
 
 ## Visualizar arquivos Word, Pdfs, Excel, etc...
-[Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
+[Exibir](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/arquivos)<br/>
 
 
 ## Programas que foram usados na construção do site
@@ -43,7 +43,6 @@
 <br/><br/>
 <a href="https://www.adobe.com/br/products/photoshop.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdt6J8Ct_fGtRJLWFiRRwJ6b7JghBNjbV5BQ&usqp=CAU" width="100px">&nbsp;Photoshop</a>
 
-<br/>
 <br/>
 @2022
 
