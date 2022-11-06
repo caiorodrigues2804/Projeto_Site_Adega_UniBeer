@@ -26,6 +26,10 @@
 ## Visualizar a modelagem de dados do banco
 [Visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
 
+## Visualizar arquivos Word, Pdfs, Excel, etc...
+[Visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/Modelagem_de_Dados_BD)<br/>
+
+<br/><br/>
 @2022
 
 
