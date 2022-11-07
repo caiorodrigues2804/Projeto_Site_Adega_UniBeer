@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-07 00:59:03
-  from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
+/* Smarty version 3.1.46, created on 2022-11-06 00:48:50
+  from 'C:\xampp\htdocs\Adega Unibeer\view\pedido_confirmar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63684a47057759_20980465',
+  'unifunc' => 'content_6366f6628631d1_66137219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
+    'e2f352142a4b854c349794a88993733df89a02cb' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1667779142,
+      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\pedido_confirmar.tpl',
+      1 => 1667692110,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Meu Carrinho</h3>
+function content_6366f6628631d1_66137219 (Smarty_Internal_Template $_smarty_tpl) {
+?><h3>Confirmar Pedido</h3>
 <hr/>
 <style type="text/css">
 	#divs_r{
 		overflow-y: scroll;
-	 		height: 400px;
+		height: 400px;
 	}
 </style>
 
@@ -34,11 +34,11 @@ function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl)
 <section class="row">
 
 	<div class="col-md-4 text-right">
-		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
-" class="btn btn-cssc" title="">Comprar Mais</a>	
+		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
+" class="btn btn-cssc" title="">Voltar ao Carrinho</a>	
 	</div>
 	<div class="col-md-4 text-right">
-		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONFIRMAR']->value;?>
+		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_FINALIZAR']->value;?>
 " class="btn btn-cssc" title="">Finalizar</a>
 	</div>
 	<div class="col-md-4">
@@ -47,19 +47,18 @@ function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl)
 
 </section>
 <br/>
- 
 <!--- table Listagem de Itens ---->
 <section class="row">
 	<div id="divs_r">	
 	<center>
 	<table class="table table-bordered" style="width: 95%;">
-		<tr class="text-danger bg-danger" id="ds_W">
+		<tr class="text-danger bg-danger">
 			<td></td>
 			<td>Produto</td>
 			<td>Valor R$</td>
 			<td>X</td>
 			<td>Sub Total R$</td>
-			<td></td>
+		 
 		</tr>
 
 		<?php
@@ -81,16 +80,7 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 </td>	
 			<td><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_subTotal'];?>
 </td>			
-			<td>
-	<form name="carrinho_dell" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO_ALTERAR']->value;?>
-">
-		<input type="hidden" name="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
-">
-		<input type="hidden" name="acao" value="del">
-		
-		<button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
-	</form>				
-			</td>
+		 
 		</tr>
 
 		<?php
@@ -116,13 +106,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 	<!-------- Botão de limpar ----------->
 		<div class="col-md-4 text-right">
-	 			<form name="limpar" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO_ALTERAR']->value;?>
-">
-	 			<input type="hidden" name="acao" value="limpar">
-	 			<input type="hidden" name="pro_id" value="1">
-
-				<button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"> Limpar Tudo</i></button>	
-	 			</form>
+	 		
 		</div>	 
 	</section>
 <?php }

@@ -1,9 +1,9 @@
-<h3>Meu Carrinho</h3>
+<h3>Confirmar Pedido</h3>
 <hr/>
 <style type="text/css">
 	#divs_r{
 		overflow-y: scroll;
-	 		height: 400px;
+		height: 400px;
 	}
 </style>
 
@@ -11,10 +11,10 @@
 <section class="row">
 
 	<div class="col-md-4 text-right">
-		<a href="{$PAG_PRODUTOS}" class="btn btn-cssc" title="">Comprar Mais</a>	
+		<a href="{$PAG_CARRINHO}" class="btn btn-cssc" title="">Voltar ao Carrinho</a>	
 	</div>
 	<div class="col-md-4 text-right">
-		<a href="{$PAG_CONFIRMAR}" class="btn btn-cssc" title="">Finalizar</a>
+		<a href="{$PAG_FINALIZAR}" class="btn btn-cssc" title="">Finalizar</a>
 	</div>
 	<div class="col-md-4">
 		
@@ -22,19 +22,18 @@
 
 </section>
 <br/>
- 
 <!--- table Listagem de Itens ---->
 <section class="row">
 	<div id="divs_r">	
 	<center>
 	<table class="table table-bordered" style="width: 95%;">
-		<tr class="text-danger bg-danger" id="ds_W">
+		<tr class="text-danger bg-danger">
 			<td></td>
 			<td>Produto</td>
 			<td>Valor R$</td>
 			<td>X</td>
 			<td>Sub Total R$</td>
-			<td></td>
+		 
 		</tr>
 
 		{foreach from=$PRO item=P}
@@ -45,14 +44,7 @@
 			<td>{$P.pro_valor}</td>	
 			<td>{$P.pro_qtd}</td>	
 			<td>{$P.pro_subTotal}</td>			
-			<td>
-	<form name="carrinho_dell" method="post" action="{$PAG_CARRINHO_ALTERAR}">
-		<input type="hidden" name="pro_id" value="{$P.pro_id}">
-		<input type="hidden" name="acao" value="del">
-		
-		<button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
-	</form>				
-			</td>
+		 
 		</tr>
 
 		{/foreach}
@@ -75,11 +67,6 @@
 
 	<!-------- Botão de limpar ----------->
 		<div class="col-md-4 text-right">
-	 			<form name="limpar" method="post" action="{$PAG_CARRINHO_ALTERAR}">
-	 			<input type="hidden" name="acao" value="limpar">
-	 			<input type="hidden" name="pro_id" value="1">
-
-				<button class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"> Limpar Tudo</i></button>	
-	 			</form>
+	 		
 		</div>	 
 	</section>

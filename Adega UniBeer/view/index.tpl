@@ -30,7 +30,7 @@
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=WLtLvcGQ7cIAX-Tlykb&_nc_ht=scontent.fcgh22-1.fna&oh=00_AfAe6q7tV78rfP31eTPLMgZSaTl0whvZxBunHIHV8uSE2A&oe=6365D35E" width="390px" alt="unibeer"></a>
+                  <a href="index.php"><img src="unibeerlogo.png" width="420px" alt="unibeer"></a>
                     </center>
                    
                 </div>    
