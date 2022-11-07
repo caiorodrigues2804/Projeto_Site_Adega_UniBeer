@@ -237,4 +237,18 @@
 			return self::$pasta_controller;
 		}
 
+		/**
+		 * @param int tempo em segundos
+		 * @param string $pagina que eu quero ir
+		 * @return string com o redirecionamento
+		 * */
+
+		static function Redirecionar($tempo, $pagina){
+
+		$url =  '<meta http-equiv="refresh" content="'.$tempo.'; url='.$pagina.'">';
+		echo $url;
+
+
+		}
+
 	}

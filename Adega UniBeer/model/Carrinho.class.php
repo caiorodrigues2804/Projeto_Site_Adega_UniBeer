@@ -61,7 +61,8 @@ class Carrinho{
 		if(count($this->itens) > 0):
 				return $this->itens;
 		else:
-			echo 'Sem produtos no Carrinho';
+			echo '<h4 class="alert alert-danger">Sem produtos no seu carrinho</h4>';
+			Rotas::Redirecionar(1,Rotas::pag_Produtos());
 		endif;
 
 	}
@@ -73,4 +74,82 @@ class Carrinho{
 		return $this->total_Valor;
 	}
 
+	function CarrinhoADD($id){
+
+		$produtos = new Produtos();
+
+		$produtos->GetProdutosID($id);
+
+				foreach ($produtos->GetItens() as $pro):
+				$ID = $pro['pro_id'];
+				$NOME  = $pro['pro_nome'];
+				$VALOR_US = $pro['pro_valor_us'];
+				$VALOR = $pro['pro_valor'];
+				$PESO  = $pro['pro_peso'];
+				$QTD   = 1;
+				$IMG   = $pro['pro_img'];
+				$LINK = Rotas::pag_ProdutosInfo() . '/' . $ID . '/' . $pro['pro_slug'] . '.png'; 
+				$ACAO = $_POST['acao'];
+		endforeach;
+
+		switch ($ACAO):
+
+			// caso seja para inserir 
+			case 'add':
+
+			// verifico se não tem ainda o produto se não gravo um novo
+			if (!isset($_SESSION['PRO'][$ID]['ID'])):
+				$_SESSION['PRO'][$ID]['ID']    = $ID;
+				$_SESSION['PRO'][$ID]['NOME']  = $NOME;
+				$_SESSION['PRO'][$ID]['VALOR']  = $VALOR;
+				$_SESSION['PRO'][$ID]['VALOR_US'] = $VALOR_US;
+				$_SESSION['PRO'][$ID]['PESO'] = $PESO;
+				$_SESSION['PRO'][$ID]['QTD']  = $QTD;
+				$_SESSION['PRO'][$ID]['IMG']  = $IMG;
+				$_SESSION['PRO'][$ID]['LINK'] = $LINK;
+
+				// se já tem aumento a QTD
+			else:
+
+			$_SESSION['PRO'][$ID]['QTD'] += $QTD;
+
+			endif;
+			echo '<h4 class="alert alert-success">Produto inserido ✅ </h4>';
+
+				break;	
+			// caso seja para deletar item
+			case 'del':
+
+				$this->CarrinhoDEL($id);
+
+			echo '<h4 class="alert alert-danger">Produto Removido ✅ </h4>';
+				break;
+			// caso seja para limpar o carrinho todo
+			case 'limpar':
+			$this->carrinhoLimpar();
+			echo '<h4 class="alert alert-danger">Produtos Removidos ✅ </h4>';
+
+			break;
+
+		endswitch;
+	}
+
+	/** 
+	 * 
+	 * @param int produto e remove
+	 * */
+	private function CarrinhoDEL($id){
+
+		unset($_SESSION['PRO'][$id]);
+
+	}
+
+	/**
+	 * Limpar o carrinho
+	 * */
+	private function carrinhoLimpar(){
+ 
+		unset($_SESSION['PRO']);
+
+	}
 }

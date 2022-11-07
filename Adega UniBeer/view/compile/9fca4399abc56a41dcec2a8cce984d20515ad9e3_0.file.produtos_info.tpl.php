@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-10-25 22:09:45
+/* Smarty version 3.1.46, created on 2022-11-04 19:29:48
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos_info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63584289545fd4_44502975',
+  'unifunc' => 'content_63655a1c8a3060_12139696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9fca4399abc56a41dcec2a8cce984d20515ad9e3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos_info.tpl',
-      1 => 1666728584,
+      1 => 1667586578,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63584289545fd4_44502975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63655a1c8a3060_12139696 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 $_smarty_tpl->tpl_vars['P']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
@@ -59,7 +59,11 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 		</div>
 		
 		<div class="col-md-6">
-			<form name="carrinho" method="post" action="">			
+			<form name="carrinho" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_COMPRAR']->value;?>
+">	
+			<input 	type="hidden" name="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
+">
+			<input 	type="hidden" name="acao" value="add">	
 			<button class="btn btn-cssc btn-lg">Comprar</button>
 			</form>
 		</div>

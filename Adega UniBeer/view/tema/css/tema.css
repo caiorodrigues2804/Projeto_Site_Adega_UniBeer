@@ -8,6 +8,9 @@ color: #fff;
     
 }
 
+#divs_dd{
+    margin-left: -6px;
+}
 
 #rodape{
      
@@ -57,6 +60,7 @@ color: #fff;
 
 }
 
+
 /* navbar e menu navbar */
 .navbar-inverse{
     border-radius: 0;
@@ -74,6 +78,9 @@ color: #fff;
   font-size: 16px;  
     
 }
+ 
+
+
 .navbar-inverse .navbar-nav > li > a:hover{
     
  background-color: #202377;

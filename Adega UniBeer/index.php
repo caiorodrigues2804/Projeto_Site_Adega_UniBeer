@@ -7,8 +7,7 @@ endif;
 // verifico se tem a sessão de pedido
 if(!isset($_SESSION['pedido'])):
 
-
-	$_SESSION['pedido'] = '123456789';
+	$_SESSION['pedido'] = md5(uniqid(date('YmdHis'))); // 20221106205500
 endif;
 
 // carrega o auto load
