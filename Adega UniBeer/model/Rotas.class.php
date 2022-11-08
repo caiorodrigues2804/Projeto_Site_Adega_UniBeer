@@ -154,6 +154,14 @@
 			return self::get_SiteHOME() . "/login";
 		}
 
+		/**
+		 * 
+		 * @returnstring pagina de Logoff
+		 * */
+		static function pag_Logoff(){
+			return self::get_SiteHOME() . "/logoff";	
+		}
+
 		 /**
 		 * 
 		 * @return string - Tela de recuperação de senha
@@ -171,7 +179,7 @@
 		 * */
 
 		static function pag_ClienteConta(){
-			return self::get_SiteHOME() . "/clientes_minhaconta";
+			return self::get_SiteHOME() . "/minhaconta";
 		}
 
 		/**
