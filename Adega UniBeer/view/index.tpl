@@ -30,10 +30,21 @@
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="unibeerlogo.png" width="420px" alt="unibeer"></a>
-                    </center>
-                   
-                </div>    
+
+                  <div class="col-md-6"> 
+
+                  <a href="index.php"><img src="unibeerlogo.png" style="margin-left:420px;" width="410px" alt="unibeer"></a>
+
+              </div>
+
+              <div class="col-md-6 text-right" style="color:#000">                    
+                {if $LOGADO == true}               
+                Olá: {$USER} <a href="{$PAG_LOGOFF}" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair </a>
+                {/if}
+              </div>
+
+               </center>
+               </div>    
             
             </div><!-- fim da div topo -->
  
@@ -62,8 +73,10 @@
                             <ul class="nav navbar-nav">
   <li><a href="{$GET_SITE_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
   <li><a href="{$PAG_PRODUTOS}"><i class="glyphicon glyphicon-barcode"></i> Produtos </a> </li>
-               
-  <li><a href="{$PAG_CLIENTE_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
+
+
+   <li><a href="{$PAG_CLIENTE_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
+
   <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
   <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
                                 

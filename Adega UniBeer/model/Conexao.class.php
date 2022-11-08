@@ -9,6 +9,7 @@
  * @author Caio Rodrigues
  **/
 
+// error_reporting(0);
 class Conexao extends Config{
 
 

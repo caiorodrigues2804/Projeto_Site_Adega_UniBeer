@@ -31,6 +31,12 @@ $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 $smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
 $smarty->assign('CATEGORIAS', $categorias->GetItens());
 $smarty->assign('DATA', Sistema::DataAtualBR());
+$smarty->assign('LOGADO', Login::logado());
+$smarty->assign('PAG_LOGOFF', Rotas::pag_Logoff());
+
+if(Login::Logado()):
+	$smarty->assign('USER', $_SESSION['CLI']['cli_nome']);	
+endif;
 
 // $dados = new Conexao();
 // $dados->ExecuteSQL("select * from clientes");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-06 00:06:20
+/* Smarty version 3.1.46, created on 2022-11-08 20:58:57
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6366ec6ce99c76_74334268',
+  'unifunc' => 'content_636ab501d96f09_13223378',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1667689579,
+      1 => 1667937508,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6366ec6ce99c76_74334268 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636ab501d96f09_13223378 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -66,10 +66,23 @@ function content_6366ec6ce99c76_74334268 (Smarty_Internal_Template $_smarty_tpl)
                 
                 <div class="container">
                     <center>
-                  <a href="index.php"><img src="unibeerlogo.png" width="420px" alt="unibeer"></a>
-                    </center>
-                   
-                </div>    
+
+                  <div class="col-md-6"> 
+
+                  <a href="index.php"><img src="unibeerlogo.png" style="margin-left:420px;" width="410px" alt="unibeer"></a>
+
+              </div>
+
+              <div class="col-md-6 text-right" style="color:#000">                    
+                <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>               
+                Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
+ <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
+" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair </a>
+                <?php }?>
+              </div>
+
+               </center>
+               </div>    
             
             </div><!-- fim da div topo -->
  
@@ -100,9 +113,11 @@ function content_6366ec6ce99c76_74334268 (Smarty_Internal_Template $_smarty_tpl)
 "><i class="glyphicon glyphicon-home"></i> Home </a> </li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 "><i class="glyphicon glyphicon-barcode"></i> Produtos </a> </li>
-               
-  <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTE_CONTA']->value;?>
+
+
+   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTE_CONTA']->value;?>
 "><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
+
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
 "><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
