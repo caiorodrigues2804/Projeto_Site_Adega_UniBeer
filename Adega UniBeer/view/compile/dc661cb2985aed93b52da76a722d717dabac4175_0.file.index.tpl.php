@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-08 20:58:57
+/* Smarty version 3.1.46, created on 2022-11-10 21:15:22
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_636ab501d96f09_13223378',
+  'unifunc' => 'content_636d5bdabc9d15_96388653',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1667937508,
+      1 => 1668111321,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636ab501d96f09_13223378 (Smarty_Internal_Template $_smarty_tpl) {
+function content_636d5bdabc9d15_96388653 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -66,23 +66,22 @@ function content_636ab501d96f09_13223378 (Smarty_Internal_Template $_smarty_tpl)
                 
                 <div class="container">
                     <center>
+                        <div class="col-md-6">
+                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=dohN5EQKXlMAX_ohSfr&_nc_ht=scontent.fcgh22-1.fna&oh=00_AfAMyMKV2hGRXYaNUBIRgE-ubcmLfM4URpLq4s0o6hjlFg&oe=6371B0DE" width="420px" style="margin-left:78%;" alt="unibeer"></a>
 
-                  <div class="col-md-6"> 
-
-                  <a href="index.php"><img src="unibeerlogo.png" style="margin-left:420px;" width="410px" alt="unibeer"></a>
-
-              </div>
-
-              <div class="col-md-6 text-right" style="color:#000">                    
-                <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>               
-                Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
+                    </div>
+                    </center>
+                   
+                    <div class="col-md-6 text-right" style="color:#000;">
+                                         
+                    <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
+                     Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
  <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
-" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair </a>
-                <?php }?>
-              </div>
-
-               </center>
-               </div>    
+" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair da conta </a>
+                    <?php }?>       
+                                            
+                    </div>
+                </div>    
             
             </div><!-- fim da div topo -->
  
@@ -113,10 +112,10 @@ function content_636ab501d96f09_13223378 (Smarty_Internal_Template $_smarty_tpl)
 "><i class="glyphicon glyphicon-home"></i> Home </a> </li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 "><i class="glyphicon glyphicon-barcode"></i> Produtos </a> </li>
-
-
-   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTE_CONTA']->value;?>
+               
+  <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTE_CONTA']->value;?>
 "><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
+
 
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
 "><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
