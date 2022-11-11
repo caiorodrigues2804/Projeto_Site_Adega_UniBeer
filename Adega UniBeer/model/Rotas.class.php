@@ -156,7 +156,7 @@
 
 		/**
 		 * 
-		 * @returnstring pagina de Logoff
+		 * @return string pagina de logoff
 		 * */
 		static function pag_Logoff(){
 			return self::get_SiteHOME() . "/logoff";	
@@ -179,7 +179,7 @@
 		 * */
 
 		static function pag_ClienteConta(){
-			return self::get_SiteHOME() . "/minhaconta";
+			return self::get_SiteHOME() . "/login";
 		}
 
 		/**

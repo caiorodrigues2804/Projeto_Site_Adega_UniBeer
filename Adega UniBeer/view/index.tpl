@@ -30,21 +30,20 @@
                 
                 <div class="container">
                     <center>
+                        <div class="col-md-6">
+                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=dohN5EQKXlMAX_ohSfr&_nc_ht=scontent.fcgh22-1.fna&oh=00_AfAMyMKV2hGRXYaNUBIRgE-ubcmLfM4URpLq4s0o6hjlFg&oe=6371B0DE" width="420px" style="margin-left:78%;" alt="unibeer"></a>
 
-                  <div class="col-md-6"> 
-
-                  <a href="index.php"><img src="unibeerlogo.png" style="margin-left:420px;" width="410px" alt="unibeer"></a>
-
-              </div>
-
-              <div class="col-md-6 text-right" style="color:#000">                    
-                {if $LOGADO == true}               
-                Olá: {$USER} <a href="{$PAG_LOGOFF}" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair </a>
-                {/if}
-              </div>
-
-               </center>
-               </div>    
+                    </div>
+                    </center>
+                   
+                    <div class="col-md-6 text-right" style="color:#000;">
+                                         
+                    {if $LOGADO == true}
+                     Olá: {$USER} <a href="{$PAG_LOGOFF}" class="btn btn-cssc"><i class="glyphicon glyphicon-log-out"></i> Sair da conta </a>
+                    {/if}       
+                                            
+                    </div>
+                </div>    
             
             </div><!-- fim da div topo -->
  
@@ -73,9 +72,9 @@
                             <ul class="nav navbar-nav">
   <li><a href="{$GET_SITE_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
   <li><a href="{$PAG_PRODUTOS}"><i class="glyphicon glyphicon-barcode"></i> Produtos </a> </li>
+               
+  <li><a href="{$PAG_CLIENTE_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
 
-
-   <li><a href="{$PAG_CLIENTE_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
 
   <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
   <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>

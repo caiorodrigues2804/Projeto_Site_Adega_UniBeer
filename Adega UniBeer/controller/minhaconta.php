@@ -13,7 +13,10 @@ else:
 
 $smarty = new Template();
 
+$pedidos= new Pedidos();
+$pedidos->GetPedidosCliente(1);
 
+$smarty->assign('PEDIDO',$pedidos->GetItens());
 
 
 $smarty->display('minhaconta.tpl');

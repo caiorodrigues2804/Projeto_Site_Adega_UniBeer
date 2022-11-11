@@ -77,41 +77,33 @@ class Login extends Conexao{
 
     }
 
-    /**
-     * Faz logoff do usuário e volta para home
-     * */
-    static function Logoff(){
 
-        unset($_SESSION['CLI']);
-        Rotas::Redirecionar(1, Rotas::get_SiteHOME());
-
-    }
 
     /**
      * @return Bolean se está logado ou não
+     * 
      * */
 
-    static function Logado(){
-        
+    static function Logado(){            
+
         if(isset($_SESSION['CLI']['cli_email']) && isset($_SESSION['CLI']['cli_id'])):
 
             return TRUE;
-        else:
-            return FALSE;            
+        else:            
+            return FALSE;
 
-        endif;  
+        endif;
     }
 
     /**
-     * Mostra aviso para fazer Login e o botão
+     * Faz o logoff do usuário e volta para home
      * */
-
-    static function AcessoNegado(){
-
-        echo '<div class="alert alert-danger"><a href="' . Rotas::pag_ClienteLogin() . '" class="btn btn-danger">Login</a> Acesso negado. Faça o login </div>';
+    static function Logoff(){
+        
+        unset($_SESSION['CLI']);
+        Rotas::Redirecionar(1,Rotas::get_SiteHOME());
 
     }
-
 
     /**
      * @param $user
