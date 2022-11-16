@@ -4,11 +4,7 @@
 if(!isset($_SESSION)):
 	session_start();
 endif;
-// verifico se tem a sessão de pedido
-if(!isset($_SESSION['pedido'])):
 
-	$_SESSION['pedido'] = md5(uniqid(date('YmdHis'))); // 20221106205500
-endif;
 
 // carrega o auto load
 require './lib/autoload.php';

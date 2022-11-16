@@ -31,11 +31,41 @@
                 <div class="container">
                     <center>
                         <div class="col-md-6">
-                  <a href="index.php"><img src="https://scontent.fcgh22-1.fna.fbcdn.net/v/t39.30808-6/311135244_1416509995539447_4991401465132922560_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=dohN5EQKXlMAX_ohSfr&_nc_ht=scontent.fcgh22-1.fna&oh=00_AfAMyMKV2hGRXYaNUBIRgE-ubcmLfM4URpLq4s0o6hjlFg&oe=6371B0DE" width="420px" style="margin-left:78%;" alt="unibeer"></a>
+                  <a href="index.php"><img id="logotipo" src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="450px" style="margin-left:70%;" alt="unibeer"></a>
+
+                 <a href="index.php"><img id="logotipo2" src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="450px" style="display:none;" alt="unibeer"></a>
 
                     </div>
                     </center>
-                   
+                   <script>
+                    // let h_s; 
+                    // h_s = document.createElement('h2'); 
+                    // document.getElementsByTagName('body')[0].appendChild(h_s)
+
+
+                       setInterval(() => {
+                           // h_s.innerHTML =  screen.width + '<br/> width: ' + innerWidth + ' height: ' + innerHeight;
+                           if (screen.width >= 1280) {
+                            document.querySelector('#logotipo').style.marginLeft = 70 + '%';
+                             document.querySelector('#logotipo').style.width = 450 + 'px';
+
+                           } else{
+                           
+
+                            document.querySelector('#logotipo2').style.marginLeft = (-20) + 'px';
+                            document.querySelector('#logotipo2').style.width = 300 + 'px';
+                           }
+
+                           if(innerWidth <= 990){
+                            document.querySelector('#logotipo').style.display = 'none';
+                            document.querySelector('#logotipo2').style.display = 'inline-block';
+                           } else {
+                              document.querySelector('#logotipo').style.display = 'inline-block';
+                            document.querySelector('#logotipo2').style.display = 'none';
+                           }
+
+                       })
+                   </script>
                     <div class="col-md-6 text-right" style="color:#000;">
                                          
                     {if $LOGADO == true}

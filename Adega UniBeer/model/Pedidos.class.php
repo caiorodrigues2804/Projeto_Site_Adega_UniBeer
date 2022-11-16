@@ -11,6 +11,55 @@ class Pedidos extends Conexao{
 	function __construct(){
 		parent::__construct();
 	}
+ 
+	function GetPedidoCliente($cliente){
+
+		$query = "SELECT * FROM ". $this->prefix . "pedidos";		
+
+		$this->ExecuteSQL($query);
+		$this->GetLista();
+
+	}	
+
+	/**
+	 * retorna o array com os itens da tabela
+	 * */
+
+	 private function GetLista(){
+        
+        $i = 1;
+        while ($lista = $this->ListarDados()):
+            
+        $this->itens[$i] = array(
+         'ped_id'    => $lista['ped_id'],  
+	     'ped_data'    => Sistema::Fdata($lista['ped_data']),  
+	     'ped_hora'    => $lista['ped_hora'],  
+	     'ped_data_us'    => $lista['ped_data'],  	     
+		 'ped_cliente' => $lista['ped_cliente'],
+		 'ped_cod' => $lista['ped_cod'],
+		 'ped_ref' => $lista['ped_ref'],
+		 'ped_pag_status' => $lista['ped_pag_status'],
+		 'ped_pag_forma' => $lista['ped_pag_forma'],
+		 'ped_pag_tipo' => $lista['ped_pag_tipo'],
+		 'ped_pag_codigo' => $lista['ped_pag_codigo'],
+		 'ped_frete_valor' => $lista['ped_frete_valor'],
+		 'ped_frete_tipo' => $lista['ped_frete_tipo'],	 	      
+        );
+        
+        
+        $i++;
+        
+        endwhile;
+        }
+
+	/**
+	 * Método para inserir o pedido no banco
+	 * @param INT $cliente
+	 * @param string $cod
+	 * @param string $ref
+	 * @param float  $freteValor
+	 * @param string $freteTipo 
+	 * */
 
 	function PedidoGravar($cliente,$cod,$ref,$freteValor=null,$freteTipo=null){
  
@@ -81,7 +130,7 @@ class Pedidos extends Conexao{
 	// print '<br/>' . $cods . ' '. $qtd .' R$ '. $valores .' Qtd(s) ' . $qtd;
  
     $query = "INSERT INTO `{$this->prefix}pedidos_itens` (`item_produto`, `item_valor`, `item_qtd`, `item_ped_cod`) VALUES ('$produtos', '$valores', '$qtd', '$cods')";
-    print '<br/>'. $query . '<br/><br/>';
+    // print '<br/>'. $query . '<br/><br/>';
 
 	$this->ExecuteSQL($query,$params);
 
@@ -97,8 +146,8 @@ class Pedidos extends Conexao{
 	function LimparSessoes(){
 
 		unset($_SESSION['PRO']);
-		unset($_SESSION['pedido']);
-
+		unset($_SESSION['PED']['pedido']);
+		unset($_SESSION['PED']['ref']);
 	}
 
 }

@@ -1,7 +1,5 @@
  <?php 
 
-// Verifico se não existe a sessão produtos
-echo $_SESSION['pedido'];
 
 // caso exista mostro as informações
 if (isset($_SESSION['PRO'])):
@@ -12,7 +10,8 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',$carrinho->GetTotal());
+      $smarty->assign('TOTAL',Sistema::MoedaBR($carrinho->GetTotal()));
+      $smarty->assign('PESO', $carrinho->GetPeso());
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos()); 
       $smarty->assign('PAG_CONFIRMAR',Rotas::pag_PedidoConfirmar()); 
 

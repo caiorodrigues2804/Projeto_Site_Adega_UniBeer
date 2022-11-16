@@ -156,6 +156,14 @@
 
 		/**
 		 * 
+		 * @return tela de cadastro
+		 * */
+
+		static function pag_ClienteCadastro(){
+			return self::get_SiteHOME() . '/cadastro';
+		}
+		/**
+		 * 
 		 * @return string pagina de logoff
 		 * */
 		static function pag_Logoff(){
@@ -173,13 +181,39 @@
 		}
 
 		/**
+		 * @return string pedidos da conta do cliente
+		 * */
+		static function pag_ClientePedidos(){
+			return self::get_SiteHome() . '/clientes_pedidos';	
+		}
+
+		/**
+		 * 
+		 * @return pagina dados do cliente
+		 * */
+
+		static function pag_ClienteDados(){
+			return self::get_SiteHome() . '/clientes_dados';	
+		}	
+
+
+		/**
+		 * 
+		 * @return dados do cliente
+		 * */
+
+		static function pag_ClienteSenha(){
+			return self::get_SiteHome() . '/clientes_senha';	
+		}
+
+		/**
 		 * 
 		 * @return string - página de conta do clientes
 		 * 
 		 * */
 
 		static function pag_ClienteConta(){
-			return self::get_SiteHOME() . "/login";
+			return self::get_SiteHOME() . "/minhaconta";
 		}
 
 		/**

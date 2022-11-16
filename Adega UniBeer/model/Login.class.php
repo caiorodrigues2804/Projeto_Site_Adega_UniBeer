@@ -65,13 +65,16 @@ class Login extends Conexao{
             $_SESSION['CLI']['cli_pass']       = $lista['cli_pass'];
             $_SESSION['CLI']['cli_celular']    = $lista['cli_celular'];
 
+            // Após passar valores atualizar a página
+            Rotas::Redirecionar(0, Rotas::pag_ClienteLogin());
 
         // echo 'logado com sucesso';
 
         // caso o login seja incorreto
         else:
 
-        // echo 'O login não foi efetivado';
+        echo '<h4 class="alert alert-danger">O login incorreto</h4>';
+        Rotas::Redirecionar(1, Rotas::pag_ClienteLogin());
 
         endif;
 
@@ -96,12 +99,55 @@ class Login extends Conexao{
     }
 
     /**
+     * Mostra aviso para fazer o login e o botão
+     * */
+    static function AcessoNegacao(){
+
+    echo '<div class="alert alert-danger"><a href="'.Rotas::pag_ClienteLogin().'"class="btn btn-danger">Login</a>&nbsp; Acesso negado. Faça login</div>';
+
+    }
+
+    /**
      * Faz o logoff do usuário e volta para home
      * */
     static function Logoff(){
         
         unset($_SESSION['CLI']);
-        Rotas::Redirecionar(1,Rotas::get_SiteHOME());
+        print '<h4 class="alert alert-success">Saindo...</h4>';
+        Rotas::Redirecionar(2,Rotas::get_SiteHOME());
+
+    }
+
+    /**
+     * mostra um bloco de menu para clientes logados
+     * */
+    static function MenuCliente(){
+ 
+ // Verifico se está Logado
+            if(!self::logado()):
+
+            self::AcessoNegacao();
+            Rotas::Redirecionar(3,Rotas::pag_ClienteLogin());
+
+            // caso não redirecione saiu do bloco
+            exit();
+
+         // caso seteja mostra a tela minha conta
+         else:
+
+        $smarty = new Template();
+
+        $smarty->assign('PAG_CONTA',Rotas::pag_ClienteConta());
+        $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
+        $smarty->assign('PAG_LOGOFF',Rotas::pag_Logoff());
+        $smarty->assign('PAG_CLIENTE_PEDIDOS',Rotas::pag_ClientePedidos());
+        $smarty->assign('PAG_CLIENTE_DADOS',Rotas::pag_ClienteDados());
+        $smarty->assign('PAG_CLIENTE_SENHA',Rotas::pag_ClienteSenha());
+        $smarty->assign('USER',$_SESSION['CLI']['cli_nome']);                
+
+        $smarty->display('menu_cliente.tpl');
+
+        endif;
 
     }
 

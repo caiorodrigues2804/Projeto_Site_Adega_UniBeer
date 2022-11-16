@@ -1,24 +1,9 @@
 <?php 
 
-// verifico se não está logado
-if(!Login::logado()):
-
-	Login::acessoNegado();
-	Rotas::Redirecionar(2,Rotas::pag_ClienteLogin());
-
-// caso esteja mostra a tela minha conta
-else:
-
-
-
+// Objeto do template
 $smarty = new Template();
 
-$pedidos= new Pedidos();
-$pedidos->GetPedidosCliente(1);
-
-$smarty->assign('PEDIDO',$pedidos->GetItens());
-
-
+Login::MenuCliente();
+ 
 $smarty->display('minhaconta.tpl');
-
-endif;
+ 
