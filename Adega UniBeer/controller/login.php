@@ -1,26 +1,38 @@
 <?php 
 
+// objeto do template
 $smarty = new Template();
+
+// objeto do login
 $login = new Login();
 
+// verifico se passei o post para efetuar o login
+	if (isset($_POST['txt_email']) && isset($_POST['txt_senha'])):
 
+		$user  = $_POST['txt_email'];
+		$senha = $_POST['txt_senha'];
+		
+		$login->GetLogin($user,$senha);
+		// var_dump($_SESSION['CLI']);
+
+	endif;
+
+// passo variáveis para o template
 	$smarty->assign('LOGADO', Login::logado());
+	$smarty->assign('PAG_CADASTRO', Rotas::pag_CLienteCadastro());
+	$smarty->assign('PAG_RECOVERY', Rotas::pag_ClienteRecovery());
 
+// verifico se estou logado ou não
 	if(Login::logado()):
 
 		$smarty->assign('USER',$_SESSION['CLI']['cli_nome']);
 		$smarty->assign('PAG_LOGOFF',Rotas::pag_Logoff());
 
+		// caso já esteja logado
+		Login::MenuCliente();
+
+
 	endif;
 
-if (isset($_POST['txt_email']) && isset($_POST['txt_senha'])):
-
-	$user  = $_POST['txt_email'];
-	$senha = $_POST['txt_senha'];
-	
-	$login->GetLogin($user,$senha);
-	// var_dump($_SESSION['CLI']);
-
-endif;
 
 $smarty->display('login.tpl');

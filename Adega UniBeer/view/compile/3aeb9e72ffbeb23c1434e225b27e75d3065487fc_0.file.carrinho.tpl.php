@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-07 00:59:03
+/* Smarty version 3.1.46, created on 2022-11-16 20:48:28
   from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63684a47057759_20980465',
+  'unifunc' => 'content_63753e8c055059_05316193',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1667779142,
+      1 => 1668628103,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,45 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Meu Carrinho</h3>
+function content_63753e8c055059_05316193 (Smarty_Internal_Template $_smarty_tpl) {
+echo '<script'; ?>
+>
+$(document).ready(function(){    
+
+        
+   // validar frete
+     $('#buscar_frete').click(function(){  
+        
+      var CEP_CLIENTE = $('#cep_frete').val();
+      var PESO_FRETE = $('#peso_frete').val();
+       
+        if (CEP_CLIENTE.length !== 8 ) {
+        alert('Digite seu CEP corretamente, 8 dígitos e sem traço ou ponto');  
+         $('#frete').addClass(' text-center text-danger');
+         $('#frete').html('<b>Digite seu CEP corretamente, 8 dígitos e sem traço ou ponto</b>');
+        $('#cep_frete').focus();
+        } else {
+            
+        
+       
+        $('#frete').html('<img src="imagens/loader.gif"> <b>Carregando...</b>');
+        $('#frete').addClass(' text-center text-danger');
+      
+        // carrego o combo com os bairros
+       
+        $('#frete').load('controller/frete.php?cepcliente='+CEP_CLIENTE+'&pesofrete='+PESO_FRETE);
+ 
+ } // fim do IF digitei o CEP
+      
+ 
+    }); // fim do change
+    
+   
+} ); // fim do ready
+
+<?php echo '</script'; ?>
+>
+<h3>Meu Carrinho</h3>
 <hr/>
 <style type="text/css">
 	#divs_r{
@@ -33,17 +70,14 @@ function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl)
 <!--- Botões e opções de cima ---> 
 <section class="row">
 
-	<div class="col-md-4 text-right">
+	<div class="col-md-4" style="margin-left:10px;">
 		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 " class="btn btn-cssc" title="">Comprar Mais</a>	
 	</div>
-	<div class="col-md-4 text-right">
-		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONFIRMAR']->value;?>
-" class="btn btn-cssc" title="">Finalizar</a>
-	</div>
-	<div class="col-md-4">
-		
-	</div>
+
+	<div class="col-md-4 text-right"></div>
+
+	<div class="col-md-4"></div>
 
 </section>
 <br/>
@@ -52,7 +86,7 @@ function content_63684a47057759_20980465 (Smarty_Internal_Template $_smarty_tpl)
 <section class="row">
 	<div id="divs_r">	
 	<center>
-	<table class="table table-bordered" style="width: 95%;">
+	<table  class="table table-bordered" style="width: 95%;">
 		<tr class="text-danger bg-danger" id="ds_W">
 			<td></td>
 			<td>Produto</td>
@@ -125,5 +159,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	 			</form>
 		</div>	 
 	</section>
-<?php }
+
+	<!--------- bloco frete --------->
+	<section class="row" id="dadosfrete">
+
+		<!-- Campos para tratar do frete -->
+		<div class="col-md-3">
+			<input type="text" name="cep_frete" class="form-control" id="cep_frete" value="" placeholder="Digite seu CEP">
+			<input type="hidden" name="peso_frete" id="peso_frete" value="<?php echo $_smarty_tpl->tpl_vars['PESO']->value;?>
+">
+
+			<input type="hidden" name="frete_valor" id="frete_valor" value="0">
+
+
+		</div>
+
+		<div class="col-md-3">
+			<!-- Botão Frete -->
+			<button class="btn btn-cssc" id="buscar_frete">Calcular Frete</button>
+		</div>
+					
+	</section>
+	<br/>
+
+	<!------- bloco confirmar --------->
+	<section class="row" id="confirmarpedido">
+
+		<div class="col-md-4"></div>
+
+	 <div class="col-md-4">
+		
+		<form name="pedido_finalizar" id="pedido_finalizar" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_CONFIRMAR']->value;?>
+">
+				
+				<!-------- Mostrar retorno do frete ------>
+				<span id="frete"></span>
+
+				<!--------------   Botão finalizar -------------->
+				<button class="btn btn-cssc btn-block" type="submit">Confirmar Pedido</button>
+
+		</form>
+	
+	</div>
+
+		<div class="col-md-4"></div>
+	</section>
+	<br/><?php }
 }

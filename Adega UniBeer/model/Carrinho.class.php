@@ -74,6 +74,13 @@ class Carrinho{
 		return $this->total_Valor;
 	}
 
+	/**
+	 * @return float com o peso
+	 * */
+	function GetPeso(){
+		return $this->total_Peso;
+	}
+
 	function CarrinhoADD($id){
 
 		$produtos = new Produtos();
