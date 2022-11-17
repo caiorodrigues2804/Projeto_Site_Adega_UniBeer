@@ -1,14 +1,16 @@
 <?php
 class Correios{
 	
-    public       
-  	    $frete = array(),        
+        public       
+  	        $frete = array(), $error,       
 		$servico, $servico2, $cepOrigem, $cepDestino, $peso, $formato = '1',
 		$comprimento, $altura, $largura, $diametro, $maoPropria = 'N',
 		$valordeclarado = '0', $avisoRecebimento = 'N',
 		$retorno = 'xml';
 		
-	private $url = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx';
+	private $url   = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx';
+        private $sedex = '04014';
+        private $pac   = '04510';
         /**
          * @param string cep destino
          * @param  float peso 
@@ -16,11 +18,11 @@ class Correios{
         function __construct($destino,$peso) {
          
 		        //tipo de servicos, ou seja, sedex, pac, sedex 10, esses codigos voce encontra no PDF que mencionei acima
-				$this->servico 	    = '04510';
-				$this->servico2 	= '04014';
+				$this->servico 	        = $this->pac;  // PAC
+				$this->servico2 	= $this->sedex; // sedex
 				
 				//cep de origem, ou seja, de onde parte
-				$this->cepOrigem 	= '14940000';
+				$this->cepOrigem 	= '04752005';
 				
 				//cep destino, ou seja, para onde vai ser mandado
 				$this->cepDestino 	= $destino;
@@ -79,9 +81,9 @@ class Correios{
                 
 
 						  switch ( $servico->Codigo):
-							  case '04510': $this->frete[$i]['tipo']   = 'PAC';
+                                                          case $this->pac   : $this->frete[$i]['tipo']   = 'PAC';
 								  break;
-							  case '04014': $this->frete[$i]['tipo']   = 'SEDEX';
+                                                          case $this->sedex : $this->frete[$i]['tipo']   = 'SEDEX';
 								  break;
 						  endswitch;
                             
@@ -90,11 +92,14 @@ class Correios{
                     $this->frete[$i]['valor']  = $servico->ValorSemAdicionais;                          
                     $this->frete[$i]['Prazo']  = $servico->PrazoEntrega;    
                     $this->frete[$i]['erro']   = $servico->Erro;    
+                    $this->frete[$i]['MsgErro']   = $servico->MsgErro;    
+                    $this->frete[$i]['Codigo']   = $servico->Codigo;    
+                   
 					  $i++;   
 					  
 					endforeach; 
  
-  
+                                     //var_dump($xml);
                 return $xml;
 			
 			endif;

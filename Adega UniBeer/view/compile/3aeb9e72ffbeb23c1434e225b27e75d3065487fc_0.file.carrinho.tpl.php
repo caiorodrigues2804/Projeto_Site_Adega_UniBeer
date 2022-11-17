@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-16 20:48:28
+/* Smarty version 3.1.46, created on 2022-11-17 16:12:39
   from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63753e8c055059_05316193',
+  'unifunc' => 'content_63764f67a7f284_60458961',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1668628103,
+      1 => 1668697958,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63753e8c055059_05316193 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63764f67a7f284_60458961 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 $(document).ready(function(){    
@@ -31,7 +31,9 @@ $(document).ready(function(){
         
       var CEP_CLIENTE = $('#cep_frete').val();
       var PESO_FRETE = $('#peso_frete').val();
-       
+      // alert(CEP_CLIENTE);
+      // alert(PESO_FRETE);
+
         if (CEP_CLIENTE.length !== 8 ) {
         alert('Digite seu CEP corretamente, 8 dígitos e sem traço ou ponto');  
          $('#frete').addClass(' text-center text-danger');
@@ -41,7 +43,7 @@ $(document).ready(function(){
             
         
        
-        $('#frete').html('<img src="imagens/loader.gif"> <b>Carregando...</b>');
+        $('#frete').html('<center><img src="http://granjasaojorge.com.br/img/loading1.gif" width="10%"> <b>Carregando ... </b></center>');
         $('#frete').addClass(' text-center text-danger');
       
         // carrego o combo com os bairros
@@ -166,8 +168,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<!-- Campos para tratar do frete -->
 		<div class="col-md-3">
 			<input type="text" name="cep_frete" class="form-control" id="cep_frete" value="" placeholder="Digite seu CEP">
-			<input type="hidden" name="peso_frete" id="peso_frete" value="<?php echo $_smarty_tpl->tpl_vars['PESO']->value;?>
-">
+			<input type="hidden" name="peso_frete" id="peso_frete" value="2">
 
 			<input type="hidden" name="frete_valor" id="frete_valor" value="0">
 
@@ -176,6 +177,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 		<div class="col-md-3">
 			<!-- Botão Frete -->
+
 			<button class="btn btn-cssc" id="buscar_frete">Calcular Frete</button>
 		</div>
 					
@@ -196,6 +198,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<span id="frete"></span>
 
 				<!--------------   Botão finalizar -------------->
+				<br/>
 				<button class="btn btn-cssc btn-block" type="submit">Confirmar Pedido</button>
 
 		</form>
