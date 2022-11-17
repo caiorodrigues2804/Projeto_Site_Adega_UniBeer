@@ -6,10 +6,10 @@
 <h3> Código-fonte do Site Adega UniBeer </h3>
 <h3> Logo </h3>
 
-<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="580px" />
+<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="590px" />
 <br/>
 <h3> Imagem do site </h3>
-<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/imagem_site.png" width="580px" /> 
+<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/imagem_site.png" width="590px" /> 
 </center>
 </div>
 <br/>

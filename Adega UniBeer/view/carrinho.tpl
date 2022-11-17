@@ -7,7 +7,9 @@ $(document).ready(function(){
         
       var CEP_CLIENTE = $('#cep_frete').val();
       var PESO_FRETE = $('#peso_frete').val();
-       
+      // alert(CEP_CLIENTE);
+      // alert(PESO_FRETE);
+
         if (CEP_CLIENTE.length !== 8 ) {
         alert('Digite seu CEP corretamente, 8 dígitos e sem traço ou ponto');  
          $('#frete').addClass(' text-center text-danger');
@@ -17,7 +19,7 @@ $(document).ready(function(){
             
         
        
-        $('#frete').html('<img src="imagens/loader.gif"> <b>Carregando...</b>');
+        $('#frete').html('<center><img src="http://granjasaojorge.com.br/img/loading1.gif" width="10%"> <b>Carregando ... </b></center>');
         $('#frete').addClass(' text-center text-danger');
       
         // carrego o combo com os bairros
@@ -123,7 +125,7 @@ $(document).ready(function(){
 		<!-- Campos para tratar do frete -->
 		<div class="col-md-3">
 			<input type="text" name="cep_frete" class="form-control" id="cep_frete" value="" placeholder="Digite seu CEP">
-			<input type="hidden" name="peso_frete" id="peso_frete" value="{$PESO}">
+			<input type="hidden" name="peso_frete" id="peso_frete" value="2">
 
 			<input type="hidden" name="frete_valor" id="frete_valor" value="0">
 
@@ -132,6 +134,7 @@ $(document).ready(function(){
 
 		<div class="col-md-3">
 			<!-- Botão Frete -->
+
 			<button class="btn btn-cssc" id="buscar_frete">Calcular Frete</button>
 		</div>
 					
@@ -151,6 +154,7 @@ $(document).ready(function(){
 				<span id="frete"></span>
 
 				<!--------------   Botão finalizar -------------->
+				<br/>
 				<button class="btn btn-cssc btn-block" type="submit">Confirmar Pedido</button>
 
 		</form>

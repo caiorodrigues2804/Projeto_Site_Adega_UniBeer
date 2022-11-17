@@ -39,6 +39,9 @@ class Carrinho{
 		$sub = ($lista['VALOR_US'] * $lista['QTD']);
 		$this->total_Valor += $sub;
 
+		// calcula peso
+		$peso = $lista['PESO'] * $lista['QTD'];
+
 		// gero meu array dos itens
 		$this->itens[$i] = array(
 			'pro_id'    => $lista['ID'],
