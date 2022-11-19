@@ -45,6 +45,13 @@
 <a href="https://getcomposer.org"><img src="http://magenteiro.com/blog/wp-content/uploads/2017/07/Logo-composer-transparent.png" width="50px">&nbsp;Composer</a>
 
 <br/>
+
+## Referências
+
+[Imigrantes Bebidas](https://www.imigrantesbebidas.com.br/)
+[Super Adega](https://www.superadega.com.br/)
+[ADEGA Online](https://www.adegaonline.com.br/)
+
 @2022
 
 
