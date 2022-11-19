@@ -48,9 +48,9 @@
 
 ## Referências
 
-[Imigrantes Bebidas](https://www.imigrantesbebidas.com.br/)
-[Super Adega](https://www.superadega.com.br/)
-[ADEGA Online](https://www.adegaonline.com.br/)
+[Imigrantes Bebidas](https://www.imigrantesbebidas.com.br/) <br/>
+[Super Adega](https://www.superadega.com.br/) <br/>
+[ADEGA Online](https://www.adegaonline.com.br/) 
 
 @2022
 
