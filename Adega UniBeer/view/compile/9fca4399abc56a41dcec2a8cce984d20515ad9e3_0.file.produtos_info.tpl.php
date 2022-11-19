@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-04 19:29:48
+/* Smarty version 3.1.46, created on 2022-11-18 23:50:50
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos_info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63655a1c8a3060_12139696',
+  'unifunc' => 'content_63780c4a2d8121_81184667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9fca4399abc56a41dcec2a8cce984d20515ad9e3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos_info.tpl',
-      1 => 1667586578,
+      1 => 1668811849,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63655a1c8a3060_12139696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63780c4a2d8121_81184667 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 $_smarty_tpl->tpl_vars['P']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
@@ -40,7 +40,7 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
  		<img class="thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
 " style="width: 300;height: 300px;" alt="">
  		
- 		
+ 	
  	</div>
 
 	<!-- div da direita info do produto -->
@@ -55,22 +55,21 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
  		<hr/>
 		<div class="col-md-6">
 		<h3 class="text-center text-danger"><b>R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['pro_valor'];?>
-</b></h3>			
+ </b></h3>		
 		</div>
 		
 		<div class="col-md-6">
 			<form name="carrinho" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_COMPRAR']->value;?>
 ">	
 			<input 	type="hidden" name="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
-">
-			<input 	type="hidden" name="acao" value="add">	
+">			
+			<input 	type="hidden" name="acao" value="add">
 			<button class="btn btn-cssc btn-lg">Comprar</button>
 			</form>
 		</div>
  	</div>
  </div>
-
-<div>
+ <div>
 	<!-- LISTAGEM DE IMAGENS PRODUTOS -->
 	 
 	</div>

@@ -9,6 +9,9 @@ if(!Login::Logado()):
    // caso esteja Logado finaliza a compra
    else:
 
+$_SESSION['VALOR_M'] = $_GET['preco'];
+$_SESSION['VALOR_M'] = str_replace(',','.',$_SESSION['VALOR_M']);
+$_SESSION['VALOR_M'] = floatval($_SESSION['VALOR_M']);
 
 // caso exista mostro as informações
 if (isset($_SESSION['PRO'])):
@@ -19,7 +22,7 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',$carrinho->GetTotal());
+      $smarty->assign('TOTAL',$_GET['preco']);
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
       $smarty->assign('tema',Rotas::Get_SiteTema());

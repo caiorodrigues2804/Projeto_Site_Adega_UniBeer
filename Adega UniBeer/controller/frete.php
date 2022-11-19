@@ -4,11 +4,19 @@ require_once '../lib/autoload.php';
         //instancio a classe correios
         $destino = $_GET['cepcliente'];
         $peso    = $_GET['pesofrete'];
+        $ValorDeclarado = $_GET['ValorDeclarado'];
 
         // print $destino . '/' . $peso;
- 
+        $ValorDeclarado = intval($ValorDeclarado);
 
-$CEPS =  $destino;
+        // print '<br/>Valor antes: ' . $ValorDeclarado;
+        if ($ValorDeclarado < 24) {
+          $ValorDeclarado = ((int)24 + (int)$ValorDeclarado);    
+          // print '<br/> Entrou na condicional </br>';
+        } 
+        // print 'Valor depois: ' . $ValorDeclarado . '<br/>';
+
+$CEPS =  $destino;  
 $CEPSLENS = strlen($CEPS);
  
 
@@ -48,16 +56,19 @@ if($CEPSLENS == 8){
     return $xml->cServico;  
 } 
 
-$val = (calcular_frete($CEPS,'04752005',2,1000,'40010'));
-$val_2 = (calcular_frete($CEPS,'04752005',2,1000,'41106'));
+$val = (calcular_frete($CEPS,'04752005',1,$ValorDeclarado,'40010'));
+$val_2 = (calcular_frete($CEPS,'04752005',1,$ValorDeclarado,'41106'));
 $Valor_sedex = (($val->Valor == 0) ? 'Valores não disponível' : $val->Valor);
 $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Valor);
 
+ 
+ echo '<br/><input class="pac_01" id="pac" style="font-size:18px;" type="radio" name="radios" required id="frete_radio"><label class="pac_01" id="pac_valor_d" style="font-size:18px;" >&nbsp; R$&nbsp;'. $Valor_pac  . ' : PAC </label><p class="pac_01" style="margin-right:80px;">Prazo de entrega: ' . ($val_2->PrazoEntrega) . ' dia(s)</p>';
 
- echo '<br/><input style="font-size:18px;" type="radio" name="radios" required id="frete_radio"><label style="font-size:18px;" >&nbsp; R$&nbsp;'. $Valor_pac  . ' : PAC </label> <br/> Prazo de entrega: ' . ($val_2->PrazoEntrega) . ' dia(s)<br/>';
- echo '<br/><input type="radio" style="font-size:18px;" name="radios"  required id="frete_radio"><label style="font-size:18px;">&nbsp; R$&nbsp;' . $Valor_sedex  . ' : SEDEX</label> <br/>  Prazo de entrega: ' . ($val->PrazoEntrega) . ' dia(s)<br/>';
+ echo '<br/><input class="sedex_01" id="sedex"  type="radio" style="font-size:18px;" name="radios"  required id="frete_radio"><label class="sedex_01" id="sedex_valor_d" style="font-size:18px;">&nbsp; R$&nbsp;' . $Valor_sedex  . ' : SEDEX</label><p class="sedex_01" style="margin-right:80px;">Prazo de entrega: ' . ($val->PrazoEntrega) . ' dia(s)</p><br/>';
 
   //                             echo '<br> <input type="radio"  required id="frete_radio" name="frete_radio" value="'.str_replace(',','.',$frete['valor']).'" > '.$frete['valor'].' : ' .$frete['tipo'].' - Prazo: ' .$frete['Prazo'].' dia(s)</b>';
+ echo "<input type='hidden' value=" . $Valor_sedex . " id='sedex_valor'>";
+ echo "<input type='hidden' value=" . $Valor_pac . " id='pac_valor'>";
 
 } else{
     print '<br/><p style="color: red;"> CEP está inválida </p>';

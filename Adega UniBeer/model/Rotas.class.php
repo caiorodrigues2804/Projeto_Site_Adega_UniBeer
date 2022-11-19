@@ -248,6 +248,16 @@
 
 		/**
 		 * 
+		 * @return string - Localização
+		 * 
+		 * */
+
+		static function pag_Localizacao(){
+			return self::get_SiteHOME() . "/localizacao";
+		}
+
+		/**
+		 * 
 		 * @return string pasta física da imagem
 		 * 
 		 * */

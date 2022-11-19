@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-15 23:44:00
+/* Smarty version 3.1.46, created on 2022-11-18 19:08:04
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637416308edb74_41530201',
+  'unifunc' => 'content_6377ca04bf8091_63015181',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1668552238,
+      1 => 1668794882,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637416308edb74_41530201 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6377ca04bf8091_63015181 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -83,8 +83,8 @@ function content_637416308edb74_41530201 (Smarty_Internal_Template $_smarty_tpl)
                        setInterval(() => {
                            // h_s.innerHTML =  screen.width + '<br/> width: ' + innerWidth + ' height: ' + innerHeight;
                            if (screen.width >= 1280) {
-                            document.querySelector('#logotipo').style.marginLeft = 70 + '%';
-                             document.querySelector('#logotipo').style.width = 450 + 'px';
+                            document.querySelector('#logotipo').style.marginLeft = 65 + '%';
+                             document.querySelector('#logotipo').style.width = 490 + 'px';
 
                            } else{
                            
@@ -147,13 +147,12 @@ function content_637416308edb74_41530201 (Smarty_Internal_Template $_smarty_tpl)
                
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTE_CONTA']->value;?>
 "><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-
-
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
 "><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
 " ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
-                                
+   <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOCALIZACAO']->value;?>
+"><i class="glyphicon glyphicon-map-marker"></i> Localização </a> </li>                         
                               
                                 
                             </ul>

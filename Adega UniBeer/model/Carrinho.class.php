@@ -41,6 +41,7 @@ class Carrinho{
 
 		// calcula peso
 		$peso = $lista['PESO'] * $lista['QTD'];
+		$this->total_Peso += $peso;
 
 		// gero meu array dos itens
 		$this->itens[$i] = array(

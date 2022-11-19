@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-16 01:21:34
+/* Smarty version 3.1.46, created on 2022-11-18 23:19:14
   from 'C:\xampp\htdocs\Adega Unibeer\view\clientes_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63742d0ed34180_14351017',
+  'unifunc' => 'content_637804e206d901_47015264',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd23ed702728394cbc3352571f69c9e56a6592bdf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\clientes_pedidos.tpl',
-      1 => 1668558094,
+      1 => 1668809952,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63742d0ed34180_14351017 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637804e206d901_47015264 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Meus Pedidos</h2>
 
 
@@ -50,7 +50,7 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 </td>
 			<td style="width: 10%;"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_ref'];?>
 </td>
-			<td></td>
+			<td style="width: 10%;"></td>
 			<td></td>
 			<td style="width: 15%;"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pag_status'];?>
 </td>
