@@ -50,6 +50,7 @@
 [Super Adega](https://www.superadega.com.br/) <br/>
 [ADEGA Online](https://www.adegaonline.com.br/) 
 
+<br/>
 @2022
 
 
