@@ -33,19 +33,20 @@ class Config {
 	/** * nome do site  * */
 	const SITE_NOME = 'Adega Unibeer - www.adegaunibeersite.com.br';
 	/** * email doa administrador do site * */
-	const SITE_EMAIL_ADM = "contato@adegaunibeer.com.br";
+	const SITE_EMAIL_ADM = "caiorodrigues2848@gmail.com";
 
 
 	/**
 	 * DADOS DO SERVIDOR DE E-MAIL
 	 * */
 
-	const EMAIL_HOST 	  = "";
-	const EMAIL_USER 	  = "";
-	const EMAIL_NOME 	  = "";
-	const EMAIL_SENHA 	  = "";
-	const EMAIL_PORTA 	  = "";
-	const EMAIL_SMTPAUTH  = "";
-	const EMAIL_SMTSECURE = "";
+	const EMAIL_HOST 	  = "smtp.gmail.com"; //stmp.caiorodrigues.com.br
+	const EMAIL_USER 	  = "caiorodrigues2848@gmail.com";
+	const EMAIL_NOME 	  = "Contato Loja 2022";
+	const EMAIL_SENHA 	  = "upjiktnarbegfkqf";
+	const EMAIL_PORTA 	  = 587;
+	const EMAIL_SMTPAUTH  = true;
+	const EMAIL_SMTSECURE = "tls";
+	const EMAIL_COPIA = "teste@teste.com";
 
 }

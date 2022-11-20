@@ -59,8 +59,8 @@
 		<div class="col-md-4 text-right">
 	 
 		</div>
-		<div class="col-md-4 text-right text-danger">
-		<h4>
+		<div class="col-md-8 text-right text-danger">
+		<h4 style="margin-right: -20px;">
 			Valor total: R$ {$TOTAL}
 		</h4>
 		</div>

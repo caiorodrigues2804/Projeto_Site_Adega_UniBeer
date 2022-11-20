@@ -9,6 +9,9 @@ if(!Login::Logado()):
    // caso esteja Logado finaliza a compra
    else:
 
+$_SESSION['VALOR_M'] = $_GET['preco'];
+$_SESSION['VALOR_M'] = str_replace(',','.',$_SESSION['VALOR_M']);
+$_SESSION['VALOR_M'] = floatval($_SESSION['VALOR_M']);
 
 // caso exista mostro as informações
 if (isset($_SESSION['PRO'])):
@@ -19,7 +22,9 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',$carrinho->GetTotal());
+      $smarty->assign('TOTAL',$_GET['preco']);
+      $smarty->assign('VALOR_FRETE',$_GET['frete']);
+      $smarty->assign('VALOR_FINAL',$_GET['valor_total']);
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
       $smarty->assign('tema',Rotas::Get_SiteTema());
@@ -43,11 +48,22 @@ if (isset($_SESSION['PRO'])):
       $cod  = $_SESSION['PED']['pedido'];
       $ref  = $_SESSION['PED']['ref'];
 
-      // gravo o pedido
+      // envio de email --------------------------------------
+      $email = new EnviarEmail();
+
+      $destinatarios = array(Config::SITE_EMAIL_ADM,$_SESSION['CLI']['cli_email']);
+      $assunto       = 'Pedido loja teste 2022 - ' . Sistema::DataAtualBR();      
+      $msg           = $smarty->fetch('pedido_finalizar.tpl');
+
+
+      $email->Enviar($assunto,$msg,$destinatarios);
+
+      // gravo o pedido no banco  ----------------------------
+
       if($pedido->PedidoGravar($cliente, $cod, $ref)):
 
          // limpar a sessão do pedidio e dos itens do carrinho
-         $pedido->LimparSessoes();
+         // $pedido->LimparSessoes();
 
       endif;
 

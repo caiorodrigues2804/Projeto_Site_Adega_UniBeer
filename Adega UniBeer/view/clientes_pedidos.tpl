@@ -20,7 +20,7 @@
 		<tr>
 			<td style="width: 10%;">{$P.ped_data}</td>
 			<td style="width: 10%;">{$P.ped_ref}</td>
-			<td></td>
+			<td style="width: 10%;"></td>
 			<td></td>
 			<td style="width: 15%;">{$P.ped_pag_status}</td>
 			<td style="width: 10%;"><button class="btn btn-default"><i class="glyphicon glyphicon-menu-hamburger"></i> Detalhes</button></td>

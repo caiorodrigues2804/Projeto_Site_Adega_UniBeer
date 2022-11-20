@@ -46,8 +46,8 @@
                        setInterval(() => {
                            // h_s.innerHTML =  screen.width + '<br/> width: ' + innerWidth + ' height: ' + innerHeight;
                            if (screen.width >= 1280) {
-                            document.querySelector('#logotipo').style.marginLeft = 70 + '%';
-                             document.querySelector('#logotipo').style.width = 450 + 'px';
+                            document.querySelector('#logotipo').style.marginLeft = 65 + '%';
+                             document.querySelector('#logotipo').style.width = 490 + 'px';
 
                            } else{
                            
@@ -104,11 +104,9 @@
   <li><a href="{$PAG_PRODUTOS}"><i class="glyphicon glyphicon-barcode"></i> Produtos </a> </li>
                
   <li><a href="{$PAG_CLIENTE_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-
-
   <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
   <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
-                                
+   <li><a href="{$PAG_LOCALIZACAO}"><i class="glyphicon glyphicon-map-marker"></i> Localização </a> </li>                         
                               
                                 
                             </ul>

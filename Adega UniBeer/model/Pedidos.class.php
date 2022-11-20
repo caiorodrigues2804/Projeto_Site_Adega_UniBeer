@@ -81,8 +81,9 @@ class Pedidos extends Conexao{
 	$refs = $params[':ref'];
 	$frete_valors = $params[':frete_valor'];
 	$frete_tipo = $freteTipo;
- 
-    $query = "INSERT INTO `{$this->prefix}pedidos` (`ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`,`ped_ref`,`ped_frete_valor`,`ped_frete_tipo`) VALUES ('$datas', '$horas', '$clientes', '$cods','$refs','$frete_valors','$frete_tipo')";
+	$valores_ = $_SESSION['VALOR_M'];
+ 	
+    $query = "INSERT INTO `{$this->prefix}pedidos` (`ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`,`ped_ref`,`ped_pag_status`,`ped_frete_valor`,`ped_frete_tipo`,`ped_valor_item`) VALUES ('$datas', '$horas', '$clientes', '$cods','$refs','NÃO','$frete_valors','$frete_tipo','$valores_')";
 
 	 // grava o pedido
 	$this->ExecuteSQL($query,$params);
@@ -102,7 +103,7 @@ class Pedidos extends Conexao{
 	 * gravar os itens do pedido
 	 * #param string $codepedido
 	 * */
-
+ 
 	function ItensGravar($codpedido){
  	$carrinho = new Carrinho();
  	
@@ -112,17 +113,15 @@ class Pedidos extends Conexao{
 	foreach ($carrinho->GetCarrinho() as $item):
 
 		
-		
 		$params = array(
 			':produto' => $item['pro_id'],
-			':valor' => $item['pro_valor_us'],
 			':qtd' => (int)$item['pro_qtd'],
 			':cod' => $codpedido
 		);
 
 
 	$produtos = $params[':produto'];
-	$valores = $params[':valor'];
+	$valores = $_SESSION['VALOR_M'];		
 	$qtd = $params[':qtd'];
 	$cods = $params[':cod'];
 

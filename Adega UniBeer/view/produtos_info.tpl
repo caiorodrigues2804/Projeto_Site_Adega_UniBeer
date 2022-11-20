@@ -11,7 +11,7 @@
  	<div class="col-md-6 ">
  		<img class="thumbnail" src="{$P.pro_img}" style="width: 300;height: 300px;" alt="">
  		
- 		
+ 	
  	</div>
 
 	<!-- div da direita info do produto -->
@@ -23,20 +23,19 @@
  		<img src="{$TEMA}/images/logo-pagseguro.png" alt="">
  		<hr/>
 		<div class="col-md-6">
-		<h3 class="text-center text-danger"><b>R$ {$P.pro_valor}</b></h3>			
+		<h3 class="text-center text-danger"><b>R$ {$P.pro_valor} </b></h3>		
 		</div>
 		
 		<div class="col-md-6">
 			<form name="carrinho" method="post" action="{$PAG_COMPRAR}">	
-			<input 	type="hidden" name="pro_id" value="{$P.pro_id}">
-			<input 	type="hidden" name="acao" value="add">	
+			<input 	type="hidden" name="pro_id" value="{$P.pro_id}">			
+			<input 	type="hidden" name="acao" value="add">
 			<button class="btn btn-cssc btn-lg">Comprar</button>
 			</form>
 		</div>
  	</div>
  </div>
-
-<div>
+ <div>
 	<!-- LISTAGEM DE IMAGENS PRODUTOS -->
 	 
 	</div>
