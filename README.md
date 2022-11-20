@@ -43,6 +43,8 @@
 <a href="https://www.adobe.com/br/products/photoshop.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdt6J8Ct_fGtRJLWFiRRwJ6b7JghBNjbV5BQ&usqp=CAU" width="60px">&nbsp;Photoshop</a>
 <br/><br/>
 <a href="https://getcomposer.org"><img src="http://magenteiro.com/blog/wp-content/uploads/2017/07/Logo-composer-transparent.png" width="60px">&nbsp;Composer</a>
+<br/><br/>
+<a href="https://www.mysql.com/products/workbench/"><img src="https://pbs.twimg.com/profile_images/621577553376100352/lvR3kClO_400x400.png" width="60px">&nbsp;MySQL Workbench</a>
 
 ## Referências
 
