@@ -9,8 +9,7 @@ if (isset($_SESSION['PRO'])):
 
       $carrinho = new Carrinho();
 
-      $preco_total = str_replace(',','.',$_GET['preco']);
-      $preco_total = floatval($preco_total);
+      $preco_total = $_GET['valor_total'];
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());

@@ -22,9 +22,9 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',$_GET['preco']);
-      $smarty->assign('VALOR_FRETE',$_GET['frete']);
-      $smarty->assign('VALOR_FINAL',$_GET['valor_total']);
+      $smarty->assign('TOTAL',str_replace('.',',',$_GET['valor_total']));
+      $smarty->assign('VALOR_FRETE', str_replace('.',',',$_GET['frete']));
+      $smarty->assign('VALOR_FINAL',str_replace('.',',',$_GET['preco']));
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
       $smarty->assign('tema',Rotas::Get_SiteTema());
@@ -57,6 +57,7 @@ if (isset($_SESSION['PRO'])):
 
 
       $email->Enviar($assunto,$msg,$destinatarios);
+
 
       // gravo o pedido no banco  ----------------------------
 
