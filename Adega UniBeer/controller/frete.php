@@ -1,4 +1,7 @@
 <?php
+
+ 
+
 require_once '../lib/autoload.php';
 
         //instancio a classe correios
@@ -62,9 +65,9 @@ $Valor_sedex = (($val->Valor == 0) ? 'Valores não disponível' : $val->Valor);
 $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Valor);
 
  
- echo '<br/><input class="pac_01" id="pac" style="font-size:18px;" type="radio" name="radios" required id="frete_radio"><label class="pac_01" id="pac_valor_d" style="font-size:18px;" >&nbsp; R$&nbsp;'. $Valor_pac  . ' : PAC </label><p class="pac_01" style="margin-right:80px;">Prazo de entrega: ' . ($val_2->PrazoEntrega) . ' dia(s)</p>';
+ echo '<br/><input class="pac_01" id="pac" style="font-size:18px;" type="radio" name="radios" required id="frete_radio"><label class="pac_01" id="pac_valor_d" style="font-size:18px;" >&nbsp; R$&nbsp;'. $Valor_pac  . ' : PAC </label><p class="pac_01" style="margin-right:40px;">Prazo de entrega: ' . ($val_2->PrazoEntrega) . ' dia(s)</p>';
 
- echo '<br/><input class="sedex_01" id="sedex"  type="radio" style="font-size:18px;" name="radios"  required id="frete_radio"><label class="sedex_01" id="sedex_valor_d" style="font-size:18px;">&nbsp; R$&nbsp;' . $Valor_sedex  . ' : SEDEX</label><p class="sedex_01" style="margin-right:80px;">Prazo de entrega: ' . ($val->PrazoEntrega) . ' dia(s)</p><br/>';
+ echo '<br/><input class="sedex_01" id="sedex"  type="radio" style="font-size:18px;" name="radios"  required id="frete_radio"><label class="sedex_01" id="sedex_valor_d" style="font-size:18px;">&nbsp; R$&nbsp;' . $Valor_sedex  . ' : SEDEX</label><p class="sedex_01" style="margin-right:40px;">Prazo de entrega: ' . ($val->PrazoEntrega) . ' dia(s)</p><br/>';
 
   //                             echo '<br> <input type="radio"  required id="frete_radio" name="frete_radio" value="'.str_replace(',','.',$frete['valor']).'" > '.$frete['valor'].' : ' .$frete['tipo'].' - Prazo: ' .$frete['Prazo'].' dia(s)</b>';
  echo "<input type='hidden' value=" . $Valor_sedex . " id='sedex_valor'>";
@@ -74,118 +77,117 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
     print '<br/><p style="color: red;"> CEP está inválida </p>';
    
 }
- 
- 
- 
 
-	// // chamando a classe Correios
-  //       $frete = new Correios($destino, $peso);
-	
-	// //chamo meu metodo para calcular
-	// $calc = $frete->Calcular();
-	
-	// //verifica se foi calculado, se sim retorna xml , caso n�o, mostra erros
-	// if(!$calc):
-	
-	// 	$error = $frete->error();
-	// 	echo $error[0];
-	
-	// else:
-	
-	// 	echo  '<span class="radio text-danger text-left" > ';
+?>
+ <script>
+
+   let sedex_valor,pac_valor,frete_hs,dados_vl;
+   sedex_valor = document.querySelector(".sedex_01");
+   pac_valor = document.querySelector(".pac_01");
+   dados_vl = document.querySelector('#c_s').innerText;
+
+   let dados_vlL;
+   dados_vlL = dados_vl.replace('R$','').trim();
+   dados_vlL = dados_vlL.replace(',','.');
+   dados_vlL = parseFloat(dados_vlL);
+   // console.log(dados_vlL, ' TIPO:', typeof dados_vlL);
+
+   //  ----- VALORES ----- //
+   let sedex_val, pac_val;
+   pac_val = document.querySelector('#pac_valor').value;
+   sedex_val = document.querySelector('#sedex_valor').value;
+
+   pac_val = pac_val.replace(',','.');
+   sedex_val = sedex_val.replace(',','.');
+   pac_val = parseFloat(pac_val);
+   sedex_val = parseFloat(sedex_val);
+
+   let resultado_A,resultado_B;
+
+   // SEDEX
+   resultado_A = (dados_vlL + sedex_val);
+   resultado_B = (dados_vlL + pac_val);
+   console.log('Resultado SEDEX: ',resultado_A);
+   console.log('Resultado PAC: ',resultado_B);
+
+   // DEBUGGING
+   // console.log('Pac:',pac_val,' Sedex:',sedex_val);
+   // console.log('Pac tipo:',typeof pac_val,' Sedex:',typeof sedex_val);
+
+   // ------------------- //
+
+
+   frete_hs = document.querySelector("#valores");
+   frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl;
+
+   // ----- CONVERSOR ----- // 
+
+  // PAC VALOR
+  let pac_val_l; 
+  pac_val_l = (pac_val + '');
+  pac_val_l = pac_val_l.replace('.',',');  
+
+  // PAC RESULTADO
+  let pac_resultado_B = (resultado_B + '');
+  pac_resultado_B = pac_resultado_B.replace('.',',');  
+
+  // SEDEX VALOR
+  let sedex_val_l; 
+  sedex_val_l = (sedex_val + '');
+  sedex_val_l = sedex_val_l.replace('.',',');  
+
+  // SEDEX RESULTADO
+  let sedex_resultado_A = (resultado_A + '');
+  sedex_resultado_A = sedex_resultado_A.replace('.',',');  
+
+
+   // ------------------- //
+
+   // ---- SELECIONADOR GERAL ---- //
+
+  let selecionador_geral = 0;
+
+  // ----------------------------- //
+
+   setInterval(() => {
+
+      // SEDEX FOI MARCADO
+      if(document.getElementById('sedex').checked == true){
+          frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9)  + '<br/><b>Frete: </b>R$ ' + sedex_val_l + '<hr/><b> Valor final: </b>R$ ' + sedex_resultado_A;  
+
+          document.querySelector("#confirmar_pedidos").style.display = 'inline-block';
+
+          selecionador_geral = 2 //SEDEX
+          
+      }
+
+      // PAC FOI MARCADO
+      if(document.getElementById('pac').checked == true){
+        frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9) + '<br/><b>Frete: </b>R$ ' + pac_val_l + '<hr/><b> Valor final: </b>R$ ' + pac_resultado_B;  
+
+        document.querySelector("#confirmar_pedidos").style.display = 'inline-block';
+
+        selecionador_geral = 1 //PAC
         
-        
-                      
-  //                       foreach ($frete->frete as $frete):
-
-
-  //                       if($frete['erro'] != 0):
-                            
-  //                        echo $frete['tipo'] . ' - ';
-  //                        echo $frete['Codigo'] . ' - ';
-  //                        echo $frete['MsgErro'];
-  //                        echo '<br><b> Erro no calculo de frete </b><br>';
-
-  //                       else:
-
-  //                             echo '<br> <input type="radio"  required id="frete_radio" name="frete_radio" value="'.str_replace(',','.',$frete['valor']).'" > '.$frete['valor'].' : ' .$frete['tipo'].' - Prazo: ' .$frete['Prazo'].' dia(s)</b>';
-
-
-  //                       endif;
-
-  //                       endforeach;
-
-  //           echo '</span><br>';
+      }
       
-	//   endif;
-        
-	
-        /**
+   })
+    
 
-40010 SEDEX Varejo
-40045 SEDEX a Cobrar Varejo
-40215 SEDEX 10 Varejo
-40290 SEDEX Hoje Varejo
-41106 PAC Varejo
+    document.querySelector('#limpar_dados').addEventListener('click',() => {
+      document.querySelector("#cep_frete").value = '';
+    })
+    
+    document.querySelector('#confirmar_pedidos').addEventListener('click',()  => {
 
+      if (selecionador_geral == 1) {
+        document.querySelector('#pedido_finalizar').action += '?preco=' + dados_vlL + '&frete=' + pac_val + '&valor_total=' + resultado_B;  
+      } 
 
- oobject(SimpleXMLElement)#1 (1) {
-  ["cServico"]=>
-  array(2) {
-    [0]=>
-    object(SimpleXMLElement)#5 (11) {
-      ["Codigo"]=>
-      string(5) "41106"
-      ["Valor"]=>
-      string(5) "17,60"
-      ["PrazoEntrega"]=>
-      string(1) "5"
-      ["ValorSemAdicionais"]=>
-      string(5) "17,60"
-      ["ValorMaoPropria"]=>
-      string(4) "0,00"
-      ["ValorAvisoRecebimento"]=>
-      string(4) "0,00"
-      ["ValorValorDeclarado"]=>
-      string(4) "0,00"
-      ["EntregaDomiciliar"]=>
-      string(1) "S"
-      ["EntregaSabado"]=>
-      string(1) "N"
-      ["Erro"]=>
-      string(1) "0"
-      ["MsgErro"]=>
-      object(SimpleXMLElement)#9 (0) {
+      if (selecionador_geral == 2) {
+        document.querySelector('#pedido_finalizar').action += '?preco=' + dados_vlL + '&frete=' + sedex_val + '&valor_total=' + resultado_A;  
       }
-    }
-    [1]=>
-    object(SimpleXMLElement)#2 (11) {
-      ["Codigo"]=>
-      string(5) "40010"
-      ["Valor"]=>
-      string(5) "19,00"
-      ["PrazoEntrega"]=>
-      string(1) "1"
-      ["ValorSemAdicionais"]=>
-      string(5) "19,00"
-      ["ValorMaoPropria"]=>
-      string(4) "0,00"
-      ["ValorAvisoRecebimento"]=>
-      string(4) "0,00"
-      ["ValorValorDeclarado"]=>
-      string(4) "0,00"
-      ["EntregaDomiciliar"]=>
-      string(1) "S"
-      ["EntregaSabado"]=>
-      string(1) "S"
-      ["Erro"]=>
-      string(1) "0"
-      ["MsgErro"]=>
-      object(SimpleXMLElement)#10 (0) {
-      }
-    }
-  }
-} 
- 
- *  /
- */
+      
+      })
+
+</script>

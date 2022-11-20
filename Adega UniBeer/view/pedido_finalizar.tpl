@@ -1,4 +1,4 @@
-<h3 style="color: #008200;background-color: #5ce638;">Finalizar Pedido</h3>
+<h3>Finalizar Pedido</h3>
  
 <style type="text/css">
 	#divs_r{
@@ -48,7 +48,7 @@
 		<div style="margin-left: 310px;" class="col-md-4 text-right text-danger">
  
 			<h4><b>Valor total:</b> R$ {$TOTAL}</h4>		
-			<h4><b>Valor do frete:</b> R$ {$VALOR_FRETE}</h4>
+			<h4><b>Frete:</b> R$ {$VALOR_FRETE}</h4>
 			<h4><b>Valor final:</b> R$ {$VALOR_FINAL}</h4>
 	 
 		</div>	 
