@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-19 16:08:40
+/* Smarty version 3.1.46, created on 2022-11-20 00:25:12
   from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6378f178b715a4_35453020',
+  'unifunc' => 'content_637965d86ddc18_01328345',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1668870520,
+      1 => 1668900308,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6378f178b715a4_35453020 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637965d86ddc18_01328345 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 
@@ -296,7 +296,8 @@ if(x < 1){
  <br/> <b>Valor do Frete:</b> R$ ' + vl_s_01 + ' <hr/> <b>Valor final:</b> R$ ' + string_d;
 				 	if (limitador <= 0) {
 					limitador += 1;
-					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d);
+					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d) + '&frete=' + (valor_sx_in) + '&valor_total=<?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
+';
 				 	}
 				 	document.querySelectorAll('.pac_01')[0].style.display = 'none';
 				 	document.querySelectorAll('.pac_01')[1].style.display = 'none';
@@ -320,7 +321,8 @@ if(x < 1){
 
 				 	if(limitador <= 0) {
 					limitador += 1;
-					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d);
+					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d) + '&frete=' + (valor_sx_in) + '&valor_total=<?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
+';
 				 	}
 				 	document.querySelectorAll('.sedex_01')[0].style.display = 'none';
 				 	document.querySelectorAll('.sedex_01')[1].style.display = 'none';

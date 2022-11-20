@@ -247,7 +247,7 @@ if(x < 1){
 				 	 	document.getElementById('valores').innerHTML = '<b>Valor Total:</b> R$ {$TOTAL} <br/> <b>Valor do Frete:</b> R$ ' + vl_s_01 + ' <hr/> <b>Valor final:</b> R$ ' + string_d;
 				 	if (limitador <= 0) {
 					limitador += 1;
-					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d);
+					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d) + '&frete=' + (valor_sx_in) + '&valor_total={$TOTAL}';
 				 	}
 				 	document.querySelectorAll('.pac_01')[0].style.display = 'none';
 				 	document.querySelectorAll('.pac_01')[1].style.display = 'none';
@@ -270,7 +270,7 @@ if(x < 1){
 
 				 	if(limitador <= 0) {
 					limitador += 1;
-					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d);
+					document.getElementById('pedido_finalizar').action += '?preco=' + (string_d) + '&frete=' + (valor_sx_in) + '&valor_total={$TOTAL}';
 				 	}
 				 	document.querySelectorAll('.sedex_01')[0].style.display = 'none';
 				 	document.querySelectorAll('.sedex_01')[1].style.display = 'none';

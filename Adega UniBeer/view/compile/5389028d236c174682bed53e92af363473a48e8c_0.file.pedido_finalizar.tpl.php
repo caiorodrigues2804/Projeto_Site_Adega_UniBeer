@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-06 00:50:32
+/* Smarty version 3.1.46, created on 2022-11-20 00:35:25
   from 'C:\xampp\htdocs\Adega Unibeer\view\pedido_finalizar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6366f6c82ad356_38984676',
+  'unifunc' => 'content_6379683d08ac15_68758180',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5389028d236c174682bed53e92af363473a48e8c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\pedido_finalizar.tpl',
-      1 => 1667692231,
+      1 => 1668900913,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6366f6c82ad356_38984676 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Finalizar Pedido</h3>
+function content_6379683d08ac15_68758180 (Smarty_Internal_Template $_smarty_tpl) {
+?><h3 style="color: #008200;background-color: #5ce638;">Finalizar Pedido</h3>
  
 <style type="text/css">
 	#divs_r{
@@ -83,10 +83,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<!-------- Botão de limpar ----------->
 		<div style="margin-left: 310px;" class="col-md-4 text-right text-danger">
  
-			<h4>
-			Valor total: R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
-
-			</h4>
+			<h4><b>Valor total:</b> R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
+</h4>		
+			<h4><b>Valor do frete:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_FRETE']->value;?>
+</h4>
+			<hr/>
+			<h4><b>Valor final:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_FINAL']->value;?>
+</h4>
 	 
 		</div>	 
 	</section>

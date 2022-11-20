@@ -17,7 +17,7 @@ if (isset($_SESSION['PRO'])):
       $smarty->assign('TOTAL',$preco_total);
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
-      $smarty->assign('PAG_FINALIZAR',Rotas::pag_PedidoFinalizar() . '?preco=' . $_GET['preco']);
+      $smarty->assign('PAG_FINALIZAR',Rotas::pag_PedidoFinalizar() . '?preco=' . $_GET['preco'] . '&frete=' . $_GET['frete'] . '&valor_total=' . $_GET['valor_total']);
 
       $smarty->display('pedido_confirmar.tpl');
 
