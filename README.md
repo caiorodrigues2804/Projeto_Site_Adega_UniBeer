@@ -52,7 +52,8 @@
 
 [Imigrantes Bebidas](https://www.imigrantesbebidas.com.br/) <br/>
 [Super Adega](https://www.superadega.com.br/) <br/>
-[ADEGA Online](https://www.adegaonline.com.br/) 
+[ADEGA Online](https://www.adegaonline.com.br/) <br/>
+[Adega Completa](https://adegacompleta.com.br/termos-e-condicoes-de-uso/)
 
 <br/>
 @2022
