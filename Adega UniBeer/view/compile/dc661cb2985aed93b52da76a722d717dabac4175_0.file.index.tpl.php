@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-18 19:08:04
+/* Smarty version 3.1.46, created on 2022-11-21 02:21:31
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6377ca04bf8091_63015181',
+  'unifunc' => 'content_637ad29bf1e579_16799946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1668794882,
+      1 => 1668993691,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6377ca04bf8091_63015181 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637ad29bf1e579_16799946 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -56,7 +56,7 @@ function content_6377ca04bf8091_63015181 (Smarty_Internal_Template $_smarty_tpl)
     
     </head>
           <body style="background: #fff;">
-      
+        
         <!-- começa  o container geral -->
         <div class="container-fluid">
             

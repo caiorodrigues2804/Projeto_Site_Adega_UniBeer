@@ -24,10 +24,15 @@ if (isset($_SESSION['PRO'])):
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
       $smarty->assign('TOTAL',str_replace('.',',',$_GET['valor_total']));
       $smarty->assign('VALOR_FRETE', str_replace('.',',',$_GET['frete']));
-      $smarty->assign('VALOR_FINAL',str_replace('.',',',$_GET['preco']));
+      $smarty->assign('VALOR_PRECO',str_replace('.',',',$_GET['preco']));
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
       $smarty->assign('tema',Rotas::Get_SiteTema());
+      $smarty->assign('NOME_CLIENTE',$_SESSION['CLI']['cli_nome']);
+      $smarty->assign('PAG_MINHA_CONTA', Rotas::pag_ClientePedidos());
+      $smarty->assign('SITE_NOME', Config::SITE_NOME);
+      $smarty->assign('SITE_HOME', Rotas::get_SiteHOME());
+
 
       // classe de pedidos -------------------
       // verifico se tem a sessão de pedido
@@ -53,7 +58,7 @@ if (isset($_SESSION['PRO'])):
 
       $destinatarios = array(Config::SITE_EMAIL_ADM,$_SESSION['CLI']['cli_email']);
       $assunto       = 'Pedido loja teste 2022 - ' . Sistema::DataAtualBR();      
-      $msg           = $smarty->fetch('pedido_finalizar.tpl');
+      $msg           = $smarty->fetch('email_compra.tpl');
 
 
       $email->Enviar($assunto,$msg,$destinatarios);
@@ -64,13 +69,14 @@ if (isset($_SESSION['PRO'])):
       if($pedido->PedidoGravar($cliente, $cod, $ref)):
 
          // limpar a sessão do pedidio e dos itens do carrinho
-         // $pedido->LimparSessoes();
+         $pedido->LimparSessoes();
 
       endif;
 
       // $pedido->ItensGravar($cod);
 
       $smarty->display('pedido_finalizar.tpl');
+      // $smarty->display('email_compra.tpl');
 
 else:
    echo '<h4 class="alert alert-danger">Sem produtos no seu carrinho</h4>';

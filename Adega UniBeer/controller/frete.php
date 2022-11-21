@@ -153,7 +153,7 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
 
       // SEDEX FOI MARCADO
       if(document.getElementById('sedex').checked == true){
-          frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9)  + '<br/><b>Frete: </b>R$ ' + sedex_val_l + '<hr/><b> Valor final: </b>R$ ' + sedex_resultado_A;  
+          frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9)  + '<br/><b>Frete: </b>R$ ' + sedex_val_l + '<hr/><b> Valor final: </b>R$ ' + sedex_resultado_A.slice(0,5);  
 
           document.querySelector("#confirmar_pedidos").style.display = 'inline-block';
 
@@ -163,7 +163,7 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
 
       // PAC FOI MARCADO
       if(document.getElementById('pac').checked == true){
-        frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9) + '<br/><b>Frete: </b>R$ ' + pac_val_l + '<hr/><b> Valor final: </b>R$ ' + pac_resultado_B;  
+        frete_hs.innerHTML = '<b>Valor total: </b>' + dados_vl.slice(0,9) + '<br/><b>Frete: </b>R$ ' + pac_val_l + '<hr/><b> Valor final: </b>R$ ' + pac_resultado_B.slice(0,5);  
 
         document.querySelector("#confirmar_pedidos").style.display = 'inline-block';
 
@@ -174,9 +174,6 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
    })
     
 
-    document.querySelector('#limpar_dados').addEventListener('click',() => {
-      document.querySelector("#cep_frete").value = '';
-    })
     
     document.querySelector('#confirmar_pedidos').addEventListener('click',()  => {
 

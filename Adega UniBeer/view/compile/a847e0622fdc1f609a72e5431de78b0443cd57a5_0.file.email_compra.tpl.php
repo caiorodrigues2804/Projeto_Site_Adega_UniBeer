@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-20 22:43:38
-  from 'C:\xampp\htdocs\Adega Unibeer\view\pedido_finalizar.tpl' */
+/* Smarty version 3.1.46, created on 2022-11-20 22:47:58
+  from 'C:\xampp\htdocs\Adega Unibeer\view\email_compra.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637a9f8a5d35c9_09982168',
+  'unifunc' => 'content_637aa08eacac78_38689512',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5389028d236c174682bed53e92af363473a48e8c' => 
+    'a847e0622fdc1f609a72e5431de78b0443cd57a5' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\pedido_finalizar.tpl',
-      1 => 1668980581,
+      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\email_compra.tpl',
+      1 => 1668980827,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637a9f8a5d35c9_09982168 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Finalizar Pedido</h3>
+function content_637aa08eacac78_38689512 (Smarty_Internal_Template $_smarty_tpl) {
+?><h4>Olá <?php echo $_smarty_tpl->tpl_vars['NOME_CLIENTE']->value;?>
+, obrigado pela sua compra no Site <?php echo $_smarty_tpl->tpl_vars['SITE_NOME']->value;?>
+<br/>
+<a href="<?php echo $_smarty_tpl->tpl_vars['SITE_HOME']->value;?>
+"> <?php echo $_smarty_tpl->tpl_vars['SITE_HOME']->value;?>
+ </a>
+</h4>
  
-<style type="text/css">
-	#divs_r{
-		overflow-y: scroll;
-		height: 400px;
-	}
-</style>
+	<section class="row">
 
-<div class="alert alert-success">Pedido finalizado com sucesso </div>
+	<h3>
+	Para acessar a sua conta e ter um histórico de seus pedidos acesse nosso site, e sua conta <br/>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHA_CONTA']->value;?>
+">Minha conta: <?php echo $_smarty_tpl->tpl_vars['PAG_MINHA_CONTA']->value;?>
+</a>
+	</h3>
 
-<!--- table Listagem de Itens ---->
+	</section>
+
+
 <section class="row">
 	 
 	<center>
 
+	<div class="alert alert-sucess"><h4>Itens do seu pedido</h4></div>
+	<br/>
 
-	<table class="table table-bordered" style="width: 95%;">
+	<table border="1px" style="width: 95%;">
 	 
 
 		<?php
@@ -70,10 +80,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</table>
 	</center>
 
-
 </section> <!---- Fim da listagem de itens --->
-
-	<!------- botoes de baixo e valor total ---> 
+<br/>
+<br/>
+<!------- botoes de baixo e valor total ---> 
 	<section class="row">
 		<div class="col-md-4 text-right">
 	 
@@ -81,25 +91,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		
 
 	<!-------- Botão de limpar ----------->
-		<div style="margin-left: 310px;" class="col-md-4 text-right text-danger">
- 
+		<div class="col-md-4">
+ 			
 			<h4><b>Valor total:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_PRECO']->value;?>
 </h4>		
 			<h4><b>Frete:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_FRETE']->value;?>
 </h4>
-			<hr/>
 			<h4><b>Valor final:</b> R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
 </h4>
 	 
 		</div>	 
 	</section>
-
-	<!---- Modo de pagamentos e outras informações --->
-	<section class="row">
-		<h3 class="text-center">Escolha uma forma de pagamento</h3>	
-		<center>	
-		<img width="30%" src="http://www.natsolutions.com.br/loja/img/cms/comprar-com-pagseguro-uol.png" alt="">
-		</center>
-	</section>
-<?php }
+		<br/>
+		<center>
+		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="300px">
+		</center><?php }
 }

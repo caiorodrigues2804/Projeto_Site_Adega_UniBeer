@@ -47,9 +47,10 @@
 	<!-------- Botão de limpar ----------->
 		<div style="margin-left: 310px;" class="col-md-4 text-right text-danger">
  
-			<h4><b>Valor total:</b> R$ {$TOTAL}</h4>		
+			<h4><b>Valor total:</b> R$ {$VALOR_PRECO}</h4>		
 			<h4><b>Frete:</b> R$ {$VALOR_FRETE}</h4>
-			<h4><b>Valor final:</b> R$ {$VALOR_FINAL}</h4>
+			<hr/>
+			<h4><b>Valor final:</b> R$ {$TOTAL}</h4>
 	 
 		</div>	 
 	</section>
