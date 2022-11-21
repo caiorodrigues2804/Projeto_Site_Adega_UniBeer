@@ -46,7 +46,7 @@
 <br/><br/>
 <a href="https://www.mysql.com/products/workbench/"><img src="https://pbs.twimg.com/profile_images/621577553376100352/lvR3kClO_400x400.png" width="60px">&nbsp;MySQL Workbench</a>
 <br/><br/>
-<a href="https://www.smarty.net/download"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNnq552MaMZjtkoiPV5F2Avfdu7Xvmi9ccqVvvg414rB02NyPJSu3k50ge5K-DyrDVQzM&usqp=CAU" width="60px">&nbsp;Smarty</a>
+<a href="https://www.smarty.net/download"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNnq552MaMZjtkoiPV5F2Avfdu7Xvmi9ccqVvvg414rB02NyPJSu3k50ge5K-DyrDVQzM&usqp=CAU" width="65px">&nbsp;Smarty</a>
 
 ## Referências
 
