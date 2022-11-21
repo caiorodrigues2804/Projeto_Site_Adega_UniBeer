@@ -146,10 +146,9 @@ $(document).ready(function(){
 
 		<div class="col-md-8">
 			<!-- Botão Frete -->
-
+			<button class="btn btn-default" id="limpar_dados">Limpar <img src="https://cdn-icons-png.flaticon.com/512/73/73858.png" width="20px"></button>  
 			<button class="btn btn-default" id="buscar_frete">Clique aqui para calcular o Frete 🚚</button>
-			<button class="btn btn-default" id="limpar_dados">Limpar <img src="https://cdn-icons-png.flaticon.com/512/73/73858.png" width="20px"></button>
-  
+			
 		</div>
 		 	 
 	</section>
@@ -181,4 +180,9 @@ $(document).ready(function(){
 		<div class="col-md-4"></div>
 	</section>
 	<br/>	
-	 
+	 <script>
+	 	
+    document.querySelector('#limpar_dados').addEventListener('click',() => {
+      document.querySelector("#cep_frete").value = '';
+    })
+	 </script>

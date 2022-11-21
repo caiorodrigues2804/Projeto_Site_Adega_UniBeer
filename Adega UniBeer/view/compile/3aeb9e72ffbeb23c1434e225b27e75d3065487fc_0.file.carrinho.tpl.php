@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-20 21:22:32
+/* Smarty version 3.1.46, created on 2022-11-20 22:21:41
   from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637a8c88608dc2_00650323',
+  'unifunc' => 'content_637a9a65894df8_01987852',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1668975642,
+      1 => 1668978513,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637a8c88608dc2_00650323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637a9a65894df8_01987852 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 
@@ -191,10 +191,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 		<div class="col-md-8">
 			<!-- Botão Frete -->
-
+			<button class="btn btn-default" id="limpar_dados">Limpar <img src="https://cdn-icons-png.flaticon.com/512/73/73858.png" width="20px"></button>  
 			<button class="btn btn-default" id="buscar_frete">Clique aqui para calcular o Frete 🚚</button>
-			<button class="btn btn-default" id="limpar_dados">Limpar <img src="https://cdn-icons-png.flaticon.com/512/73/73858.png" width="20px"></button>
-  
+			
 		</div>
 		 	 
 	</section>
@@ -227,5 +226,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<div class="col-md-4"></div>
 	</section>
 	<br/>	
-	 <?php }
+	 <?php echo '<script'; ?>
+>
+	 	
+    document.querySelector('#limpar_dados').addEventListener('click',() => {
+      document.querySelector("#cep_frete").value = '';
+    })
+	 <?php echo '</script'; ?>
+><?php }
 }

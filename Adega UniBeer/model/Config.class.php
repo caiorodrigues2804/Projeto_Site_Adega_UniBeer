@@ -31,7 +31,7 @@ class Config {
 	/*** Pasta padrão do site */
 	const SITE_PASTA = "Adega Unibeer";
 	/** * nome do site  * */
-	const SITE_NOME = 'Adega Unibeer - www.adegaunibeersite.com.br';
+	const SITE_NOME = 'Adega Unibeer - projetoadegaunibeer.caiorodriguesportfolios.com.br';
 	/** * email doa administrador do site * */
 	const SITE_EMAIL_ADM = "caiorodrigues2848@gmail.com";
 
