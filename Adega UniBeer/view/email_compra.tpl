@@ -60,4 +60,7 @@
 		<br/>
 		<center>
 		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="500px">
+		<br/>
+		<br/>
+		<br/>
 		</center>

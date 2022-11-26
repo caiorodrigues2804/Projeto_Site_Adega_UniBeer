@@ -57,8 +57,8 @@ if (isset($_SESSION['PRO'])):
 
       // envio de email --------------------------------------
       $email = new EnviarEmail();
-
-      $destinatarios = array(Config::SITE_EMAIL_ADM,$_SESSION['CLI']['cli_email']);
+    //   print 'Email: ' . $_SESSION['CLI']['cli_email'];
+      $destinatarios = array('',$_SESSION['CLI']['cli_email']);
       $assunto       = 'Pedido loja teste 2022 - ' . Sistema::DataAtualBR();      
       $msg           = $smarty->fetch('email_compra.tpl');
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-26 13:09:06
+/* Smarty version 3.1.46, created on 2022-11-26 14:26:43
   from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63823a22178550_60182212',
+  'unifunc' => 'content_63824c53a3ea35_56926652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63823a22178550_60182212 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63824c53a3ea35_56926652 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 
