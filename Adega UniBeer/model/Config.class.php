@@ -14,7 +14,7 @@ class Config {
 	 *  INFORMAÇÕES DE BANCO DE DADOS ====================
 	 * */
 	const BD_HOST = "localhost";
-	const BD_USER = "root";
+	const BD_USER = "root"; 
 	const BD_SENHA = "";
 	const BD_BANCO = "miniloja2017";
 	const BD_PREFIX = "as_";
@@ -26,10 +26,10 @@ class Config {
 	 * */
 
 	/*** URL do site */
-	const SITE_URL = "http://localhost";
+	const SITE_URL = "http://localhost/Adega%20Unibeer";
 
 	/*** Pasta padrão do site */
-	const SITE_PASTA = "Adega Unibeer";
+	const SITE_PASTA = "";
 	/** * nome do site  * */
 	const SITE_NOME = 'Adega Unibeer - projetoadegaunibeer.caiorodriguesportfolios.com.br';
 	/** * email doa administrador do site * */

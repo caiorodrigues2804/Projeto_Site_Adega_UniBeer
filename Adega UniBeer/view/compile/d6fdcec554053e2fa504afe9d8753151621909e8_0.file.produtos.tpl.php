@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-26 13:09:06
-  from 'C:\xampp\htdocs\Adega Unibeer\view\produtos.tpl' */
+/* Smarty version 3.1.46, created on 2022-11-25 22:15:21
+  from '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63823a22178550_60182212',
+  'unifunc' => 'content_638168a9101281_16955537',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'cb4d519cd033029857acd852f942d82d32695518' => 
+    'd6fdcec554053e2fa504afe9d8753151621909e8' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\produtos.tpl',
+      0 => '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/produtos.tpl',
       1 => 1669425248,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63823a22178550_60182212 (Smarty_Internal_Template $_smarty_tpl) {
+function content_638168a9101281_16955537 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h2>Lista de Produtos</h2>
 

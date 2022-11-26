@@ -8,6 +8,8 @@ if(!Login::Logado()):
 
    // caso esteja Logado finaliza a compra
    else:
+       
+      
 
 $_SESSION['VALOR_M'] = $_GET['preco'];
 $_SESSION['VALOR_M'] = str_replace(',','.',$_SESSION['VALOR_M']);
@@ -70,14 +72,14 @@ if (isset($_SESSION['PRO'])):
 
          // limpar a sessão do pedido e dos itens do carrinho
          $pedido->LimparSessoes();
-           Rotas::Redirecionar(3, Rotas::pag_HOME());
+          Rotas::Redirecionar(4,Rotas::pag_Produtos());
 
       endif;
 
       // $pedido->ItensGravar($cod);
 
       $smarty->display('pedido_finalizar.tpl');
-      // $smarty->display('email_compra.tpl');
+    //   $smarty->display('email_compra.tpl');
 
 else:
    echo '<h4 class="alert alert-danger">Sem produtos no seu carrinho</h4>';
