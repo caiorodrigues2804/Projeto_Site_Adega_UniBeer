@@ -10,10 +10,10 @@ $smarty->display('buscador_resultados.tpl');
 	$var_busc = $_POST["campos"];
 
 
-    $servername = "us-imm-web652.main-hosting.eu";
-    $database = "u308103531_adegaunibeer_a";
-    $username = "u308103531_root_adega_use";
-    $password = "Nvidia280401vai28@";
+    $servername = "localhost";
+    $database = "miniloja2017";
+    $username = "root";
+    $password = "";
  
     $con = mysqli_connect($servername, $username, $password, $database);
  
