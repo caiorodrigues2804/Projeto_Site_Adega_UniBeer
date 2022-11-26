@@ -15,7 +15,7 @@
 
 	<!-- aqui estão os campos -->
 	<div id="ds_ss" class="col-md-4">
-	<img src="http://localhost/Adega%20Unibeer/unibeerlogo.png" width="100%">
+	<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/logounibeer.jpg" width="100%">
 	<hr/> 
 	<div class="form-group">
 		<label>E-mail:</label>
@@ -37,7 +37,7 @@
 	<a href="{$PAG_CADASTRO}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-pencil"></i> &nbsp; Cadastrar</a>
 	<a href="{$PAG_RECOVERY}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-question-sign"></i> &nbsp; Esqueci a Senha</a>
 
-
+	<a href="{$PAG_RECOVERY}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área da administração</a>
 	 </div>
 
 	</div> <!--- fim dos campos ---->

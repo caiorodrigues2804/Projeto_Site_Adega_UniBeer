@@ -68,8 +68,9 @@ if (isset($_SESSION['PRO'])):
 
       if($pedido->PedidoGravar($cliente, $cod, $ref)):
 
-         // limpar a sessão do pedidio e dos itens do carrinho
+         // limpar a sessão do pedido e dos itens do carrinho
          $pedido->LimparSessoes();
+           Rotas::Redirecionar(3, Rotas::pag_HOME());
 
       endif;
 

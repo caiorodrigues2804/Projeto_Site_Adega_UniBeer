@@ -28,6 +28,7 @@ class Clientes extends Conexao{
 	private $cli_hora_cad;	
 	private $cli_senha;	
 
+
 	/**
 	 * chamando o construtor da classe pai
 	 * */
@@ -43,7 +44,7 @@ class Clientes extends Conexao{
 	 *  
 	 * */
 
-	function Preparar($cli_nome,$cli_sobrenome,$cli_data_nasc,$cli_rg,$cli_cpf,$cli_ddd,$cli_fone,$cli_celular,$cli_endereco,$cli_numero,$cli_bairro,$cli_cidade,$cli_uf,$cli_cep,$cli_email,$cli_data_cad,$cli_hora_cad,$cli_senha)
+	function Preparar($cli_nome,$cli_sobrenome,$cli_data_nasc,$cli_rg,$cli_cpf,$cli_ddd,$cli_fone,$cli_celular,$cli_endereco,$cli_numero,$cli_bairro,$cli_cidade,$cli_uf,$cli_cep,$cli_email,$cli_data_cad,$cli_hora_cad,$cli_senha,$cli_senha_2)
 	{
 
 		# $this->setCli_
@@ -68,6 +69,7 @@ class Clientes extends Conexao{
 		$this->setCli_data_cad($cli_data_cad);
 		$this->setCli_hora_cad($cli_hora_cad);
 		$this->setCli_senha($cli_senha);
+		$this->setCli_senha_2($cli_senha_2);
 			
 	}
 
@@ -78,6 +80,25 @@ class Clientes extends Conexao{
 	 * */
 
 	function Inserir(){
+
+	// veirifico se já tem este cpf no banco de dados
+	if($this->GetClienteCPF($this->getCli_cpf()) > 0):
+		print '<div class="alert alert-danger" id="erro_mostrar"> Este CPF já está cadastrado ';
+		Sistema::voltarPagina();
+		print '</div>';
+		exit();
+	endif;
+
+	// verifica se o email já está cadastrado
+	if($this->GetClienteEmail($this->getCli_email()) > 0):
+		print '<div class="alert alert-danger" id="erro_mostrar"> Este e-mail já está cadastrado ';
+		Sistema::voltarPagina();		
+		print '</div>';
+		exit();
+	endif;
+ 
+
+	// caso passou na verificação grava no banco
 
 	// $query  = " INSERT INTO clientes (cli_nome,cli_sobrenome,cli_data_nasc,cli_rg,";
 	// $query .= " cli_cpf,cli_ddd,cli_fone,cli_celular,cli_endereco,cli_numero,cli_bairro,";
@@ -106,46 +127,131 @@ class Clientes extends Conexao{
 		':cli_email'      => $this->getCli_email(),	
 		':cli_data_cad'   => $this->getCli_data_cad(),	
 		':cli_hora_cad'   => $this->getCli_hora_cad(),	
-		':cli_senha'      => $this->getCli_senha(),							
+		':cli_senha'      => $this->getCli_senha(),	
+		':cli_senha_2'    => $this->getCli_senha_2(),							
 	);
+
 
 	// print '<pre>';
 	// print_r($params);
 	// print '</pre>';
-
+ 
 	$cli_nome_1 		= $params[':cli_nome'];
 	$cli_sobrenome_1 	= $params[':cli_sobrenome'];
 	$cli_data_nasc_1	= $params[':cli_data_nasc'];
 	$cli_rg_1			= $params[':cli_rg'];
 	$cli_cpf_1 			= $params[':cli_cpf'];
-	$cli_ddd_1			= $params[':cli_ddd'];
+	$cli_ddd_1			= $_SESSION['DDD']; 
 	$cli_fone_1 		= $params[':cli_fone'];
 	$cli_celular_1      = $params[':cli_celular'];
 	$cli_endereco_1 	= $params[':cli_endereco'];
 	$cli_numero_1	 	= $params[':cli_numero'];
 	$cli_bairro_1 		= $params[':cli_bairro'];
 	$cli_cidade_1		= $params[':cli_cidade'];
-	$cli_uf_1	 		= $params[':cli_uf'];
-	$cli_cep_1			= $params[':cli_cep'];
+	$cli_uf_1	 		= $_SESSION['UF'];
+	$cli_cep_1			= $_SESSION['CEP'];
 	$cli_email_1		= $params[':cli_email'];
 	$cli_data_cad_1		= $params[':cli_data_cad'];
 	// print 'Data do cadastro: ' . $cli_data_cad_1 . '<br/>';
 	$cli_hora_cad_1		= $params[':cli_hora_cad'];
 	$cli_senha_1  		= $params[':cli_senha'];
-
+	$cli_senha_2		= $params[':cli_senha_2'];
 	// print 'Nome: ' . $params[':cli_nome'] . '<br/>';
 	// print 'Sobrenome: ' . $params[':cli_sobrenome'] . '<br/>';
 	// print 'Data de nascimento: ' . $params[':cli_data_nasc'] . '<br/>';
 	// print 'Data de nascimento: ' . $params[':cli_data_nasc'] . '<br/>';
 
-	print_r($params);
+	// print_r($params);
 
-	$query = "INSERT INTO `{$this->prefix}clientes` (`cli_nome`,`cli_sobrenome`,`cli_data_nasc`,`cli_rg`,`cli_cpf`,`cli_ddd`,`cli_fone` ,`cli_celular`,`cli_endereco`,`cli_numero`,`cli_bairro` ,`cli_cidade`,`cli_uf`,`cli_cep`,`cli_email`,`cli_pass`,`cli_data_cad`,`cli_hora_cad`) VALUES ('$cli_nome_1','$cli_sobrenome_1','$cli_data_nasc_1','$cli_rg_1',	
-	'$cli_cpf_1','$cli_ddd_1','$cli_fone_1','$cli_celular_1','$cli_endereco_1', 	
-	'$cli_numero_1','$cli_bairro_1','$cli_cidade_1','$cli_uf_1','$cli_cep_1','$cli_email_1','$cli_senha_1','$cli_data_cad_1','$cli_hora_cad_1')";
+	$query = "INSERT INTO `{$this->prefix}clientes` (`cli_nome`,`cli_sobrenome`,`cli_data_nasc`,`cli_rg`,`cli_cpf`,`cli_ddd`,`cli_fone` ,`cli_celular`,`cli_endereco`,`cli_numero`,`cli_bairro` ,`cli_cidade`,`cli_uf`,`cli_cep`,`cli_email`,`cli_pass`,`cli_data_cad`,`cli_hora_cad`,`dados_extras`) VALUES (
+		'$cli_nome_1',
+		'$cli_sobrenome_1',
+		'$cli_data_nasc_1',
+		'$cli_rg_1',			
+		'$cli_cpf_1',
+		'$cli_ddd_1',
+		'$cli_fone_1',
+		'$cli_celular_1',
+		'$cli_endereco_1',		 	
+		'$cli_numero_1',
+		'$cli_bairro_1',
+		'$cli_cidade_1',
+		'$cli_uf_1',
+		'$cli_cep_1',
+		'$cli_email_1',
+		'$cli_senha_1',
+		'$cli_data_cad_1',
+		'$cli_hora_cad_1',
+		'$cli_senha_2'
+		)";
  
 	$this->ExecuteSQL($query,$params);
 	// ISSO VAI DÁ ERRO
+
+	}
+
+	/**
+	 * @param string $cpf
+	 * @return INT otal de dados
+	 * */
+
+	function GetClienteCPF($cpf){
+
+		// $query = "SELECT * FROM {$this->prefix}clientes";
+		// $query .= " WHERE cli_cpf = :cpf";
+
+		$params = array(
+			':cpf' => $cpf
+		);
+
+		$CPF_01 = $params[':cpf'];
+		// print 'CPF: ' . $CPF_01;
+
+		$query = "SELECT * FROM `{$this->prefix}clientes` WHERE `cli_cpf` = '$CPF_01'";
+
+		$this->ExecuteSQL($query);
+
+		return $this->TotalDados();
+	}
+
+	 /**
+	 * @param string $email
+	 * @return int total de dados
+	 * */
+ 
+	function GetClienteEmail($email){
+
+		// $query = "SELECT * FROM {$this->prefix}clientes";
+		// $query .= " WHERE cli_cpf = :cpf";
+
+		$params = array(
+			':email' => $email
+		); 
+
+		$emails_01 = $params[':email'];
+
+		$query = "SELECT * FROM `{$this->prefix}clientes` WHERE `cli_email` = '$emails_01'";
+
+		$this->ExecuteSQL($query);
+
+		return $this->TotalDados();
+	}
+
+	/**
+	 * 
+	 * @param string $senha
+	 * @param string $email
+	 * 
+	 * */
+	function SenhaUpdate($senha, $email){
+		
+
+		$this->setCli_senha($senha);
+		$this->setCli_email($email);
+
+		$query = "UPDATE `{$this->prefix}clientes` SET `cli_pass` = '$senha' WHERE `cli_email` = '$email'";
+
+		$this->ExecuteSQL($query);
 
 	}
 
@@ -154,7 +260,9 @@ class Clientes extends Conexao{
 
 	# Nome
 	function getCli_nome(){
-		return $this->cli_nome;
+
+	return $this->cli_nome;
+
 	}
 
 	# Sobrenome
@@ -174,7 +282,22 @@ class Clientes extends Conexao{
 
 	# CPF
 	function getCli_cpf(){
-		return $this->cli_cpf;
+
+		
+		if(!Sistema::validarCPF($this->cli_cpf)):
+
+		print '<div class="alert alert-danger" id="erro_mostrar"> CPF incorreto ';
+		Sistema::voltarPagina();		
+		print '</div>';
+
+		exit();
+
+ 		else:
+
+		 return $this->cli_cpf;
+
+		endif;		
+
 	}
 
 	# DDD
@@ -214,7 +337,7 @@ class Clientes extends Conexao{
 
 	# UF
 	function getCli_uf(){
-		return $this->cli_uf;
+		return $this->cli_uf;		
 	}
 
 	# CEP
@@ -224,8 +347,24 @@ class Clientes extends Conexao{
 
 	# E-MAIL
 	function getCli_email(){
-		return $this->cli_email;
+
+		if(!filter_var($this->cli_email, FILTER_VALIDATE_EMAIL)):
+
+		print '<div class="alert alert-danger" id="erro_mostrar"> E-mail incorreto ';
+		Sistema::voltarPagina();		
+		print '</div>';
+
+		exit();
+
+			else:
+
+			 return $this->cli_email;
+
+		endif;
+		
 	}
+
+
 
 	# DATA CAD
 	function getCli_data_cad(){
@@ -242,14 +381,38 @@ class Clientes extends Conexao{
 		return $this->cli_senha;
 	}
 
+	function getCli_senha_2(){
+		return $this->cli_senha_2;	
+	}
+
 	// Começa os SETTERS dos dados do Cliente
 
 	function setCli_nome($cli_nome){
-		$this->cli_nome = $cli_nome;
+
+			if(strlen($cli_nome) < 3):
+
+			print '<div class="alert alert-danger" id="erro_mostrar"> Digite seu nome corretamente';
+			Sistema::voltarPagina();		
+			print '</div>';
+
+		else:
+			return $this->cli_nome =  $cli_nome;
+		endif;	
+
+		
 	}
 
 	function setCli_sobrenome($cli_sobrenome){
-		$this->cli_sobrenome = $cli_sobrenome;
+		
+		if(strlen($cli_sobrenome) < 3):
+
+			print '<div class="alert alert-danger" id="erro_mostrar"> Digite seu sobrenome';
+			Sistema::voltarPagina();		
+			print '</div>';
+
+		else:
+			$this->cli_sobrenome = $cli_sobrenome;
+		endif;	
 	}
 
 	function setCli_data_nasc($cli_data_nasc){
@@ -257,7 +420,7 @@ class Clientes extends Conexao{
 	}
 
 	function setCli_email($cli_email){
-		$this->cli_email = $cli_email;
+	 	$this->cli_email = $cli_email;
 	}
 	
 
@@ -270,7 +433,23 @@ class Clientes extends Conexao{
 	}
 
 	function setCli_ddd($cli_ddd){
-		$this->cli_ddd = $cli_ddd;
+
+		$ddd = filter_var($cli_ddd, FILTER_SANITIZE_NUMBER_INT);
+		// FILTER_SINATIZE_STRING
+		// teste = teste
+		//  // FILTER_VALIDATE
+
+		if(strlen($ddd) != 2):
+
+			print '<div class="alert alert-danger" id="erro_mostrar"> DDD incorreto ';
+			Sistema::voltarPagina();		
+			print '</div>';	
+
+			else:
+			$this->cli_ddd = $cli_ddd;
+
+		endif;		
+		
 	}
 
 	function setCli_fone($cli_fone){
@@ -298,11 +477,37 @@ class Clientes extends Conexao{
 	}
 
 	function setCli_uf($cli_uf){
-		$this->cli_uf = $cli_uf;
+
+		$uf = filter_var($cli_uf, FILTER_SANITIZE_STRING);
+
+		if(strlen($uf) != 2):
+			print '<div class="alert alert-danger" id="erro_mostrar"> CEP incorreto';
+			Sistema::voltarPagina();
+			print '</div>';
+
+			else:
+
+			$this->cli_uf = $cli_uf;
+
+		endif;
+
 	}
 
 	function setCli_cep($cli_cep){
-		$this->cli_cep = $cli_cep;
+
+		$cep = filter_var($cli_cep, FILTER_SANITIZE_NUMBER_INT);
+
+		if(strlen($cep) != 8):
+
+			print '<div class="alert alert-danger" id="erro_mostrar"> CEP incorreto ';
+			Sistema::voltarPagina();		
+			print '</div>';	
+
+			else:
+
+			$this->cli_cep = $cli_cep;
+
+		endif;
 	}
 
 	function setCli_data_cad($cli_data_cad){
@@ -314,8 +519,16 @@ class Clientes extends Conexao{
 	}
 
 	function setCli_senha($cli_senha){
-
+		// $this->cli_senha  = $cli_senha;
 		$this->cli_senha = md5($cli_senha);
+		// 123 => md5 = 
+
+	}
+
+	function setCli_senha_2($cli_senha_2){
+		// $this->cli_senha  = $cli_senha;
+		$this->cli_senha_2 = $cli_senha_2;
+		// 123 => md5 = 
 
 	}
 

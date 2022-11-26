@@ -6,12 +6,14 @@ $smarty = new Template();
 // objeto do login
 $login = new Login();
 
+ 
 // verifico se passei o post para efetuar o login
 	if (isset($_POST['txt_email']) && isset($_POST['txt_senha'])):
 
 		$user  = $_POST['txt_email'];
 		$senha = $_POST['txt_senha'];
 		
+
 		$login->GetLogin($user,$senha);
 		// var_dump($_SESSION['CLI']);
 

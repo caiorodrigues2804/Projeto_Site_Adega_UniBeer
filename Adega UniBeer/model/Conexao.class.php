@@ -117,7 +117,9 @@ class Conexao extends Config{
 
 
  	function PaginacaoLinks($campo,$tabela){
- 	 	
+ 		
+ 	 	// print 'campo: ' . $campo . ' tabela: ' . $tabela;
+
  	 	// Instancia o objeto de paginação
  		$pag = new Paginacao();
 
@@ -136,7 +138,7 @@ class Conexao extends Config{
 
  		// retorno a SQL de complemento
  		return " limit {$inicio},{$limite}";
-
+	 
  	}
 
  	/**

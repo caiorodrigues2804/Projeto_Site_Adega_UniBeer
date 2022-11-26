@@ -39,6 +39,9 @@ class Paginacao extends Conexao{
 
 	function GetPaginacao($campo,$tabela){
 
+		// DEBUGGING
+		// print 'CAMPO: ' . $campo . ' TABLE: ' . $tabela . '<br/>';
+
 		// Faço uma consulta em um campo da tabela
 		$query = "SELECT {$campo} FROM {$tabela}";
 		$this->executeSQL($query);

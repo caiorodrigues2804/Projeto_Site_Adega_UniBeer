@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-20 22:47:58
+/* Smarty version 3.1.46, created on 2022-11-22 19:59:02
   from 'C:\xampp\htdocs\Adega Unibeer\view\email_compra.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637aa08eacac78_38689512',
+  'unifunc' => 'content_637d543687e8a0_18266926',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a847e0622fdc1f609a72e5431de78b0443cd57a5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\email_compra.tpl',
-      1 => 1668980827,
+      1 => 1669057259,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637aa08eacac78_38689512 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637d543687e8a0_18266926 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h4>Olá <?php echo $_smarty_tpl->tpl_vars['NOME_CLIENTE']->value;?>
 , obrigado pela sua compra no Site <?php echo $_smarty_tpl->tpl_vars['SITE_NOME']->value;?>
 <br/>
@@ -104,6 +104,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</section>
 		<br/>
 		<center>
-		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="300px">
+		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="500px">
 		</center><?php }
 }

@@ -1,3 +1,4 @@
+
 <h3>Cadastro de cliente</h3>
 
 <hr/>
@@ -11,7 +12,7 @@
 		<div class="col-md-4">
 			
 			<label>Nome:</label>
-			<input type="text" name="cli_nome"  class="form-control" required>
+			<input type="text" name="cli_nome" minlength="3" class="form-control" required>
 
 		</div>
 
@@ -19,7 +20,7 @@
 		<div class="col-md-4">
 			
 			<label>Sobrenome:</label>
-			<input type="text" name="cli_sobrenome"  class="form-control" required>
+			<input type="text" name="cli_sobrenome" minlength="3" class="form-control" required>
 
 		</div>
 
@@ -43,7 +44,7 @@
 		<div class="col-md-2">
 			
 			<label>CPF:</label>
-			<input type="text" name="cli_cpf"  class="form-control" required>
+			<input type="text" name="cli_cpf" placeholder="Não pode conter traços e pontos. Exemplo: 40574871071" class="form-control" minlength="11" maxlength="11" required>
 
 		</div>
 
@@ -51,7 +52,7 @@
 		<div class="col-md-2">
 			
 			<label>DDD:</label>
-			<input type="number" name="cli_ddd"  class="form-control" required>
+			<input type="number" name="cli_ddd"  class="form-control" min="10" max="99" required>
 
 		</div>
 
@@ -76,7 +77,7 @@
 		<div class="col-md-6">
 			
 			<label>Endereço:</label>
-			<input type="text" name="cli_endereco"  class="form-control" required>
+			<input type="text" name="cli_endereco"  class="form-control" minlength="4" required>
 
 		</div>
 
@@ -93,7 +94,7 @@
 		<div class="col-md-4">
 			
 			<label>Bairro:</label>
-			<input type="text" name="cli_bairro"  class="form-control" required>
+			<input type="text" name="cli_bairro"  class="form-control" minlength="3" required>
 
 		</div>
 
@@ -101,7 +102,7 @@
 		<div class="col-md-4">
 			
 			<label>Cidade:</label>
-			<input type="text" name="cli_cidade"  class="form-control" required>
+			<input type="text" name="cli_cidade"  class="form-control" minlength="3" required>
 
 		</div>
 		
@@ -109,7 +110,7 @@
 		<div class="col-md-2">
 			
 			<label>UF:</label>
-			<input type="text" name="cli_uf"  class="form-control" required>
+			<input type="text" name="cli_uf"  class="form-control" maxlength="2" minlength="2" required>
 
 		</div>
 
@@ -117,7 +118,7 @@
 		<div class="col-md-2">
 			
 			<label>CEP:</label>
-			<input type="number" name="cli_cep"  class="form-control" required>
+			<input type="text" name="cli_cep"  class="form-control" minlength="8" maxlength="8" required>
 
 		</div>
 
@@ -136,8 +137,9 @@
 <br/>
 <br/>
 <center>
-
-<label>Sou maior de 18 anos e concordo com os termos de uso <input type="radio" name="termo" id="termo"></label>
+<input type="button" onclick="ler()" value="Ler os termos de uso" class="btn btn-default"/>
+<br/><br/>
+<label>Sou maior de 18 anos e concordo com os termos de uso <input type="radio" name="termo" id="termo" required></label>
 </center>
 <br/>
 <section class="row" id="btngravar">
@@ -145,7 +147,7 @@
 	<div class="col-md-4">
 
 		
-		<button style="display: none;" id="btns-confirmacao" type="submit" class="btn btn-cssc btn-block">Cadastrar <i class="glyphicon glyphicon-ok"></i> </button>
+		<button style="display: block;" id="btns-confirmacao" type="submit" class="btn btn-cssc btn-block">Cadastrar <i class="glyphicon glyphicon-ok"></i> </button>
 		
 	</div>
 	<div class="col-md-4"></div>
@@ -153,10 +155,10 @@
 </section>
 	</form>
 	<script>
+        function ler(){
+            window.open('{$TERMO_DE_USO}');
+        }
 
-
-		setInterval(() => {
-			if(document.querySelector('#termo').checked == true){document.querySelector('#btns-confirmacao').style.display = 'inline-block';}
-		})
-		
+        document.querySelector('#termo').checkod = off;
 	</script>
+
