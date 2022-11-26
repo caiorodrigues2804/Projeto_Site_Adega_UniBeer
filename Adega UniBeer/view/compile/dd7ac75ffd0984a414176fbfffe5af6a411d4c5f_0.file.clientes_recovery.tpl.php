@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-16 20:00:22
+/* Smarty version 3.1.46, created on 2022-11-25 18:01:07
   from 'C:\xampp\htdocs\Adega Unibeer\view\clientes_recovery.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63753346d816b3_78375417',
+  'unifunc' => 'content_63812d136a0d53_11131695',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dd7ac75ffd0984a414176fbfffe5af6a411d4c5f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\clientes_recovery.tpl',
-      1 => 1668625166,
+      1 => 1669410066,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63753346d816b3_78375417 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Recuperação de senha</h3><?php }
+function content_63812d136a0d53_11131695 (Smarty_Internal_Template $_smarty_tpl) {
+?><h4 class="text-center">Digite seu e-mail cadastrado para receber a sua senha</h4>
+<hr/>
+<form name="recuperarsenha" method="post" action="">	
+
+	<section>
+		<div class="col-md-4"></div>
+
+		<div class="col-md-4">
+			
+		<label>Digite seu email cadastrado</label>
+		<input type="email" name="cli_email" id="cli_email" class="form-control" required>	
+		<br/>
+		<input type="submit" class="btn btn-cssc btn-block" value="Repecurar">		
+		</div>
+
+		<div class="col-md-4"></div>
+	</section>
+
+	<section>
+		<div class="col-md-4"></div>		
+	</section>
+
+
+</form><?php }
 }

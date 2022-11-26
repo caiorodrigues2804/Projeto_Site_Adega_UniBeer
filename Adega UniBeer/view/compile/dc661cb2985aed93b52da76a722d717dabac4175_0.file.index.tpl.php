@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-21 02:21:31
+/* Smarty version 3.1.46, created on 2022-11-25 21:31:02
   from 'C:\xampp\htdocs\Adega Unibeer\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637ad29bf1e579_16799946',
+  'unifunc' => 'content_63815e46ed29e3_14204345',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc661cb2985aed93b52da76a722d717dabac4175' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\index.tpl',
-      1 => 1668993691,
+      1 => 1669422660,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637ad29bf1e579_16799946 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63815e46ed29e3_14204345 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -89,7 +89,7 @@ function content_637ad29bf1e579_16799946 (Smarty_Internal_Template $_smarty_tpl)
                            } else{
                            
 
-                            document.querySelector('#logotipo2').style.marginLeft = (-20) + 'px';
+                            document.querySelector('#logotipo2').style.marginLeft = (-5) + 'px';
                             document.querySelector('#logotipo2').style.width = 300 + 'px';
                            }
 
@@ -159,11 +159,13 @@ function content_637ad29bf1e579_16799946 (Smarty_Internal_Template $_smarty_tpl)
 
                             
 
-                            <form class="navbar-form navbar-right" role="search">
+                <form class="navbar-form navbar-right" method="post" action="<?php echo $_smarty_tpl->tpl_vars['GET_SITE_HOME']->value;?>
+/buscador_resultados" role="search">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Digite para buscar" required>
+                                    <input type="text" id="campos" name="campos" class="form-control" placeholder="Digite para buscar" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Buscar</button>
+                                <button id="buscador" type="submit" class="btn btn-primary">Buscar</button>
+
                             </form>
                             
                          </div><!-- fim navbar collapse-->   
@@ -251,8 +253,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     width: 40px;
                 }
             </style>
-        <h5>🔞 Venda proibida para menores de 18 anos. Aprecie com moderação. Se beber não dirija!</h5>
-       <h3>Pagamento: 
+        <h5 style="margin:20px">🔞 Venda proibida para menores de 18 anos. Aprecie com moderação. Se beber não dirija!</h5>
+       <h3 style="margin:20px;">Pagamento: 
        <img src="https://superadega.vteximg.com.br/arquivos/pag_master.png?v=637043387616270000">
        <img src="https://superadega.vteximg.com.br/arquivos/pag_visaelectron.png?v=637838107811670000">
        <img src="https://superadega.vteximg.com.br/arquivos/pag_dinners.png?v=637043387596030000">
@@ -267,11 +269,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="row" id="rodape">
                 <center>
 
-                    <div style="width: 70%;margin: 15px;">
+                    <div style="width: 70%;margin: 29px;">
                 Seja bem-vindo a maior loja on-line de bebidas de qualidade. Adega UniBeer Ltda-02 | CNPJ: 42.587.316/0001-59 | Inscrição Estadual:  606.934.862.680 Endereço: Rua Amador Bueno, 392 - Santo Amaro | 04752-005 | São Paulo - SP | SAC: adegaunibeer@contato.com.br 
-                <br/>
-                <?php echo $_smarty_tpl->tpl_vars['SITE_NOME']->value;?>
-
                     </div>
              
                 </center>

@@ -52,7 +52,7 @@
                            } else{
                            
 
-                            document.querySelector('#logotipo2').style.marginLeft = (-20) + 'px';
+                            document.querySelector('#logotipo2').style.marginLeft = (-5) + 'px';
                             document.querySelector('#logotipo2').style.width = 300 + 'px';
                            }
 
@@ -113,11 +113,12 @@
 
                             
 
-                            <form class="navbar-form navbar-right" role="search">
+                <form class="navbar-form navbar-right" method="post" action="{$GET_SITE_HOME}/buscador_resultados" role="search">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Digite para buscar" required>
+                                    <input type="text" id="campos" name="campos" class="form-control" placeholder="Digite para buscar" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Buscar</button>
+                                <button id="buscador" type="submit" class="btn btn-primary">Buscar</button>
+
                             </form>
                             
                          </div><!-- fim navbar collapse-->   
@@ -193,8 +194,8 @@
                     width: 40px;
                 }
             </style>
-        <h5>🔞 Venda proibida para menores de 18 anos. Aprecie com moderação. Se beber não dirija!</h5>
-       <h3>Pagamento: 
+        <h5 style="margin:20px">🔞 Venda proibida para menores de 18 anos. Aprecie com moderação. Se beber não dirija!</h5>
+       <h3 style="margin:20px;">Pagamento: 
        <img src="https://superadega.vteximg.com.br/arquivos/pag_master.png?v=637043387616270000">
        <img src="https://superadega.vteximg.com.br/arquivos/pag_visaelectron.png?v=637838107811670000">
        <img src="https://superadega.vteximg.com.br/arquivos/pag_dinners.png?v=637043387596030000">
@@ -209,10 +210,8 @@
             <div class="row" id="rodape">
                 <center>
 
-                    <div style="width: 70%;margin: 15px;">
+                    <div style="width: 70%;margin: 29px;">
                 Seja bem-vindo a maior loja on-line de bebidas de qualidade. Adega UniBeer Ltda-02 | CNPJ: 42.587.316/0001-59 | Inscrição Estadual:  606.934.862.680 Endereço: Rua Amador Bueno, 392 - Santo Amaro | 04752-005 | São Paulo - SP | SAC: adegaunibeer@contato.com.br 
-                <br/>
-                {$SITE_NOME}
                     </div>
              
                 </center>

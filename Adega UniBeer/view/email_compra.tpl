@@ -59,5 +59,5 @@
 	</section>
 		<br/>
 		<center>
-		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="300px">
+		<img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="500px">
 		</center>

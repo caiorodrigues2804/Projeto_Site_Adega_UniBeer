@@ -25,6 +25,7 @@ $smarty->assign('PAG_CLIENTE_CONTA', Rotas::pag_ClienteConta());
 $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
 $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 $smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
+$smarty->assign('BUSCADOR', Rotas::pag_BuscadorResultados());
 
 // LOCALIZAÇÃO
 $smarty->assign('PAG_LOCALIZACAO', Rotas::pag_Localizacao());

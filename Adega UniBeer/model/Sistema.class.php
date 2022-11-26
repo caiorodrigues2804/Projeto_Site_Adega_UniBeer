@@ -3,7 +3,7 @@
 /**
  * descricao Sistema
  *
- * @author adrianosites.com.br
+ * @author Caio Rodrigues
  */
 class Sistema {
    
@@ -12,7 +12,7 @@ class Sistema {
      * @return String: data atual fotmato BR
      */
     static function DataAtualBR(){
-        
+        date_default_timezone_set('America/Sao_Paulo');
         return date('d/m/Y') ;
     }
     /**

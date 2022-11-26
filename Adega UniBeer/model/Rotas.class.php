@@ -258,6 +258,26 @@
 
 		/**
 		 * 
+		 * @return string - Termo de uso
+		 * 
+		 * */
+
+		static function pag_TermosUso(){
+			return self::get_SiteHOME() . "/termos_de_uso";
+		}
+
+		/**
+		 * 
+		 * @return string - Buscador resultados
+		 * 
+		 * */
+
+		static function pag_BuscadorResultados(){
+			return self::get_SiteHOME() . "buscador_resultados";
+		}
+
+		/**
+		 * 
 		 * @return string pasta física da imagem
 		 * 
 		 * */
@@ -288,6 +308,8 @@
 		static function get_Pasta_Controller(){
 			return self::$pasta_controller;
 		}
+
+
 
 		/**
 		 * @param int tempo em segundos
