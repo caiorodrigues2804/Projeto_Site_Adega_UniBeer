@@ -23,10 +23,10 @@ if(isset($_POST['cli_email'])):
 	$email_validador = $_POST['cli_email'];
 	
 
-    $servername = "us-imm-web652.main-hosting.eu";
-    $database = "u308103531_adegaunibeer";
-    $username = "u308103531_rootadega";
-    $password = "Nvidia280401vai@";
+    $servername = "localhost";
+    $database = "miniloja2017";
+    $username = "root";
+    $password = "";
  
     $con = mysqli_connect($servername, $username, $password, $database);
  
