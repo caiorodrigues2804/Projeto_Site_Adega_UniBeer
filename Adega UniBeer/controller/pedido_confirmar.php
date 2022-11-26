@@ -13,11 +13,11 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',$preco_total);
+      $smarty->assign('TOTAL',str_replace('.',',',substr($preco_total,0,5)));
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos());
       $smarty->assign('PAG_CARRINHO',Rotas::pag_Carrinho());
       $smarty->assign('PAG_FINALIZAR',Rotas::pag_PedidoFinalizar() . '?preco=' . $_GET['preco'] . '&frete=' . $_GET['frete'] . '&valor_total=' . $_GET['valor_total']);
-
+    //   $smarty->assign('PAG_FINALIZAR',Rotas::pag_PedidoFinalizar());
       $smarty->display('pedido_confirmar.tpl');
 
 else:

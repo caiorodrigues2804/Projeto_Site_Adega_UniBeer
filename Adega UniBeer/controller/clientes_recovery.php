@@ -21,17 +21,24 @@ if(isset($_POST['cli_email'])):
 	// o email foi encontrado
 
 	$email_validador = $_POST['cli_email'];
-
 	
-     $host = "localhost";
-     $senha = "";
-     $usuario = "root";
-     $nome_do_banco = "miniloja2017";
+
+    $servername = "us-imm-web652.main-hosting.eu";
+    $database = "u308103531_adegaunibeer";
+    $username = "u308103531_rootadega";
+    $password = "Nvidia280401vai@";
  
-     $con = mysqli_connect($host,$senha,$usuario,$nome_do_banco);
+    $con = mysqli_connect($servername, $username, $password, $database);
+ 
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+   ;
+    
+
      $ds = mysqli_query($con,"SELECT `dados_extras` FROM `as_clientes` WHERE `cli_email` = '$email_validador'");
      $novasenha = mysqli_fetch_assoc($ds)["dados_extras"];
-     print $novasenha;
+    //  print $novasenha;
 
 		
 	// Enviar o email para o cliente
@@ -46,11 +53,12 @@ if(isset($_POST['cli_email'])):
 	$email->Enviar($assunto,$msg,$destinatarios);
 
 	// mostra mensagem na tela que foi enviada a senha
-	echo "<h4/>Olá cliente, enviamos a sua senha que já está vinculada ao seu e-mail, verifica no seu e-mail que foi cadastrado no site <h4>";
-	// Rotas::Redirecionar(5,Rotas::pag_ClienteLogin());
+	echo "<div class='alert alert-success'><h4>Olá cliente, enviamos a sua senha que já está vinculada ao seu e-mail, verifica no seu e-mail que foi cadastrado no site <h4></div>";
+	Rotas::Redirecionar(5,Rotas::pag_ClienteLogin());
 	else:
 	// email não foi encontrado
 		echo '<h3>Email não foi encontrado no sistema</h3>';
+		Rotas::Redirecionar(3,Rotas::pag_ClienteLogin());
 	endif;
 
 // caso não exista o post mostro o template

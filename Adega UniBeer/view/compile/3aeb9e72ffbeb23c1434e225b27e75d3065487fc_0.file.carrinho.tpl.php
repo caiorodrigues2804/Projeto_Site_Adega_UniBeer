@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-20 22:21:41
+/* Smarty version 3.1.46, created on 2022-11-26 13:10:11
   from 'C:\xampp\htdocs\Adega Unibeer\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637a9a65894df8_01987852',
+  'unifunc' => 'content_63823a63a82727_77233605',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aeb9e72ffbeb23c1434e225b27e75d3065487fc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\carrinho.tpl',
-      1 => 1668978513,
+      1 => 1669477835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637a9a65894df8_01987852 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63823a63a82727_77233605 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 
@@ -181,8 +181,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			<input type="hidden" name="peso_frete" id="peso_frete" value="<?php echo $_smarty_tpl->tpl_vars['PESO']->value;?>
 ">
 
-			<input type="hidden" name="produtos_valores" class="form-control" id="produtos_valores" value="<?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
-">
+			<input type="hidden" name="produtos_valores" class="form-control" id="produtos_valores" value="substr(<?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
+,0,5)">
 
 			<input type="hidden" name="frete_valor" id="frete_valor" value="0">
 

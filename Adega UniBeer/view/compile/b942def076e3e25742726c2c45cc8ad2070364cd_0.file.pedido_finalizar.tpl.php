@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-26 13:10:33
-  from 'C:\xampp\htdocs\Adega Unibeer\view\pedido_confirmar.tpl' */
+/* Smarty version 3.1.46, created on 2022-11-26 12:58:00
+  from '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/pedido_finalizar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63823a79598c78_20318486',
+  'unifunc' => 'content_638237883079f1_03068192',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e2f352142a4b854c349794a88993733df89a02cb' => 
+    'b942def076e3e25742726c2c45cc8ad2070364cd' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\pedido_confirmar.tpl',
-      1 => 1669478025,
+      0 => '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/pedido_finalizar.tpl',
+      1 => 1669425199,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63823a79598c78_20318486 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Confirmar Pedido</h3>
-<hr/>
+function content_638237883079f1_03068192 (Smarty_Internal_Template $_smarty_tpl) {
+?><h3>Finalizar Pedido</h3>
+ 
 <style type="text/css">
 	#divs_r{
 		overflow-y: scroll;
@@ -30,36 +30,16 @@ function content_63823a79598c78_20318486 (Smarty_Internal_Template $_smarty_tpl)
 	}
 </style>
 
-<!--- Botões e opções de cima ---> 
-<section class="row">
+<div class="alert alert-success">Pedido finalizado com sucesso </div>
 
-	<div class="col-md-4 text-right">
-		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
-" class="btn btn-cssc" title="">Voltar ao Carrinho</a>	
-	</div>
-	<div class="col-md-4 text-right">
-		<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_FINALIZAR']->value;?>
-" class="btn btn-cssc" title="">Finalizar</a>
-	</div>
-	<div class="col-md-4">
-		
-	</div>
-
-</section>
-<br/>
 <!--- table Listagem de Itens ---->
 <section class="row">
-	<div id="divs_r">	
+	 
 	<center>
+
+
 	<table class="table table-bordered" style="width: 95%;">
-		<tr class="text-danger bg-danger">
-			<td></td>
-			<td>Produto</td>
-			<td>Valor R$</td>
-			<td>X</td>
-			<td>Sub Total R$</td>
-		 
-		</tr>
+	 
 
 		<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
@@ -69,9 +49,9 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
 
 		<tr>
-			<td> <img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
+		<!---	<td> <img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
 " width="100px" height="100px" alt="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
-"> </td>
+"> </td>-->
 			<td><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
 </td>
 			<td><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_valor'];?>
@@ -80,7 +60,7 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 </td>	
 			<td><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_subTotal'];?>
 </td>			
-		 
+		 	
 		</tr>
 
 		<?php
@@ -90,6 +70,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</table>
 	</center>
 
+
 </section> <!---- Fim da listagem de itens --->
 
 	<!------- botoes de baixo e valor total ---> 
@@ -97,17 +78,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<div class="col-md-4 text-right">
 	 
 		</div>
-		<div class="col-md-8 text-right text-danger">
-		<h4 style="margin-right: -20px;">
-			Valor total: R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
-
-		</h4>
-		</div>
+		
 
 	<!-------- Botão de limpar ----------->
-		<div class="col-md-4 text-right">
-	 		
-		</div>	 
+	<div class="text-danger">
+ 	<center>
+			<h4><b>Valor total:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_PRECO']->value;?>
+</h4>		
+			<h4><b>Frete:</b> R$ <?php echo $_smarty_tpl->tpl_vars['VALOR_FRETE']->value;?>
+</h4>
+			<hr/>
+			<h4><b>Valor final:</b> R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
+</h4>
+	</center>
+	</div>	 
+	</section>
+
+	<!---- Modo de pagamentos e outras informações --->
+	<section class="row">
+		<h3 class="text-center">Escolha uma forma de pagamento</h3>	
+		<center>	
+		<img width="30%" src="http://www.natsolutions.com.br/loja/img/cms/comprar-com-pagseguro-uol.png" alt="">
+		</center>
 	</section>
 <?php }
 }
