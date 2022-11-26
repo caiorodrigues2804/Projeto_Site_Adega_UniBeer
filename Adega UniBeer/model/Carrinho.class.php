@@ -77,7 +77,7 @@ class Carrinho{
 	function GetTotal(){
 		return $this->total_Valor;
 	}
-
+ 
 	/**
 	 * @return float com o peso
 	 * */

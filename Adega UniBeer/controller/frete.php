@@ -107,6 +107,14 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
    // SEDEX
    resultado_A = (dados_vlL + sedex_val);
    resultado_B = (dados_vlL + pac_val);
+   
+   
+   resultado_A = resultado_A + '';
+   resultado_B = resultado_B + '';
+   
+   resultado_A = resultado_A.slice(0, 5);
+   resultado_B = resultado_B.slice(0, 5);
+   
    console.log('Resultado SEDEX: ',resultado_A);
    console.log('Resultado PAC: ',resultado_B);
 
@@ -139,7 +147,7 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
   // SEDEX RESULTADO
   let sedex_resultado_A = (resultado_A + '');
   sedex_resultado_A = sedex_resultado_A.replace('.',',');  
-
+  
 
    // ------------------- //
 
@@ -178,6 +186,7 @@ $Valor_pac   =  (($val_2->Valor == 0) ? 'Valores não disponível' : $val_2->Val
     document.querySelector('#confirmar_pedidos').addEventListener('click',()  => {
 
       if (selecionador_geral == 1) {
+     
         document.querySelector('#pedido_finalizar').action += '?preco=' + dados_vlL + '&frete=' + pac_val + '&valor_total=' + resultado_B;  
       } 
 

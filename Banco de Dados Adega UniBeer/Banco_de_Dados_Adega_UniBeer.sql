@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 26-Nov-2022 às 02:06
+-- Tempo de geração: 26-Nov-2022 às 18:28
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -86,7 +86,8 @@ CREATE TABLE `as_clientes` (
 --
 
 INSERT INTO `as_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_endereco`, `cli_numero`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_cep`, `cli_cpf`, `cli_rg`, `cli_ddd`, `cli_fone`, `cli_celular`, `cli_email`, `cli_pass`, `cli_data_nasc`, `cli_data_cad`, `cli_hora_cad`, `dados_extras`) VALUES
-(2, 'Caio', 'Rodrigues', 'Rua Cabo', '300', 'Parque Casa de Pedra', 'São Paulo', 'SP', '02322180', '97202029804', '227447529', 11, '36298736', '993422752', 'caiorodrigues2848@gmail.com', '6d78b1ff6383cc7d1c5f383588505618', '2001-04-28', '2022-11-25', '18:00:22', 'q67y85xr');
+(2, 'Caio', 'Rodrigues', 'Rua Cabo', '300', 'Parque Casa de Pedra', 'São Paulo', 'SP', '02322180', '97202029804', '227447529', 11, '36298736', '993422752', 'caiorodrigues2848@gmail.com', '6d78b1ff6383cc7d1c5f383588505618', '2001-04-28', '2022-11-25', '18:00:22', 'q67y85xr'),
+(3, 'Rayssa Laura ', 'Laís Peixoto', 'Parque São Rafael', '775', 'Parque São Rafael', 'São Paulo', 'SP', '08320010', '92815345846', '354033554', 11, '37901385', '984809066', '4f1dee7989@inboxmail.life', '75c0200ecd958e6c2839591fbbbf57dc', '1998-03-04', '2022-11-26', '13:01:25', 'r41p89zu');
 
 -- --------------------------------------------------------
 
@@ -188,7 +189,9 @@ INSERT INTO `as_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_
 (5, '2022-11-22', '20:01:21', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
 (6, '2022-11-22', '20:01:52', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
 (7, '2022-11-22', '20:02:37', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(8, '2022-11-22', '20:03:18', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38');
+(8, '2022-11-22', '20:03:18', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
+(9, '2022-11-26', '13:01:59', 3, 'a800c2d7c2c547efd112a0c405019d7c', '2211261301563', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
+(10, '2022-11-26', '13:03:55', 3, 'b8c9fd5ac34eec7b5962683d9a5b53cd', '2211261303513', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38');
 
 -- --------------------------------------------------------
 
@@ -228,7 +231,9 @@ INSERT INTO `as_pedidos_itens` (`item_id`, `item_produto`, `item_valor`, `item_q
 (17, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
 (18, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
 (19, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
-(20, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63');
+(20, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
+(21, 1, 2.38, 1, 'a800c2d7c2c547efd112a0c405019d7c'),
+(22, 1, 2.38, 1, 'b8c9fd5ac34eec7b5962683d9a5b53cd');
 
 -- --------------------------------------------------------
 
@@ -521,7 +526,7 @@ ALTER TABLE `as_categorias`
 -- AUTO_INCREMENT de tabela `as_clientes`
 --
 ALTER TABLE `as_clientes`
-  MODIFY `cli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `as_estados`
@@ -539,13 +544,13 @@ ALTER TABLE `as_imagens`
 -- AUTO_INCREMENT de tabela `as_pedidos`
 --
 ALTER TABLE `as_pedidos`
-  MODIFY `ped_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ped_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `as_pedidos_itens`
 --
 ALTER TABLE `as_pedidos_itens`
-  MODIFY `item_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `item_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `as_produtos`

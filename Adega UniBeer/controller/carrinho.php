@@ -10,7 +10,8 @@ if (isset($_SESSION['PRO'])):
 
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
-      $smarty->assign('TOTAL',Sistema::MoedaBR($carrinho->GetTotal()));
+      $smarty->assign('TOTAL', (Sistema::MoedaBR($carrinho->GetTotal(), 0, 5)));
+    //   echo substr("39.199999999999996",0,5);
       $smarty->assign('PESO', $carrinho->GetPeso());
       $smarty->assign('PAG_PRODUTOS',Rotas::pag_Produtos()); 
       $smarty->assign('PAG_CONFIRMAR',Rotas::pag_PedidoConfirmar()); 
