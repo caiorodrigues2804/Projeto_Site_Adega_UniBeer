@@ -32,7 +32,7 @@
 [Clique aqui para visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/arquivos)<br/>
 
 
-## Programas que foram usados na construção do site
+## Programas e frameworks que foram usados na construção do site
 <br/>
 
 <a href="https://www.sublimetext.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8c6pwZVhVIQAGSQuFEfTd9z_02njDpEKvDXwuTNrQ67tHVPXgAXmZOtsiicNljuML4kM&usqp=CAU" style="display:inline"  width="60px">&nbsp; Sublime Text</a>
