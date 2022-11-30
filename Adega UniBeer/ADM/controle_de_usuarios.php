@@ -71,7 +71,7 @@ session_start();
  			<th>Nome</th>
 			<th>E-mail</th>
 			<th>CPF</th>
-      <th>Data N</th>
+      <th>Data n..</th>
 			<th>Acesso</th>
 			<th>Deletar</th>
  		</tr> 	
@@ -134,4 +134,5 @@ session_start();
 </body>
 
 </html>
+
 
