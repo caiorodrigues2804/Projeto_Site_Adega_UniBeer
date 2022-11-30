@@ -120,7 +120,7 @@ include("../conexao.php");
               if($valor <= 0){
              ?>
             <button class="btn btn-primary text-white">
-            <a href="ped_confirm.php?id=<?= $indices["ped_id"] ?>&confirm=1">( ✔ ) Sim</a>
+            <a href="ped_confirm.php?id=<?= $indices["ped_id"] ?>&confirm=1">( ✖ ) Não</a>
            </button>
            <?php  } ?>
            <?php
@@ -130,7 +130,7 @@ include("../conexao.php");
               if($valor >= 1){
              ?>
             <button class="btn btn-primary text-white">
-            <a href="ped_confirm.php?id=<?= $indices["ped_id"] ?>&confirm=0">( ✖ ) Não</a>
+            <a href="ped_confirm.php?id=<?= $indices["ped_id"] ?>&confirm=0">( ✔ ) Sim</a>
            </button>
            <?php  } ?>
 

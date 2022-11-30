@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-28 20:46:12
+/* Smarty version 3.1.46, created on 2022-11-30 19:39:49
   from 'C:\xampp\htdocs\Adega Unibeer\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63854844dfad49_11964424',
+  'unifunc' => 'content_6387dbb55ec8f0_03840701',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f8d6307d9e33922bf578d47bf608cc4ec34c44ab' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\login.tpl',
-      1 => 1669679160,
+      1 => 1669837610,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63854844dfad49_11964424 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6387dbb55ec8f0_03840701 (Smarty_Internal_Template $_smarty_tpl) {
 ?> 
 <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
  
