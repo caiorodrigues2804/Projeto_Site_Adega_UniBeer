@@ -81,7 +81,7 @@
 
 		 static function get_SiteHOME(){
         
-        return Config::SITE_URL .'/'.Config::SITE_PASTA;
+        return Config::SITE_URL . Config::SITE_PASTA;
   		  }
 
 		static function get_SiteRAIZ(){
@@ -100,7 +100,15 @@
 
     	}
 
+			/**
+		 * 
+		 * @return string - página carrinho
+		 * 
+		 * */
 
+		static function pag_ADM(){
+			return self::get_SiteHOME() . "/ADM/login.php";
+		}
 
 		/**
 		 * 
@@ -188,6 +196,14 @@
 		}
 
 		/**
+		 * @return string Tela de itens do cliente
+		 * */
+		static function pag_ClienteItens(){
+			return self::get_SiteHome() . '/clientes_itens';	
+		}
+
+
+		/**
 		 * 
 		 * @return pagina dados do cliente
 		 * */
@@ -254,6 +270,17 @@
 
 		static function pag_Localizacao(){
 			return self::get_SiteHOME() . "/localizacao";
+		}
+
+
+		/**
+		 * 
+		 * @return string - Senha
+		 * 
+		 * */
+
+		static function pag_SenhaAlterada(){
+			return self::get_SiteHOME() . "/clientes_senha";
 		}
 
 		/**

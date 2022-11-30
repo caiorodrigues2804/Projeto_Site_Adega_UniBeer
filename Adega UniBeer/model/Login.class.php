@@ -62,11 +62,12 @@ class Login extends Conexao{
             $_SESSION['CLI']['cli_celular']    = $lista['cli_celular'];
             $_SESSION['CLI']['cli_data_nasc']  = $lista['cli_data_nasc'];
             $_SESSION['CLI']['cli_data_cad']   = $lista['cli_data_cad'];
+            $_SESSION['CLI']['cli_hora_cad']   = $lista['cli_hora_cad'];
             $_SESSION['CLI']['cli_pass']       = $lista['cli_pass'];
             $_SESSION['CLI']['cli_celular']    = $lista['cli_celular'];
 
             // Após passar valores atualizar a página
-            Rotas::Redirecionar(0, Rotas::pag_ClienteLogin());
+            Rotas::Redirecionar(0, Rotas::pag_ClienteConta());
 
         // echo 'logado com sucesso';
 
@@ -114,7 +115,7 @@ class Login extends Conexao{
         
         unset($_SESSION['CLI']);
         print '<h4 class="alert alert-success">Saindo...</h4>';
-        Rotas::Redirecionar(2,Rotas::get_SiteHOME());
+        Rotas::Redirecionar(5,Rotas::get_SiteHOME());
 
     }
 
@@ -164,7 +165,9 @@ class Login extends Conexao{
      * */
 
     private function setSenha($senha){
-        $this->senha = md5($senha);
+
+        $this->senha = Sistema::Criptografia($senha);
+
     }
 
     /**

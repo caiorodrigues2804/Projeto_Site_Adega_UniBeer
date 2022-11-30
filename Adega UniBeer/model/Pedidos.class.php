@@ -12,9 +12,16 @@ class Pedidos extends Conexao{
 		parent::__construct();
 	}
  
-	function GetPedidoCliente($cliente){
+	function GetPedidoCliente($cliente=null){
 
-		$query = "SELECT * FROM ". $this->prefix . "pedidos";		
+		$query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";		
+		$query .= " ON p.ped_cliente = c.cli_id";
+
+		if($cliente != null):
+			$cli = (int)$cliente;
+			$query .= " WHERE `ped_cliente` = '{$cli}'";
+			// print $query;
+		endif;
 
 		$this->ExecuteSQL($query);
 		$this->GetLista();
@@ -83,7 +90,7 @@ class Pedidos extends Conexao{
 	$frete_tipo = $freteTipo;
 	$valores_ = $_SESSION['VALOR_M'];
  	
-    $query = "INSERT INTO `{$this->prefix}pedidos` (`ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`,`ped_ref`,`ped_pag_status`,`ped_frete_valor`,`ped_frete_tipo`,`ped_valor_item`) VALUES ('$datas', '$horas', '$clientes', '$cods','$refs','NÃO','$frete_valors','$frete_tipo','$valores_')";
+    $query = "INSERT INTO `{$this->prefix}pedidos` (`ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`,`ped_ref`,`ped_pag_status`,`ped_frete_valor`,`ped_frete_tipo`,`ped_valor_item`) VALUES ('$datas', '$horas', '$clientes', '$cods','$refs','NAO','$frete_valors','$frete_tipo','$valores_')";
 
 	 // grava o pedido
 	$this->ExecuteSQL($query,$params);

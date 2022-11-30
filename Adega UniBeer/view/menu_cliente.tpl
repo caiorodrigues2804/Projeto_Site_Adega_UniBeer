@@ -7,7 +7,7 @@
 			<a id="font_ss" href="{$PAG_CLIENTE_PEDIDOS}" class="btn btn-cssc"><i class="glyphicon glyphicon-barcode"></i> Pedidos</a><c></c>
 			<a id="font_ss" href="{$PAG_CLIENTE_DADOS}" class="btn btn-cssc"><i class="glyphicon glyphicon-edit"></i> Meus Dados</a><c></c>
 			<a id="font_ss" href="{$PAG_CARRINHO}" class="btn btn-cssc"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</a><c></c>
-			<a id="font_ss" href="{$PAG_CLIENTE_SENHA}" class="btn btn-cssc"><i class="glyphicon glyphicon-exclamation-sign"></i> Senha</a><c></c>
+			<a id="font_ss" href="{$PAG_CLIENTE_SENHA}" class="btn btn-cssc"><i class="glyphicon glyphicon-exclamation-sign"></i> Alterar Senha</a><c></c>
 			<a id="font_ss" href="{$PAG_LOGOFF}" class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair da conta</a>
 						
 

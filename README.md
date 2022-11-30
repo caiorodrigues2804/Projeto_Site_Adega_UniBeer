@@ -52,6 +52,8 @@
 <a href="https://www.smarty.net/download"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNnq552MaMZjtkoiPV5F2Avfdu7Xvmi9ccqVvvg414rB02NyPJSu3k50ge5K-DyrDVQzM&usqp=CAU" width="65px">&nbsp;Smarty</a>
 <br/><br/>
 <a href="https://getbootstrap.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfA9saZjv6q5LESFvG0kFqCWKyDY8GSwcY9TDkTFkTay-zXp30U2ydvFQoEYBMeh2mg4c&usqp=CAU" width="60px">&nbsp;Bootstrap</a>
+<br/><br/>
+<a href="https://jquery.com/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKICs179exfPrYfYKZEDzZvd6Q03pj-MCn5e1X_WOEb3qjCygIrMtvCclYQMhQBeGGWWk&usqp=CAU" width="60px">&nbsp;jQuery</a>
 
 ## Referências
 

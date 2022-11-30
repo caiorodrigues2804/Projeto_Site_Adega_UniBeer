@@ -22,6 +22,9 @@ if (isset($_SESSION['PRO'])):
 
       $carrinho = new Carrinho();
 
+      // Criando um COD para areferência e cod pedido
+      $ref_cod_pedido = date('ymdHis') . $_SESSION['CLI']['cli_id'];
+
       $smarty->assign('PRO',$carrinho->GetCarrinho());
       $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_CarrinhoAlterar());
       $smarty->assign('TOTAL',str_replace('.',',',$_GET['valor_total']));
@@ -35,17 +38,18 @@ if (isset($_SESSION['PRO'])):
       $smarty->assign('SITE_NOME', Config::SITE_NOME);
       $smarty->assign('SITE_HOME', Rotas::get_SiteHOME());
 
+      $freteValor = intval($_GET['valor_total']);
 
       // classe de pedidos -------------------
       // verifico se tem a sessão de pedido
       if(!isset($_SESSION['PED']['pedido'])):
 
-         $_SESSION['PED']['pedido'] = md5(uniqid(date('YmdHis'))); // 20221106205500
+         $_SESSION['PED']['pedido'] = $ref_cod_pedido; // 20221106205500
       endif;
       // verifico se não tem a referência, e gero uma nova
       if(!isset($_SESSION['PED']['ref'])):
 
-         $_SESSION['PED']['ref'] = date('ymdHis') . $_SESSION['CLI']['cli_id']; // 2211152002
+         $_SESSION['PED']['ref'] = $ref_cod_pedido; // 2211152002
       endif;
 
 
@@ -68,11 +72,11 @@ if (isset($_SESSION['PRO'])):
 
       // gravo o pedido no banco  ----------------------------
 
-      if($pedido->PedidoGravar($cliente, $cod, $ref)):
+      if($pedido->PedidoGravar($cliente, $cod, $ref,$freteValor)):
 
          // limpar a sessão do pedido e dos itens do carrinho
          $pedido->LimparSessoes();
-          Rotas::Redirecionar(4,Rotas::pag_Produtos());
+          Rotas::Redirecionar(5,Rotas::pag_Produtos());
 
       endif;
 

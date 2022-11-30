@@ -45,16 +45,16 @@ if(isset($_POST['cli_email'])):
 	$email = new EnviarEmail();
 
 	$destinatarios = array($cliente->getCli_email(), Config::SITE_EMAIL_ADM);
-	$assunto = 'Nova senha' . Config::SITE_NOME;
-	$msg = 'Olá cliente, foi solicitada a sua senha para acessar o Site ' . Config::SITE_NOME;
-	$msg .= "<br/> Sua senha é  ( " . $novasenha . " ) <br/>";
-	$msg .= "Recomendamos que faça a alteração da sua senha através do site na opção 'Senha' quando estiver logado";
-
+	$assunto = '(Sua senha) ' . Config::SITE_NOME;
+	$msg = 'Olá cliente, foi solicitada a sua senha para acessar o Site ' . Config::SITE_NOME . '<br/>';
+	$msg .= "<br/> Sua senha para acessar o login é  <b style='font-size: 18px;'>( " . $novasenha . " )</b><br/>";
+	$msg .= 'Recomendamos que faça a alteração da sua senha através do site na opção "Alterar Senha" quando estiver logado';
+	$msg .= '<hr/><center><img src="https://adegaunibeer.caiorodriguesportfolios.com.br/unibeerlogo.png" width="350px"></center>';
 	$email->Enviar($assunto,$msg,$destinatarios);
 
 	// mostra mensagem na tela que foi enviada a senha
-	echo "<div class='alert alert-success'><h4>Olá cliente, enviamos a sua senha que já está vinculada ao seu e-mail, verifica no seu e-mail que foi cadastrado no site <h4></div>";
-	Rotas::Redirecionar(5,Rotas::pag_ClienteLogin());
+	echo "<div class='alert alert-success'><h5>Olá cliente, enviamos a sua senha que já está cadastrado no site, verifique no seu email<h5></div>";
+	Rotas::Redirecionar(6,Rotas::pag_ClienteLogin());
 	else:
 	// email não foi encontrado
 		echo '<h3>Email não foi encontrado no sistema</h3>';

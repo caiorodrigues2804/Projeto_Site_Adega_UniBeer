@@ -10,7 +10,7 @@
 		<label>Digite seu email cadastrado</label>
 		<input type="email" name="cli_email" id="cli_email" class="form-control" required>	
 		<br/>
-		<input type="submit" class="btn btn-cssc btn-block" value="Repecurar">		
+		<input type="submit" class="btn btn-cssc btn-block" value="Recuperar">		
 		</div>
 
 		<div class="col-md-4"></div>

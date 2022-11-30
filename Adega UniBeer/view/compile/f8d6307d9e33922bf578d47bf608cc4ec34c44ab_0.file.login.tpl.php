@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-22 16:19:19
+/* Smarty version 3.1.46, created on 2022-11-28 20:46:12
   from 'C:\xampp\htdocs\Adega Unibeer\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_637d20b7dfe910_12435840',
+  'unifunc' => 'content_63854844dfad49_11964424',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f8d6307d9e33922bf578d47bf608cc4ec34c44ab' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\login.tpl',
-      1 => 1669144758,
+      1 => 1669679160,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637d20b7dfe910_12435840 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Login</h3>
-<hr>
- 
+function content_63854844dfad49_11964424 (Smarty_Internal_Template $_smarty_tpl) {
+?> 
 <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
  
 <?php } else { ?>
@@ -62,8 +60,8 @@ function content_637d20b7dfe910_12435840 (Smarty_Internal_Template $_smarty_tpl)
 	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_RECOVERY']->value;?>
 " class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-question-sign"></i> &nbsp; Esqueci a Senha</a>
 
-	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_RECOVERY']->value;?>
-" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área da administração</a>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM']->value;?>
+" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área  administrativa</a>
 	 </div>
 
 	</div> <!--- fim dos campos ---->
