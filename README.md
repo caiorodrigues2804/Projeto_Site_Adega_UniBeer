@@ -28,7 +28,7 @@
 ### Todas as versões
 [Clique aqui para exibir todas as versões do site](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/versoes)<br/>
 
-## Visualizar arquivos Word, Pdfs, Excel, etc...
+## Visualizar arquivos Word, Pdfs, Excel, etc... do projeto
 [Clique aqui para visualizar](https://github.com/caiorodrigues2804/Projeto_Site_Adega_UniBeer/tree/arquivos)<br/>
 
 
