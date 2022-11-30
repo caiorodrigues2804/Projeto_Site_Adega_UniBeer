@@ -5,6 +5,9 @@ if(!isset($_SESSION)):
 	session_start();
 endif;
 
+// Setando o meu timezone
+date_default_timezone_set('America/Sao_Paulo');
+
 
 // carrega o auto load
 require './lib/autoload.php';
@@ -45,5 +48,6 @@ endif;
 
 // chamo o template
 $smarty->display('index.tpl');
+ ?>
 
- 
+  

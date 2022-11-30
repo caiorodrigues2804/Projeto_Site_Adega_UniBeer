@@ -191,6 +191,114 @@ class Clientes extends Conexao{
 	}
 
 	/**
+	 * 
+	 * ALTERAR cliente no banco
+	 * 
+	 * */
+
+	function Alterar($id){	
+
+	// verifico se já tem este cpf no banco de dados
+	if($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_SESSION['CLI']['cli_cpf']):
+		print '<div class="alert alert-danger" id="erro_mostrar"> Este CPF já está cadastrado ';
+		Sistema::voltarPagina();
+		print '</div>';
+		exit();
+	endif;
+
+	// verifica se o email já está cadastrado
+	if($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_SESSION['CLI']['cli_email']):
+		print '<div class="alert alert-danger" id="erro_mostrar"> Este e-mail já está cadastrado ';
+		Sistema::voltarPagina();		
+		print '</div>';
+		exit();
+	endif;
+ 
+
+	// caso passou na verificação grava no banco
+
+	// $query  = " INSERT INTO clientes (cli_nome,cli_sobrenome,cli_data_nasc,cli_rg,";
+	// $query .= " cli_cpf,cli_ddd,cli_fone,cli_celular,cli_endereco,cli_numero,cli_bairro,";
+	// $query .= " cli_cidade,cli_uf,cli_cep,cli_email,cli_data_cad,cli_hora_cad,cli_senha)";
+	// $query .= " VALUES ";
+	// $query .= " (:cli_nome,:cli_sobrenome,:cli_data_nasc,:cli_rg,";
+	// $query .= " :cli_cpf,:cli_ddd,:cli_fone,:cli_celular,:cli_endereco,:cli_numero,:cli_bairro,";
+	// $query .= " :cli_cidade,:cli_uf,:cli_cep,:cli_email,:cli_data_cad,:cli_hora_cad,:cli_senha)";
+
+
+	$params = array(
+		':cli_nome'       => $this->getCli_nome(),
+		':cli_sobrenome'  => $this->getCli_sobrenome(),
+		':cli_data_nasc'  => $this->getCli_data_nasc(),
+		':cli_rg'         => $this->getCli_rg(),
+		':cli_cpf'        => $this->getCli_cpf(),	
+		':cli_ddd'        => $this->getCli_ddd(),	
+		':cli_fone'       => $this->getCli_fone(),	
+		':cli_celular'    => $this->getCli_celular(),	
+		':cli_endereco'   => $this->getCli_endereco(),	
+		':cli_numero'     => $this->getCli_numero(),	
+		':cli_bairro'     => $this->getCli_bairro(),	
+		':cli_cidade'     => $this->getCli_cidade(),	
+		':cli_uf'         => $this->getCli_uf(),	
+		':cli_cep'        => $this->getCli_cep(),
+		':cli_email'      => $this->getCli_email(),	
+		':cli_data_cad'   => $this->getCli_data_cad(),	
+		':cli_hora_cad'   => $this->getCli_hora_cad(),	
+		':cli_senha'      => $this->getCli_senha(),	
+		':cli_senha_2'    => $this->getCli_senha_2(),
+		':cli_id'    	  => (int)$id							
+	);
+
+
+	// print '<pre>';
+	// print_r($params);
+	// print '</pre>';
+ 
+	$cli_nome_1 		= $params[':cli_nome'];
+	$cli_sobrenome_1 	= $params[':cli_sobrenome'];
+	$cli_data_nasc_1	= $params[':cli_data_nasc'];
+	$cli_rg_1			= $params[':cli_rg'];
+	$cli_cpf_1 			= $params[':cli_cpf'];
+	$cli_ddd_1			= $params[':cli_ddd'];
+	$cli_fone_1 		= $params[':cli_fone'];
+	$cli_celular_1      = $params[':cli_celular'];
+	$cli_endereco_1 	= $params[':cli_endereco'];
+	$cli_numero_1	 	= $params[':cli_numero'];
+	$cli_bairro_1 		= $params[':cli_bairro'];
+	$cli_cidade_1		= $params[':cli_cidade'];
+	$cli_uf_1	 		= $params[':cli_uf'];
+	$cli_cep_1			= $params[':cli_cep'];
+	$cli_email_1		= $params[':cli_email'];
+	$cli_data_cad_1		= $params[':cli_data_cad'];
+	// print 'Data do cadastro: ' . $cli_data_cad_1 . '<br/>';
+	$cli_hora_cad_1		= $params[':cli_hora_cad'];
+	$cli_senha_1  		= $params[':cli_senha'];
+	$cli_senha_2		= $params[':cli_senha_2'];
+	$id_s				= $params[':cli_id'];
+	// print 'Nome: ' . $params[':cli_nome'] . '<br/>';
+	// print 'Sobrenome: ' . $params[':cli_sobrenome'] . '<br/>';
+	// print 'Data de nascimento: ' . $params[':cli_data_nasc'] . '<br/>';
+	// print 'Data de nascimento: ' . $params[':cli_data_nasc'] . '<br/>';
+
+	// print_r($params);
+
+	$query = "UPDATE  `{$this->prefix}clientes` SET `cli_nome` = '$cli_nome_1',`cli_sobrenome` = '$cli_sobrenome_1',`cli_data_nasc` = '$cli_data_nasc_1',`cli_rg` = '$cli_rg_1',`cli_cpf` = '$cli_cpf_1',`cli_ddd` = '$cli_ddd_1',`cli_fone` = '$cli_fone_1',`cli_celular` = '$cli_celular_1',`cli_endereco` = '$cli_endereco_1',`cli_numero` = '$cli_numero_1',`cli_bairro` = '$cli_bairro_1' ,`cli_cidade` = '$cli_cidade_1',`cli_uf` = '$cli_uf_1',`cli_cep` = '$cli_cep_1',`cli_email` = '$cli_email_1',`cli_pass` = '$cli_senha_1',`cli_data_cad` = '$cli_data_cad_1',`cli_hora_cad` = '$cli_hora_cad_1',`dados_extras` = '$cli_senha_2' WHERE `cli_id` = '$id_s'";
+ 
+	 
+ 	// Executar query no MySQL
+	if($this->ExecuteSQL($query,$params)):
+
+			return true;
+
+		else:
+
+			return false;
+
+	endif;	
+
+	}
+
+	/**
 	 * @param string $cpf
 	 * @return INT otal de dados
 	 * */
@@ -520,14 +628,14 @@ class Clientes extends Conexao{
 
 	function setCli_senha($cli_senha){
 		// $this->cli_senha  = $cli_senha;
-		$this->cli_senha = md5($cli_senha);
+		$this->cli_senha = Sistema::Criptografia($cli_senha);
 		// 123 => md5 = 
 
 	}
 
-	function setCli_senha_2($cli_senha_2){
+	function setCli_senha_2($cli_senha){
 		// $this->cli_senha  = $cli_senha;
-		$this->cli_senha_2 = $cli_senha_2;
+		$this->cli_senha_2 = $cli_senha;
 		// 123 => md5 = 
 
 	}

@@ -80,6 +80,9 @@ class Sistema {
 			return $string;
 			
 	} 
+
+
+
         
     /**
      * validar CPF
@@ -192,6 +195,14 @@ class Sistema {
         return trim($string);
     }
      
-     
+        /**
+         * 
+         * @param string $valor original
+         * @return string valor criptografado
+         * */
+        static function Criptografia($valor){
+
+            return hash('SHA512', $valor);
+        }
     
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 26-Nov-2022 às 18:28
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 30-Nov-2022 às 22:22
+-- Versão do servidor: 10.5.12-MariaDB-cll-lve
+-- versão do PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `miniloja2017`
+-- Banco de dados: `u308103531_adegaunibeer`
 --
 
 -- --------------------------------------------------------
@@ -38,7 +38,7 @@ CREATE TABLE `as_categorias` (
 --
 
 INSERT INTO `as_categorias` (`cate_id`, `cate_nome`, `cate_slug`) VALUES
-(2, 'Cervejas', 'Cervejas'),
+(2, 'Cerveja', 'Cerveja'),
 (3, 'Energeticos', 'Energeticos'),
 (4, 'Refrigerantes', 'Refrigerantes'),
 (5, 'Sucos', 'Sucos'),
@@ -74,20 +74,21 @@ CREATE TABLE `as_clientes` (
   `cli_fone` varchar(10) DEFAULT NULL,
   `cli_celular` varchar(10) DEFAULT NULL,
   `cli_email` varchar(60) DEFAULT NULL,
-  `cli_pass` varchar(40) DEFAULT NULL,
+  `cli_pass` varchar(128) DEFAULT NULL,
   `cli_data_nasc` date DEFAULT NULL,
   `cli_data_cad` date DEFAULT NULL,
   `cli_hora_cad` time DEFAULT NULL,
-  `dados_extras` varchar(40) NOT NULL
+  `dados_extras` varchar(40) NOT NULL,
+  `pro_acesso` tinyint(4) NOT NULL
 ) ENGINE=InnoDB AVG_ROW_LENGTH=5461 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `as_clientes`
 --
 
-INSERT INTO `as_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_endereco`, `cli_numero`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_cep`, `cli_cpf`, `cli_rg`, `cli_ddd`, `cli_fone`, `cli_celular`, `cli_email`, `cli_pass`, `cli_data_nasc`, `cli_data_cad`, `cli_hora_cad`, `dados_extras`) VALUES
-(2, 'Caio', 'Rodrigues', 'Rua Cabo', '300', 'Parque Casa de Pedra', 'São Paulo', 'SP', '02322180', '97202029804', '227447529', 11, '36298736', '993422752', 'caiorodrigues2848@gmail.com', '6d78b1ff6383cc7d1c5f383588505618', '2001-04-28', '2022-11-25', '18:00:22', 'q67y85xr'),
-(3, 'Rayssa Laura ', 'Laís Peixoto', 'Parque São Rafael', '775', 'Parque São Rafael', 'São Paulo', 'SP', '08320010', '92815345846', '354033554', 11, '37901385', '984809066', '4f1dee7989@inboxmail.life', '75c0200ecd958e6c2839591fbbbf57dc', '1998-03-04', '2022-11-26', '13:01:25', 'r41p89zu');
+INSERT INTO `as_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_endereco`, `cli_numero`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_cep`, `cli_cpf`, `cli_rg`, `cli_ddd`, `cli_fone`, `cli_celular`, `cli_email`, `cli_pass`, `cli_data_nasc`, `cli_data_cad`, `cli_hora_cad`, `dados_extras`, `pro_acesso`) VALUES
+(1, 'Caio', 'Rodrigues ', 'Rua Adauto Lúcio Cardoso', '648', 'República', 'São Paulo', 'SP', '01153000', '46501641845', '292716436', 11, '25488437', '981744230', 'caiorodrigues2848@gmail.com', 'b95e317040f6b728a05a24ca4fa378389b2a0f28e45bd8179e96d51fddf28cce653780cee0ea158f356dcb74e1700b03788843025b1dd35b25f14a2ffcb73637', '2001-04-28', '2022-11-29', '19:20:41', '1234v', 0),
+(2, 'Hugo', 'Henrique Monteiro', 'Rua Dom Pedro II', '526', 'Parque Alvorada II', 'Imperatriz', 'MA', '65915805', '22865075036', '486036704', 98, '28935219', '997228377', 'webcompleto22@gmail.com', 'b123e9e19d217169b981a61188920f9d28638709a5132201684d792b9264271b7f09157ed4321b1c097f7a4abecfc0977d40a7ee599c845883bd1074ca23c4af', '2001-04-23', '2022-11-29', '19:30:42', 'teste', 0);
 
 -- --------------------------------------------------------
 
@@ -168,30 +169,27 @@ CREATE TABLE `as_pedidos` (
   `ped_cliente` int(11) DEFAULT NULL,
   `ped_cod` varchar(100) DEFAULT NULL,
   `ped_ref` varchar(40) DEFAULT NULL,
-  `ped_pag_status` varchar(20) DEFAULT NULL,
+  `ped_pag_status` varchar(20) DEFAULT 'NAO',
   `ped_pag_forma` varchar(20) DEFAULT NULL,
   `ped_pag_tipo` varchar(20) DEFAULT NULL,
   `ped_pag_codigo` varchar(220) DEFAULT NULL,
   `ped_frete_valor` double(9,2) DEFAULT NULL,
   `ped_frete_tipo` varchar(20) DEFAULT NULL,
-  `ped_valor_item` varchar(100) NOT NULL
+  `ped_valor_item` varchar(100) NOT NULL,
+  `ped_concluido` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB AVG_ROW_LENGTH=16384 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `as_pedidos`
 --
 
-INSERT INTO `as_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`, `ped_ref`, `ped_pag_status`, `ped_pag_forma`, `ped_pag_tipo`, `ped_pag_codigo`, `ped_frete_valor`, `ped_frete_tipo`, `ped_valor_item`) VALUES
-(1, '2022-11-20', '21:51:22', 4, '0f8dcd91376bb6018624810c7f1b42e0', '2211201952274', 'NÃO', NULL, NULL, NULL, 0.00, '', '244.97'),
-(2, '2022-11-20', '22:22:10', 4, '0f8dcd91376bb6018624810c7f1b42e0', '2211201952274', 'NÃO', NULL, NULL, NULL, 0.00, '', '244.97'),
-(3, '2022-11-20', '22:48:01', 4, '79354578c26befaaff861709d608c165', '2211202223224', 'NÃO', NULL, NULL, NULL, 0.00, '', '125.81'),
-(4, '2022-11-22', '19:59:05', 8, 'e4846deb3aa8c34eb4aa217d438727de', '2211221959028', 'NÃO', NULL, NULL, NULL, 0.00, '', '7.14'),
-(5, '2022-11-22', '20:01:21', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(6, '2022-11-22', '20:01:52', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(7, '2022-11-22', '20:02:37', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(8, '2022-11-22', '20:03:18', 8, '6a109df43a6293a21b6abec226c10c63', '2211222001218', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(9, '2022-11-26', '13:01:59', 3, 'a800c2d7c2c547efd112a0c405019d7c', '2211261301563', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38'),
-(10, '2022-11-26', '13:03:55', 3, 'b8c9fd5ac34eec7b5962683d9a5b53cd', '2211261303513', 'NÃO', NULL, NULL, NULL, 0.00, '', '2.38');
+INSERT INTO `as_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`, `ped_ref`, `ped_pag_status`, `ped_pag_forma`, `ped_pag_tipo`, `ped_pag_codigo`, `ped_frete_valor`, `ped_frete_tipo`, `ped_valor_item`, `ped_concluido`) VALUES
+(5, '2022-11-30', '14:04:11', 2, '2211301404072', '2211301404072', 'NAO', NULL, NULL, NULL, 34.00, '', '12.34', 1),
+(6, '2022-11-30', '14:13:35', 1, '2211301413321', '2211301413321', 'NAO', NULL, NULL, NULL, 38.00, '', '15.98', 1),
+(7, '2022-11-30', '14:21:42', 1, '2211301421391', '2211301421391', 'NAO', NULL, NULL, NULL, 52.00, '', '30.21', 1),
+(8, '2022-11-30', '16:55:22', 1, '2211301655211', '2211301655211', 'NAO', NULL, NULL, NULL, 27.00, '', '4.76', 1),
+(9, '2022-11-30', '18:34:32', 1, '2211301834311', '2211301834311', 'NAO', NULL, NULL, NULL, 29.00, '', '6.99', 1),
+(10, '2022-11-30', '18:55:37', 1, '2211301855361', '2211301855361', 'NAO', NULL, NULL, NULL, 25.00, '', '3', 0);
 
 -- --------------------------------------------------------
 
@@ -212,28 +210,16 @@ CREATE TABLE `as_pedidos_itens` (
 --
 
 INSERT INTO `as_pedidos_itens` (`item_id`, `item_produto`, `item_valor`, `item_qtd`, `item_ped_cod`) VALUES
-(1, 8, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(2, 33, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(3, 31, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(4, 22, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(5, 13, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(6, 8, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(7, 33, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(8, 31, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(9, 22, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(10, 13, 244.97, 1, '0f8dcd91376bb6018624810c7f1b42e0'),
-(11, 1, 125.81, 3, '79354578c26befaaff861709d608c165'),
-(12, 2, 125.81, 1, '79354578c26befaaff861709d608c165'),
-(13, 4, 125.81, 1, '79354578c26befaaff861709d608c165'),
-(14, 8, 125.81, 1, '79354578c26befaaff861709d608c165'),
-(15, 9, 125.81, 1, '79354578c26befaaff861709d608c165'),
-(16, 1, 7.14, 3, 'e4846deb3aa8c34eb4aa217d438727de'),
-(17, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
-(18, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
-(19, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
-(20, 1, 2.38, 1, '6a109df43a6293a21b6abec226c10c63'),
-(21, 1, 2.38, 1, 'a800c2d7c2c547efd112a0c405019d7c'),
-(22, 1, 2.38, 1, 'b8c9fd5ac34eec7b5962683d9a5b53cd');
+(1, 1, 8.55, 2, '2211301221411'),
+(2, 2, 8.55, 1, '2211301221411'),
+(3, 1, 12.34, 2, '2211301404072'),
+(5, 7, 15.98, 2, '2211301413321'),
+(6, 1, 30.21, 1, '2211301421391'),
+(7, 2, 30.21, 1, '2211301421391'),
+(8, 183, 30.21, 1, '2211301421391'),
+(9, 1, 4.76, 2, '2211301655211'),
+(10, 32, 6.99, 1, '2211301834311'),
+(11, 184, 3.00, 1, '2211301855361');
 
 -- --------------------------------------------------------
 
@@ -268,7 +254,7 @@ CREATE TABLE `as_produtos` (
 
 INSERT INTO `as_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `pro_peso`, `pro_valor`, `pro_altura`, `pro_largura`, `pro_comprimento`, `pro_img`, `pro_slug`, `pro_estoque`, `pro_modelo`, `pro_ref`, `pro_fabricante`, `pro_ativo`, `pro_frete_free`, `pro_descricao_extra`) VALUES
 (1, 2, 'Skol Pilsen Lata 550ml', 'Cerveja Skol Pilsen Lata.\r\n\r\nA clássica redonda que anima qualquer momento. Seu nome vem da palavra escandinava skål, que significa \"à vossa saúde/à nossa saúde\"; expressão comum que antecede brindes. É hoje a maior do segmento no mercado brasileiro e a quinta maior do segmento no mundo.\r\n\r\nCerveja do tipo Pilsen, Skol é uma cerveja clara, com aroma refinado e sabor leve e suave. Skol Pilsen é uma típica cerveja clara, com aroma refinado e sabor leve e suave. Seu teor de amargor é menos acentuado e seu teor alcoólico é médio.', 100.000, 2.38, 100, 100, 100, 'skol.png', 'skol', 10, NULL, '00011', NULL, 'SIM', 'NAO', 'Cerveja Skol Pilsen Lata 550ml 12 U'),
-(2, 2, 'Cerveja Original 350ml', 'A clássica Cerveja Antarctica Original de350ml é reconhecida por preservar sua essência, tradição e qualidade desde 1931. Uma Standard American Lager de sabor suave, leve amargor e aroma de lúpulo, além de refrescância única — garantida por sua alta carbonatação. A tradicional versão 600 ml é ideal para dividir com amigos sem esquentar. Complemente a confraternização, harmonizando o sabor Original com petiscos, queijos à milanesa, lulas fritas, ostras ou salames e pizzas. INGREDIENTES: Água, malte, milho e lúpulo. ALERGÊNICOS: Contém cevada e glúten.', 100.000, 3.79, 100, 100, 100, 'cerveja_original.png', 'cerveja_original', 10, NULL, '00022', NULL, 'SIM', 'NAO', 'Cerveja Original Pilsen 350ml Lata'),
+(2, 2, 'Cerveja Original 350ml', 'Cerveja Original Pilsen 350ml Lata', 100.000, 3.79, 100, 100, 100, 'cerveja_original.png', 'cerveja_original', 10, '', '00022', 0, 'SIM', 'NAO', 'Cerveja Original Pilsen 350ml Lata'),
 (3, 3, 'RedBull Energy Drink 250ml', 'Energético Red Bull Energy Drink, 250 ml (24 latas) RED BULL TE DÁ ASAS Inspirado por bebidas funcionais do Extremo Oriente, Dietrich Mateschitz fundou a Red Bull em meados dos anos 80. Ele criou a fórmula e desenvolveu o conceito de marketing exclusivo ao lançar o primeiro Red Bull Energy Drink em 1º de abril de 1987 na Áustria. Uma nova categoria de produtos – Energéticos - nascia. QUANDO BEBER O Red Bull Energy Drink é apreciado em todo o mundo por atletas de elite, profissionais dinâmicos, estudantes ativos e motoristas em viagens longas. O QUE EXISTE DENTRO DA LATA Cafeína: A cafeína já era conhecida por seus efeitos estimulantes pelas civilizações antigas, que a consumiam a partir de fontes naturais como o chá, café grãos de cacau e noz de cola. Taurina: Taurina é um aminoácido natural do corpo humano, que está presente na dieta diária das pessoas e está envolvida numa vasta gama de processos biológicos. Vitaminas do grupo B: As vitaminas são micronutrientes essenciais necessários para manter as funções normais do organismo. Açúcares: Red Bull Energy Drink é feito com açúcar proveniente da beterraba. Água das fontes Alpinas: Naturalmente, a água é um ingrediente crucial da Red Bull.', 100.000, 9.00, 100, 100, 100, 'redbull.png', 'redbull\r\n', 10, NULL, '00033', NULL, 'SIM', 'NAO', 'Energético Red Bull Energy Drink 250 ml'),
 (4, 5, 'Del Valle Lata 290ml', 'Suco Del Valle <br/><br/>\r\n\r\nNéctar de Laranja Del Valle é uma excelente opção de bebida para refrescar seu dia. Quando falamos em Néctar de Fruta, estamos falando em bebidas que contém até 50% de suco ou polpa em sua elaboração. Apesar de conter adição de açúcar o Néctar Del Valle não contém conservantes, aromas e corantes artificiais. Compre Néctar de Laranja Del Valle 1,5 Litro e experimente o delicioso sabor Del Valle, uma das marcas de sucos mais vendidas do Brasil. Compartilhe com amigos e familiares!', 100.000, 4.99, 100, 100, 100, 'delvalle.png', 'del_valle', 10, NULL, '00055', NULL, 'SIM', 'NAO', 'Suco Del Valle Néctar Lata 290ml'),
 (6, 2, 'Corona Extra 330ml 6 packs', '\r\nA Cerveja Corona é refrescante, transparente, com espuma clara, mas pouco persistente e aroma discreto. Estilo Pilsen (Latin American Light Lager), é também frisante, leve, fácil de beber, de acidez média com toques cítricos (limão) persistentes e doçura residual. Começou a ser fabricada no México em 1925, na Cervejaria Modelo. É a marca líder no mercado nacional e a cerveja mexicana de maior venda nos Estados Unidos. Essa pilsener atende a pessoas que estão em busca de relaxar e refrescar.', 100.000, 7.99, 100, 100, 100, 'corona_extra.png', 'corona_extra', 10, NULL, '00066', NULL, 'SIM', 'NAO', 'Cerveja Corona Extra Long Neck 330ml Pack (6 Unidades)'),
@@ -297,7 +283,7 @@ INSERT INTO `as_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `p
 (29, 2, 'Baden Baden Ipa 600ml', 'Cerveja Baden Baden IPA Maracujá 600ml c6. \\n \\nÁ princípio, esta é uma cerveja do estilo American India Pale Ale. \\n \\nA cerveja IPA da Baden Baden possui aroma intenso de maracujá, proveniente dos lúpulos tanto quanto da adição do suco da fruta. \\n \\nSua coloração é acobreada e tem amargor potente mas equilibrado por seu sabor cítrico e teor alcoólico elevado. \\n \\nEla é produzida com a técnica Dip Hop, ou seja, tem maior diferença e personalização dos aromas nobres do lúpulo. Assim, não muda na qualidade do amargor. \\n \\nAlém disso, combina com carnes, comidas condimentadas e apimentadas. \\n \\nPor exemplo: hambúrguer, comida mexicana (assim como com tacos e burritos), picanha ou entrecôte grelhado. \\n \\nA cervejaria Baden Baden nasceu em Campos do Jordão então como uma das pioneiras na produção de cervejas artesanais de qualidade. Atualmente, chega em vários lugares do Brasil. \\n \\nAssim, desde 1999, a empresa assumiu o compromisso de seguir a tradição cervejeira sem abrir mão de criar receitas que surpreendam para, assim, continuar fazendo cerveja como nunca! \\n \\nFicha Técnica Cerveja Baden Baden IPA Maracujá 600ml c6. \\nFamília: Ale \\nTipo: American India Pale Ale \\nEmbalagem: Garrafa \\nVolume: 600 ml \\nGraduação Alcoólica: 6,4% vol \\nConsumir entre: 6°e 9°C \\n(IBUs): 33 \\nIngredientes: água, malte, lúpulo e fermento. \\nTemperatura Sugerida: 6 ºC \\nOrigem: Brasil \\nFabricação: Brasil \\n \\nÉ proibida a venda de bebidas para menores de 18 anos. \\n \\nBeba com moderação. \\n \\nSe beber não dirija.', 100.000, 97.53, 100, 100, 100, 'cerveja_baden_baden_ipa_ma.png', 'cerveja_baden_baden_ipa_ma', 1700, NULL, '00119', NULL, 'SIM', 'NAO', 'Cerveja Baden Baden Ipa Maracuja Gf 600m 6 Unidades'),
 (30, 2, 'Cerveja Bohemia Lata 350ml', 'Cerveja Bohemia Lata 350ml\r\nClara, leve e muito refrescante, é produzida com malte 100% importado e lúpulo Saaz, da República Tcheca. Seu aroma levemente frutado é marcado por notas leves de malte e lúpulo.', 100.000, 2.99, 100, 100, 100, 'bohemia.png', 'bohemia', 200, NULL, '00120', NULL, 'SIM', 'NAO', 'Cerveja Bohemia Lata 350ml'),
 (31, 2, 'Lager Long Neck 275ml', 'É uma cerveja com notas pronunciadas de malte e lúpulo e o seu leve amargor que entregam um sabor único e convidativo.', 100.000, 4.79, 100, 100, 100, 'imperio_cerveja_lager_long.png', 'imperio_cerveja_lager_long', 350, NULL, '00121', NULL, 'SIM', 'NAO', 'Imperio Cerveja Lager Long Neck'),
-(32, 4, 'Coca-Cola Original 1,5L', 'Refrigerante Coca Cola 1,5L  Água gaseificada, açúcar, extrato de noz-de-cola, cafeína, corante caramelo IV, acidulante ácido fosfórico, aroma natural e edulcorante sucralose (4,4mg) por 100ml.', 1.550, 6.99, 100, 100, 100, 'coca_cola.png', 'coca_cola', 1500, NULL, '00122', NULL, 'SIM', 'NAO', 'Refrigerante Coca-Cola Sabor Original Pet 1,5L'),
+(32, 4, 'Coca-Cola Original 1,5L', 'Refrigerante Coca-Cola Sabor Original Pet 1,5L', 100.000, 6.99, 100, 100, 100, 'coca_cola.png', 'coca_cola', 1500, '', '00122', 0, 'SIM', 'NAO', 'Refrigerante Coca-Cola Sabor Original Pet 1,5L'),
 (33, 4, 'Pepsi Black 2L', 'Refrigerante Pepsi Black Sem Açúcares Pet 2 Litros \r\n\r\n', 100.000, 8.29, 100, 100, 100, 'pepsi_cola.png', 'pepsi_cola', 2000, NULL, '00123', NULL, 'SIM', 'NAO', 'Refrigerante Pepsi Black Sem Açúcares Pet 2 Litros'),
 (34, 4, 'Pepsi Black lata 350 ml', 'Originalmente, a fórmula da Pepsi foi criada para fins medicinais. Mas seu sabor agradou tanto que o xarope começou a ser consumido simplesmente por prazer. Cinco anos mais tarde, a fórmula transformou-se em bebida e começou a ser comercializada. Hoje, a Pepsi é um refrigerante de cola com aroma natural, muito apreciado pelo sabor suave e pela refrescância. ', 100.000, 2.29, 100, 100, 100, 'pepsi_lata.png', 'pepsi_lata', 400, NULL, '00124', NULL, 'SIM', 'NAO', 'Refrigerante Pepsi Black sem açúcar lata 350 ml'),
 (35, 4, 'Pepsi Black 200ml', 'Refrigerante Pepsi Black Sem Açúcares.\r\n\r\nA Pepsi Black traz a ousadia e efervescência da Geração Z em uma fórmula inovadora que garante sabor intenso a cada gole.\r\n\r\nO refrigerante Pepsi Black é zero açúcar e zero calorias porém tem um sabor muito mais intenso que a Pepsi Zero!\r\n\r\nElaborado com aromatizantes naturais compostos: água gaseificada, cafeína, conservador, corante, acidulante, edulcorantes artificiais: acesulfame e aspartame.\r\n\r\nBebida não Alcoólica.\r\nContém 200ml.\r\nRefrigerante Fabricado no Brasil.', 100.000, 1.39, 100, 100, 100, 'pepsi_pet.png', 'pepsi_pet', 500, NULL, '00125', NULL, 'SIM', 'NAO', 'Refrigerante Pepsi Black Sem Açúcares 200ml'),
@@ -363,9 +349,9 @@ INSERT INTO `as_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `p
 (99, 4, 'Kuat Lata 350ml', 'O sabor do guaraná, uma fruta típica da amazônia, faz do Kuat Original um dos refrigerantes mais saborosos do Brasil. Produzido com os melhores ingredientes para manter a qualidade e o sabor característico desse refrigerante. Uma garrafa de Kuat Original geladinha é perfeita para acompanhar qualquer momento!', 100.000, 3.19, 100, 100, 100, 'refri_kuat.png', 'refri_kuat', 63241, NULL, '00186', NULL, 'SIM', 'NAO', 'Refrigerante Kuat Sabor Guaraná LATA 350ML'),
 (100, 4, 'Kuat 2L', 'Refrigerante Guaraná Kuat Garrafa 2l', 100.000, 4.38, 100, 100, 100, 'kuat_refri.png', 'kuat_refri', 312, NULL, '00187', NULL, 'SIM', 'NAO', 'Refrigerante Guaraná Kuat Garrafa 2l'),
 (101, 4, 'Kuat 600ML', 'Refrigerante Guaraná Kuat Garrafa 600ml', 100.000, 3.69, 100, 100, 100, 'refri_kuat_600.png', 'refri_kuat_600', 42, NULL, '00188', NULL, 'SIM', 'NAO', 'Refrigerante Guaraná Kuat Garrafa 600ml'),
-(102, 4, 'Kuat Lata 350ml', 'Guarana kuat lata 350ML', 1000.000, 3.49, 100, 100, 100, 'refri_kuat_fruit_lata.png', 'refri_kuat_fruit_lata', 412, NULL, '00189', NULL, 'SIM', 'NAO', 'Guarana kuat lata 350ML\r\n');
+(102, 4, 'Kuat Lata 350ml', 'Guarana kuat lata 350ML', 1000.000, 3.49, 100, 100, 100, 'refri_kuat_fruit_lata.png', 'refri_kuat_fruit_lata', 412, NULL, '00189', NULL, 'SIM', 'NAO', 'Guarana kuat lata 350ML\r\n'),
+(103, 4, 'Kuat Garrafa 250ml', 'Refrigerante Guarana Kuat Garrafa 250ml', 100.000, 1.55, 100, 100, 100, 'refri_kuat_250ml.png', 'refri_kuat_250ml', 6346, NULL, '00190', NULL, 'SIM', 'NAO', 'Refrigerante Guarana Kuat Garrafa 250ml');
 INSERT INTO `as_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `pro_peso`, `pro_valor`, `pro_altura`, `pro_largura`, `pro_comprimento`, `pro_img`, `pro_slug`, `pro_estoque`, `pro_modelo`, `pro_ref`, `pro_fabricante`, `pro_ativo`, `pro_frete_free`, `pro_descricao_extra`) VALUES
-(103, 4, 'Kuat Garrafa 250ml', 'Refrigerante Guarana Kuat Garrafa 250ml', 100.000, 1.55, 100, 100, 100, 'refri_kuat_250ml.png', 'refri_kuat_250ml', 6346, NULL, '00190', NULL, 'SIM', 'NAO', 'Refrigerante Guarana Kuat Garrafa 250ml'),
 (104, 4, 'Kit 12 Kuat 1L', 'Kit 12 Litros Refrigerante Guaraná Kuat Garrafa\r\n\r\n-o sabor do guaraná, uma fruta típica da amazônia, faz do kuat original um dos refrigerantes mais saborosos do brasil.\r\nProduzido com os melhores ingredientes para manter a qualidade e o sabor característico desse refrigerante.\r\nUm kuat original geladinho é perfeito para acompanhar qualquer momento\r\n\r\nEste produto não contém gorduras trans e nem gorduras saturadas.\r\nTotal de gorduras: 0.\r\nA garrafa pet e descartável e com sua cor em verde, ajuda a degradar menos o meio ambiente.\r\n\r\n-kuat é um refrigerante com sabor guaraná lançado em 1997 pela empresa the coca-cola company.\r\n-kuat é uma palavra tupi-guarani que signica irmão gêmeo da lua, um nome bem apropriado para um refrigerante que contém guaraná produzido na região amazônica.\r\n\r\n-característica do produto:\r\nSabor: tradicional guaraná.\r\nMarca: kuat.\r\nQuantidade litros: 1 litro.', 1000.000, 135.56, 100, 100, 100, 'kit_kuat.png', 'kit_kuat', 42, NULL, '00191', NULL, 'SIM', 'NAO', 'Kit 12 Litros Refrigerante Guaraná Kuat Garrafa'),
 (105, 4, 'Kit 6 Kuat 220ml', 'Refrigerante Guaraná  Kuat 6 Unidade - 220ml Cada', 400.000, 14.40, 100, 100, 100, 'kuat_latas.png', 'kuat_latas', 513, NULL, '00192', NULL, 'SIM', 'NAO', 'Refrigerante Guaraná  Kuat 6 Unidade - 220ml Cada'),
 (106, 4, 'Fanta Laranja 2L', '<b>Refrigerante Fanta</b><br/>\r\nRefrigerante Fanta geladíssimo!', 600.000, 8.59, 100, 100, 100, 'fanta_laranja.png', 'fanta_laranja', 485, NULL, '00193', NULL, 'SIM', 'NAO', 'Refrigerante Fanta 2L'),
@@ -445,7 +431,8 @@ INSERT INTO `as_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `p
 (180, 3, 'Monster Ultra 473ml', 'Energético Monster Ultra Lata 473ml', 100.000, 8.99, 100, 100, 100, 'monster_ultra.png', 'monster_ultra', 100, NULL, '00267', NULL, 'SIM', 'NAO', 'Energético Monster Ultra Lata 473ml'),
 (181, 3, 'Moster Ultra Violet 437ml', 'Energético Ultra Violet Zero Açúcar Monster Lata 473ml', 100.000, 9.35, 100, 100, 100, 'monster_violet.png', 'monster_violet', 100, NULL, '00268', NULL, 'SIM', 'NAO', 'Energético Ultra Violet Zero Açúcar Monster Lata 473ml'),
 (182, 13, 'Alambique 750 mL', 'Cachaça de Alambique HB Premium 750 mL Carvalho<br/>\r\nCachaça deAlambique HB Premium 750 mL – Carvalho<br/>\r\n\r\nTambém conhecida como Pinga ou Caninha, a cachaça sempre foiconsiderada uma bebida popular, mas hoje é conhecida pelo consumo cada vez maissofisticado, com sabores únicos e deliciosos. Obtida através da fermentação edestilação do caldo de cana, a cachaça é o ingrediente essencial para vocêdesfrutar de momentos mais prazerosos.\r\n\r\nAroma, Cor e Sabor<br/>\r\n\r\nSeus diferentes sabores e aromas deve-se a forma de seuarmazenamento, o tempo de envelhecimento e o resultado final dependem damadeira escolhida para armazená-la. Podendo ser armazenada em barris de Amendoim,Jequitibá ou Carvalho, materiais que vão deixar a cachaça com sabor e coloraçãodiferenciados. Deixando a cachaça mais suave e adocicada, com um aromaincrível.<br/>\r\n\r\nDrinks<br/>\r\n\r\nQuem resiste a famosa Caipirinha de Limão? Ninguém, não émesmo. Mas não para por aí, a versatilidade da cachaça trás consigo inúmerasopões de bebidas saborosas, podendo ir de coquetéis até às mais variadascaipiras. Leve essa combinação maravilhosa para sua casa e impressione suafamília e amigos!<br/>\r\n\r\nEspecificações Técnicas<br/>\r\n\r\n-Linha: HB Premium<br/>\r\n\r\nSabor:Carvalho<br/>\r\n\r\nGraduaçãoAlcoólica: 39 %<br/>\r\n\r\n-Volume: 750 mL<br/>\r\n\r\n-Envelhecido: Sim<br/>\r\n\r\n-Armazenada 1 ano<br/>\r\n\r\n-Filtrada 3 vezes<br/>\r\n\r\n-Marca: Heats Brazil<br/>\r\n\r\nOBS: Proibida a venda de bebidas alcoólicas paramenores de 18 anos.\r\n', 100.000, 41.99, 100, 100, 100, 'cachaca_1.png', 'cachaca', 100, NULL, '00269', NULL, 'SIM', 'NAO', 'Cachaça de Alambique HB Premium 750 mL Carvalho - Heats Brazil'),
-(183, 14, 'Ypióca Limão 960ml', 'Caipirinha Ypióca Limão 960ml', 100.000, 24.04, 100, 100, 100, 'ypioca.png', 'ypioca', 100, NULL, '00270', NULL, 'SIM', 'NAO', 'Caipirinha Ypióca Limão 960ml');
+(183, 14, 'Ypióca Limão 960ml', 'Caipirinha Ypióca Limão 960ml', 100.000, 24.04, 100, 100, 100, 'ypioca.png', 'ypioca', 100, NULL, '00270', NULL, 'SIM', 'NAO', 'Caipirinha Ypióca Limão 960ml'),
+(184, 4, 'H2OH Limoneto 500ml', 'Refrigerante H2OH Limoneto Garrafa 500ML', 100.000, 3.00, 100, 100, 100, 'h2o_limao.jpg', 'Refrigerante H2OH Limoneto_Garrafa_500ML', 100, '', '00271', 0, 'SIM', 'NÃO', 'Refrigerante H2OH Limoneto Garrafa 500ML');
 
 -- --------------------------------------------------------
 
@@ -526,7 +513,7 @@ ALTER TABLE `as_categorias`
 -- AUTO_INCREMENT de tabela `as_clientes`
 --
 ALTER TABLE `as_clientes`
-  MODIFY `cli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `as_estados`
@@ -550,13 +537,13 @@ ALTER TABLE `as_pedidos`
 -- AUTO_INCREMENT de tabela `as_pedidos_itens`
 --
 ALTER TABLE `as_pedidos_itens`
-  MODIFY `item_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `item_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `as_produtos`
 --
 ALTER TABLE `as_produtos`
-  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- AUTO_INCREMENT de tabela `as_user`

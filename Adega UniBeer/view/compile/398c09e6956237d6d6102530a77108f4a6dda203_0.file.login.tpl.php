@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-25 22:29:48
+/* Smarty version 3.1.46, created on 2022-11-30 16:48:40
   from '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63816c0c2f5a33_34365513',
+  'unifunc' => 'content_6387b398993564_58572712',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '398c09e6956237d6d6102530a77108f4a6dda203' => 
     array (
       0 => '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/login.tpl',
-      1 => 1669425199,
+      1 => 1669837610,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63816c0c2f5a33_34365513 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Login</h3>
-<hr>
- 
+function content_6387b398993564_58572712 (Smarty_Internal_Template $_smarty_tpl) {
+?> 
 <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
  
 <?php } else { ?>
@@ -62,8 +60,8 @@ function content_63816c0c2f5a33_34365513 (Smarty_Internal_Template $_smarty_tpl)
 	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_RECOVERY']->value;?>
 " class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-question-sign"></i> &nbsp; Esqueci a Senha</a>
 
-	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_RECOVERY']->value;?>
-" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área da administração</a>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM']->value;?>
+" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área  administrativa</a>
 	 </div>
 
 	</div> <!--- fim dos campos ---->

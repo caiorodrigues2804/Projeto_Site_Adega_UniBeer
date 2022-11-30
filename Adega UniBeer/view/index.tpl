@@ -222,8 +222,84 @@
             
            </div> <!-- fim do container geral -->
         
-    </div>
-        
-        
+    </div>    
+            
+<div class="modal fade" id="meumodal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+<h4 class="modal-title">Comunicados</h4>
+</div>
+<div class="modal-body">
+<h4>Seja bem-vindo ao Projeto Site Adega Unibeer!! </h4>
+<h4>Este site trata-se de uma adega fictícia</h4>
+</div>
+<div class="modal-footer">
+<button type="button" onclick="actions()" class="btn btn-primary">Ok</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="meusmodal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+<h4 class="modal-title">Comunicados</h4>
+</div>
+<div class="modal-body">
+<h4>Você tem 18 anos ou mais??</h4>
+</div>
+<div class="modal-footer">
+<button type="button" onclick="actionsss()" class="btn btn-primary">Não</button>
+<button type="button" onclick="actionss()" class="btn btn-primary">Sim</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+
+    if(localStorage){
+
+        if(!localStorage.getItem('ja_visitei')){            
+            if(!localStorage.getItem('acesso') == 1){
+            $("#meumodal").modal("show");
+
+            function actions(){
+              $("#meumodal").modal("hide");
+              $("#meusmodal").modal("show");
+              actionss = () =>  $("#meusmodal").modal("hide");
+              actionsss = () => window.location.href = 'https://about.black/';
+
+              localStorage.setItem('acesso',2);
+              localStorage.setItem('ja_visitei','verdadeiro');
+          }
+        }
+     };
+    }
+
+   if(localStorage){
+
+        if(!localStorage.getItem('ja_visitei')){            
+            if(localStorage.getItem('acesso') == 2){
+            $("#meumodal").modal("show");
+
+            function actions(){
+              $("#meumodal").modal("hide");
+              $("#meusmodal").modal("show");
+              actionss = () =>  $("#meusmodal").modal("hide");
+              actionsss = () => window.location.href = 'https://about.black/';
+
+              localStorage.setItem('acesso',2);
+              localStorage.setItem('ja_visitei','verdadeiro');
+          }
+        }
+     };
+    }
+</script>
     </body>
 </html>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-19 00:38:15
+/* Smarty version 3.1.46, created on 2022-11-27 20:33:13
   from 'C:\xampp\htdocs\Adega Unibeer\view\pedido_confirmar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_6378176784ad57_82710479',
+  'unifunc' => 'content_6383f3b9dd74c3_29020945',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e2f352142a4b854c349794a88993733df89a02cb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\pedido_confirmar.tpl',
-      1 => 1668814694,
+      1 => 1669478025,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6378176784ad57_82710479 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6383f3b9dd74c3_29020945 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Confirmar Pedido</h3>
 <hr/>
 <style type="text/css">

@@ -144,8 +144,36 @@ $smarty->display('buscador_resultados.tpl');
  <?php } } } ?>
  </div>
 
+// ------------------------------------------------------------------------------- //
+
+clientes_senha.php  ---> Cole dentro do arquivo
+
+// gravo a nova senha no banco de dados
 
 
+    $servername = "us-imm-web652.main-hosting.eu";
+    $database = "u308103531_adegaunibeer";
+    $username = "u308103531_rootadega";
+    $password = "Nvidia280401vai@";
+ 
+
+	 $con = mysqli_connect($servername,$username,$password,$database);
+
+	 if($con == mysqli_connect_error()){print 'Aconteceu um erro';}
+
+
+	 mysqli_query($con,"UPDATE `as_clientes` SET `dados_extras` = '$senha_nova' WHERE `cli_email` = '$email'");
+
+
+
+	 $clientes = new Clientes();
+	 $clientes->setCli_senha($senha_nova);
+	 
+	 $clientes->setCli_email($email);
+
+	 $clientes->SenhaUpdate($clientes->getCli_senha(), $clientes->getCli_email());
+
+	 echo '<div class="alert alert-success">A senha foi trocada com sucesso!! Já pode fazer login com sua nova senha</div>';
 
 
 

@@ -1,5 +1,3 @@
-<h3>Login</h3>
-<hr>
  
 {if $LOGADO == true}
  
@@ -37,7 +35,7 @@
 	<a href="{$PAG_CADASTRO}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-pencil"></i> &nbsp; Cadastrar</a>
 	<a href="{$PAG_RECOVERY}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-question-sign"></i> &nbsp; Esqueci a Senha</a>
 
-	<a href="{$PAG_RECOVERY}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área da administração</a>
+	<a href="{$PAG_ADM}" class="btn btn-cssc btn-block"><i class="glyphicon glyphicon-sunglasses"></i> &nbsp; Área  administrativa</a>
 	 </div>
 
 	</div> <!--- fim dos campos ---->

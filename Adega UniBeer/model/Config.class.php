@@ -26,7 +26,7 @@ class Config {
 	 * */
 
 	/*** URL do site */
-	const SITE_URL = "http://localhost/Adega%20Unibeer";
+	const SITE_URL = "http://localhost/Adega%20Unibeer/";
 
 	/*** Pasta padrão do site */
 	const SITE_PASTA = "";

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-25 22:15:21
+/* Smarty version 3.1.46, created on 2022-11-30 16:58:10
   from '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_638168a90d4132_79229166',
+  'unifunc' => 'content_6387b5d205d6b0_66666250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8faa7d98c1c2cb1fb58f069fd6d02a57db976ac4' => 
     array (
       0 => '/home/u308103531/domains/caiorodriguesportfolios.com.br/public_html/projetoadegaunibeer/view/index.tpl',
-      1 => 1669425199,
+      1 => 1669838288,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_638168a90d4132_79229166 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6387b5d205d6b0_66666250 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -281,9 +281,87 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             
            </div> <!-- fim do container geral -->
         
-    </div>
-        
-        
+    </div>    
+            
+<div class="modal fade" id="meumodal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+<h4 class="modal-title">Comunicados</h4>
+</div>
+<div class="modal-body">
+<h4>Seja bem-vindo ao Projeto Site Adega Unibeer!! </h4>
+<h4>Este site trata-se de uma adega fictícia</h4>
+</div>
+<div class="modal-footer">
+<button type="button" onclick="actions()" class="btn btn-primary">Ok</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="meusmodal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+<h4 class="modal-title">Comunicados</h4>
+</div>
+<div class="modal-body">
+<h4>Você tem 18 anos ou mais??</h4>
+</div>
+<div class="modal-footer">
+<button type="button" onclick="actionsss()" class="btn btn-primary">Não</button>
+<button type="button" onclick="actionss()" class="btn btn-primary">Sim</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<?php echo '<script'; ?>
+>
+
+    if(localStorage){
+
+        if(!localStorage.getItem('ja_visitei')){            
+            if(!localStorage.getItem('acesso') == 1){
+            $("#meumodal").modal("show");
+
+            function actions(){
+              $("#meumodal").modal("hide");
+              $("#meusmodal").modal("show");
+              actionss = () =>  $("#meusmodal").modal("hide");
+              actionsss = () => window.location.href = 'https://about.black/';
+
+              localStorage.setItem('acesso',2);
+              localStorage.setItem('ja_visitei','verdadeiro');
+          }
+        }
+     };
+    }
+
+   if(localStorage){
+
+        if(!localStorage.getItem('ja_visitei')){            
+            if(localStorage.getItem('acesso') == 2){
+            $("#meumodal").modal("show");
+
+            function actions(){
+              $("#meumodal").modal("hide");
+              $("#meusmodal").modal("show");
+              actionss = () =>  $("#meusmodal").modal("hide");
+              actionsss = () => window.location.href = 'https://about.black/';
+
+              localStorage.setItem('acesso',2);
+              localStorage.setItem('ja_visitei','verdadeiro');
+          }
+        }
+     };
+    }
+<?php echo '</script'; ?>
+>
     </body>
 </html>
 <?php }
