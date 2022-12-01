@@ -1,6 +1,5 @@
 
 ## Projeto Site Adega UniBeer (Página Principal)
-<br/>
 <center>
 <div align="center">
 <h3> Logo </h3>
