@@ -118,7 +118,7 @@ include("../conexao.php");
         $dados;
 
         if(!isset($_POST["data"])){
-        $consulta = "SELECT * FROM `as_pedidos`";
+        $consulta = "SELECT * FROM `as_pedidos` ORDER BY `ped_pag_status` DESC";
         $dados = mysqli_query($conexoes,$consulta);        
         } else if(isset($_POST["data"])){
         $consulta = "SELECT * FROM `as_pedidos` WHERE `ped_data` = '$_POST[data]'";
