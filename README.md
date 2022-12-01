@@ -1,4 +1,3 @@
-
 ## Projeto Site Adega UniBeer (Página Principal)
 <center>
 <div align="center">
