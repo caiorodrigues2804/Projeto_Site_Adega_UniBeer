@@ -72,7 +72,7 @@
 
     <a href="controle_de_usuarios.php"><input class="btn btn-primary btn-lg text-white" type="button" value="Controle de usuários"></a><br/><br/>
  
-<button type="button" class="btn btn-primary position-relative">
+<button type="button" class="btn btn-primary position-relative btn-lg">
   <a href="Pedidos/index.php">Gerenciar pedidos</a>
 
 

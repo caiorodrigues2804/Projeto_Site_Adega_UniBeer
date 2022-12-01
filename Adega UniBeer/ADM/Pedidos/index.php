@@ -73,11 +73,35 @@ include("../conexao.php");
   <center>    
     <h3>Pedidos dos clientes</h3>
   	    <button class="btn btn-primary"><a href="../index.php">Voltar para página principal ( < )</a></button>
+        <br/>  
+
+        <!-- BUSCAR PEDIDOS -->
+        <form action="index.php?data=<?php if(isset($_POST["data"])){print $_POST["data"];}?>" method="post">
+        <label><h4>Procurar pedidos:</h4></label><br/>
+        <label>Selecione a data do pedido</label>
+        <br/> 
+        <input name="data" value="<?php 
+        if(isset($_POST["data"])){
+          print $_POST["data"];
+        }?>" type="date">
+        <br/>
+        <button type="submit" class="btn btn-primary btn-sm mt-1">Buscar</button>
+        <?php if(isset($_POST['data'])) { ?>
+        <button type="button" onclick="desfazer()" class="btn btn-primary btn-sm mt-1">Desfazer busca</button>
+        <script>
+          function desfazer(){
+            location.href = 'index.php';
+          }
+        </script>
+        <?php } ?>
+        </form>
+        <!-- / BUSCAR PEDIDOS -->
+
         <br/>
         <br/>
          <div style="overflow-y: scroll;height: 500px;"/>
         <table>          
-          <tr class="bg-secondary text-white text-center">
+          <tr class="bg-black text-white text-center p-2">
             <th>Id</th>
             <th>Data e hora</th>
             <th>Valor</th>
@@ -90,8 +114,16 @@ include("../conexao.php");
             <th>Deletar pedido</th>
           </tr>
         <?php 
+        $consuta;
+        $dados;
+
+        if(!isset($_POST["data"])){
         $consulta = "SELECT * FROM `as_pedidos`";
-        $dados = mysqli_query($conexoes,$consulta);
+        $dados = mysqli_query($conexoes,$consulta);        
+        } else if(isset($_POST["data"])){
+        $consulta = "SELECT * FROM `as_pedidos` WHERE `ped_data` = '$_POST[data]'";
+        $dados = mysqli_query($conexoes,$consulta);        
+        }
         
         while($indices = $dados->fetch_array()){
         // print '<pre>';print_r($indices);print '</pre>'; 
@@ -100,7 +132,7 @@ include("../conexao.php");
         <tr class="text-center">
 
           <td><?= $indices["ped_id"] ?></td>
-          <td><?= 'Data: '. date('d/m/Y', strtotime($indices["ped_data"])) . '<br/> Hora: ' . $indices["ped_hora"]?></td>
+          <td style="padding: 2px;"><?= date('d/m/Y', strtotime($indices["ped_data"])) . '<br/>' . $indices["ped_hora"]?></td>
           <td>R$ <?= str_replace('.', ',', $indices["ped_valor_item"]); ?></td>
           <td>R$ <?= str_replace('.', ',', $indices["ped_frete_valor"]);?></td>
           <td><?php 
@@ -119,7 +151,7 @@ include("../conexao.php");
               $valor = intval(mysqli_fetch_assoc($dadoss)["ped_concluido"]);
               if($valor <= 0){
              ?>
-            <button class="btn btn-primary text-white">
+            <button class="btn btn-danger text-white">
             <a href="ped_confirm.php?id=<?= $indices["ped_id"] ?>&confirm=1">( ✖ ) Não</a>
            </button>
            <?php  } ?>
