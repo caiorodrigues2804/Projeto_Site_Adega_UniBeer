@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-27 23:06:56
+/* Smarty version 3.1.46, created on 2022-11-30 22:17:42
   from 'C:\xampp\htdocs\Adega Unibeer\view\clientes_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_638417c009db61_04180453',
+  'unifunc' => 'content_638800b6d61a91_62875218',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd23ed702728394cbc3352571f69c9e56a6592bdf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\clientes_pedidos.tpl',
-      1 => 1669601214,
+      1 => 1669837933,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_638417c009db61_04180453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_638800b6d61a91_62875218 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2>Meus Pedidos</h2>
 
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-11-30 14:13:05
+/* Smarty version 3.1.46, created on 2022-11-30 22:51:10
   from 'C:\xampp\htdocs\Adega Unibeer\view\clientes_itens.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63878f21ce70f4_54912178',
+  'unifunc' => 'content_6388088e8c7948_76787696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a0d2e3eb127467b213889dfca4f2e282fa2392e2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Adega Unibeer\\view\\clientes_itens.tpl',
-      1 => 1669827107,
+      1 => 1669859468,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63878f21ce70f4_54912178 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6388088e8c7948_76787696 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h4 class="text-center">Dados do pedido</h4>
 
 <!----- Informações sobre o pedido ---->
@@ -101,12 +101,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						<td class="text-danger"><b>Final:</b> R$ <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_frete_valor']+$_smarty_tpl->tpl_vars['TOTAL']->value;?>
 </td>	
 
-
+						<input type="hidden" id="value_form" value="<?php echo $_smarty_tpl->tpl_vars['VALOR_DS']->value;?>
+">
 					</tr>
 				</table> 
 
-				 
-				<input class="btn btn-success btn-lg" type="button" value="Fazer o pagamento"/></a>
+				
 			 
 			</center>
 

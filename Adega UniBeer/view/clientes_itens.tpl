@@ -59,12 +59,11 @@
 
 						<td class="text-danger"><b>Final:</b> R$ {$ITENS.1.ped_frete_valor+$TOTAL}</td>	
 
-
+						<input type="hidden" id="value_form" value="{$VALOR_DS}">
 					</tr>
 				</table> 
 
-				 
-				<input class="btn btn-success btn-lg" type="button" value="Fazer o pagamento"/></a>
+				
 			 
 			</center>
 

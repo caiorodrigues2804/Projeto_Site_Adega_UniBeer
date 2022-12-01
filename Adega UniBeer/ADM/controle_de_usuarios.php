@@ -63,7 +63,30 @@ session_start();
  <?php for($i = 0;$i < 5;$i++){ ?><br/><?php } ?>    
   <center>
   	 <button class="btn btn-primary"><a href="index.php">Voltar para página principal</a></button>
-  	 <br/><br/>
+     <!-- Procurar clientes -->
+
+     <br/><br/>
+     <form action="controle_de_usuarios.php?procurar=1" method="post">
+     <label><h4>Procurar clientes: </h4> </label><br/>
+     <input name="texto" style="width: 280px;" type="text" placeholder="Digite o nome do cliente"> 
+      <br/>
+
+     <?php if(isset($_GET["procurar"])) { ?>
+ 
+      <input onclick="desfazer()" class="btn btn-primary btn-sm mt-1" type="button" value="Desfazer busca">
+      <script>
+        desfazer = () => {
+          location.href = 'controle_de_usuarios.php';
+        }
+      </script>
+     <?php } ?>
+ 
+     <input class="btn btn-primary btn-sm  mt-1" type="submit" value="buscar">
+     </form>
+  	 <br/> 
+
+     <!-- /procurar clientes -->
+
   	 <h4>Controle de usuários</h4>
   	<div class="col-md-10" style="overflow-y: scroll;height: 500px;">
  	<table class="table table-bordered">  			
@@ -76,9 +99,21 @@ session_start();
 			<th>Deletar</th>
  		</tr> 	
 
- 		<?php  			
+ 		<?php  
+
+    $consulta;
+    $dados;
+
+ 
+    if(isset($_GET["procurar"]) == 1){
+      $consulta = "SELECT * FROM `as_clientes` WHERE `cli_nome` = '$_POST[texto]'";
+      $dados = mysqli_query($conexoes,$consulta);
+    }
+        // print '<pre>';print_r($indices);print '</pre>';
+    if(isset($_GET["procurar"]) != 1){	
       $consulta = "SELECT * FROM `as_clientes`";
       $dados = mysqli_query($conexoes,$consulta);
+   }
 
       while($indices = $dados->fetch_array()){
         // print '<pre>';print_r($indices);print '</pre>';
@@ -113,7 +148,7 @@ session_start();
         ">Deletar</a></button></td>         
 	   	<tr/>
 
-     <?php } ?>
+     <?php }  ?>
  	</table>
  	</div>
    <br/>
